@@ -1,0 +1,15 @@
+Closed Deal – {!Opportunity.Engagement_Type__c}.
+
+Please find listed details of a new sale under the projects category.
+
+*************************************************************************
+Account Name: {!Opportunity.Account}
+Opportunity Name: {!Opportunity.Name}
+Closed Date: {!Opportunity.CloseDate}
+Gross Margin/Value: {!Opportunity.Amount}
+Engineering GM %: {!Opportunity.Engineering_Margin__c}
+Start Date: {!Opportunity.Start_Date__c}
+*************************************************************************
+
+Please follow this link to directly access the opportunity:
+{!Opportunity.Link}

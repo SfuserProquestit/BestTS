@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloneAsChild</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloseCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MassClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AssetId</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BusinessHoursId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CKSW_BASE__EngineeringReqNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engineering Req Number</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CKSW_BASE__PotentialLiability__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Potential Liability</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CKSW_BASE__Product__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GC1040</fullName>
+                    <default>false</default>
+                    <label>GC1040</label>
+                </value>
+                <value>
+                    <fullName>GC1060</fullName>
+                    <default>false</default>
+                    <label>GC1060</label>
+                </value>
+                <value>
+                    <fullName>GC3020</fullName>
+                    <default>false</default>
+                    <label>GC3020</label>
+                </value>
+                <value>
+                    <fullName>GC3040</fullName>
+                    <default>false</default>
+                    <label>GC3040</label>
+                </value>
+                <value>
+                    <fullName>GC3060</fullName>
+                    <default>false</default>
+                    <label>GC3060</label>
+                </value>
+                <value>
+                    <fullName>GC5020</fullName>
+                    <default>false</default>
+                    <label>GC5020</label>
+                </value>
+                <value>
+                    <fullName>GC5040</fullName>
+                    <default>false</default>
+                    <label>GC5040</label>
+                </value>
+                <value>
+                    <fullName>GC5060</fullName>
+                    <default>false</default>
+                    <label>GC5060</label>
+                </value>
+                <value>
+                    <fullName>GC1020</fullName>
+                    <default>false</default>
+                    <label>GC1020</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CKSW_BASE__SLAViolation__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Violation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case_PO_Number__c</fullName>
+        <description>Current Purchase order Number</description>
+        <externalId>false</externalId>
+        <label>PO Number</label>
+        <length>26</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClosedDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactFax</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <inlineHelpText>Existing contact in Service Max</inlineHelpText>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContactMobile</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>EntitlementId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IsClosedOnCreate</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsEscalated</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsSelfServiceClosed</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsStopped</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatus</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatusIcon</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Account that the General Product is associated to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account that the General Product is associated to.</inlineHelpText>
+        <label>Product Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.Type</field>
+                <operation>equals</operation>
+                <value>Product Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Actual_Initial_Response__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time on which customer was initial responsed as per commitment in SLA.</description>
+        <externalId>false</externalId>
+        <label>Actual Initial Response</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Actual_Onsite_Response__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time on which customer was onsite responsed as per commitment in SLA.</description>
+        <externalId>false</externalId>
+        <label>Actual Onsite Response</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Actual_Resolution__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time on which customer was resolved as per commitment in SLA.</description>
+        <externalId>false</externalId>
+        <label>Actual Resolution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Actual_Restoration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time on which customer was restored as per commitment in SLA.</description>
+        <externalId>false</externalId>
+        <label>Actual Restoration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Auto_Entitlement_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Auto Entitlement Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Success</fullName>
+                    <default>false</default>
+                    <label>Success</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SVMXC__BW_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Booking Window Date</description>
+        <externalId>false</externalId>
+        <label>BW Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__BW_Selected_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>BW Selected By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Case_BW_Selected_By</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__BW_Selected_On__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>BW Selected On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__BW_Slots_Before__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>BW Slots Before</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__BW_Territory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>BW Territory</label>
+        <referenceTo>SVMXC__Territory__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Case</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__BW_Time_Zone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>BW Time Zone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Billing_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Select Billing Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select Billing Type</inlineHelpText>
+        <label>Billing Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                    <label>Contract</label>
+                </value>
+                <value>
+                    <fullName>Courtesy</fullName>
+                    <default>false</default>
+                    <label>Courtesy</label>
+                </value>
+                <value>
+                    <fullName>Empowerment</fullName>
+                    <default>false</default>
+                    <label>Empowerment</label>
+                </value>
+                <value>
+                    <fullName>Loan</fullName>
+                    <default>false</default>
+                    <label>Loan</label>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                    <label>Paid</label>
+                </value>
+                <value>
+                    <fullName>Warranty</fullName>
+                    <default>false</default>
+                    <label>Warranty</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Booking_Window__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Booking Window</label>
+        <referenceTo>SVMXC__Booking_Window__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Case</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Clock_Paused_Forever__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Clock Paused Forever</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Component_City__c</fullName>
+        <deprecated>false</deprecated>
+        <description>“City” part of the physical location address of Component SN</description>
+        <externalId>false</externalId>
+        <formula>SVMXC__Component__r.SVMXC__City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>“City” part of the physical location address of Component SN</inlineHelpText>
+        <label>Component SN City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Component_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>“Country” part of the physical location address of Component SN</description>
+        <externalId>false</externalId>
+        <formula>TEXT(SVMXC__Component__r.SVMXC__Country__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>“Country” part of the physical location address of Component SN</inlineHelpText>
+        <label>Component SN Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Component_State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>“State/Province” part of the physical location address of Component SN</description>
+        <externalId>false</externalId>
+        <formula>SVMXC__Component__r.SVMXC__State__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>“State/Province” part of the physical location address of Component SN</inlineHelpText>
+        <label>Component SN State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Component_Street__c</fullName>
+        <deprecated>false</deprecated>
+        <description>“Street” part of the physical location address of Component SN</description>
+        <externalId>false</externalId>
+        <formula>SVMXC__Component__r.SVMXC__Street__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>“Street” part of the physical location address of Component SN</inlineHelpText>
+        <label>Component SN Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Component_Zip__c</fullName>
+        <deprecated>false</deprecated>
+        <description>“Zip/Postal Code” part of the physical location address of Component SN</description>
+        <externalId>false</externalId>
+        <formula>SVMXC__Component__r.SVMXC__Zip__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>“Zip/Postal Code” part of the physical location address of Component SN</inlineHelpText>
+        <label>Component SN Zip</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Component__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Serial number of the component for which the customer is seeking support. Is a lookup to an existing installed product record in ServiceMax</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Serial number of the component for which the customer is seeking support. Is a lookup to an existing installed product record in ServiceMax</inlineHelpText>
+        <label>Component SN</label>
+        <referenceTo>SVMXC__Installed_Product__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Case1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Entitlement_Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional information entered in Case during customer entitlement</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional information entered in Case during customer entitlement</inlineHelpText>
+        <label>Entitlement Notes</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Entitlement_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is for internal use,  and this is set to &apos;Auto&apos; by Auto-Entitlement or set to &apos;Interactive&apos; in interactive entitlement.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is for internal use,  and this is set to &apos;Auto&apos; by Auto-Entitlement or set to &apos;Interactive&apos; in interactive entitlement.</inlineHelpText>
+        <label>Entitlement Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AUTO</fullName>
+                    <default>false</default>
+                    <label>AUTO</label>
+                </value>
+                <value>
+                    <fullName>INTERACTIVE</fullName>
+                    <default>false</default>
+                    <label>INTERACTIVE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Initial_Response_Customer_By__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Initial Response Customer By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Initial_Response_Internal_By__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time by which customer should be initial responsed as per internal commitment in SLA.</description>
+        <externalId>false</externalId>
+        <label>Initial Response Internal By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Is_Entitlement_Performed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Entitlement Performed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Is_Invoice_Created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Invoice Created</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Is_PM_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is PM Case</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Is_SLA_Calculated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Recalculate SLA</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Is_Service_Covered__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Service Covered</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Onsite_Response_Customer_By__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Onsite Response Customer By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Onsite_Response_Internal_By__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time by which customer should be onsite responsed as per internal commitment in SLA.</description>
+        <externalId>false</externalId>
+        <label>Onsite Response Internal By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__PM_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Preventive Maintenance Plan</label>
+        <referenceTo>SVMXC__PM_Plan__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Case</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Perform_Auto_Entitlement__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Perform Auto Entitlement</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Preferred_End_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>End time for the case to be scheduled. Calculated automatically based on booking window selection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>End time for the case to be scheduled. Calculated automatically based on booking window selection.</inlineHelpText>
+        <label>Preferred End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Preferred_Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Start time for the case to be scheduled. Calculated automatically based on booking window selection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Start time for the case to be scheduled. Calculated automatically based on booking window selection.</inlineHelpText>
+        <label>Preferred Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Name of the product for which customer is seeking support. Reference to Product2 object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose or enter the Product name for which the customer is seeking support.</inlineHelpText>
+        <label>Component Name</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Proforma_Invoice_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Proforma Invoice Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Proforma_Invoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Proforma Invoice</label>
+        <referenceTo>SVMXC__Proforma_Invoice__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Resolution_Customer_By__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Resolution Customer By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Resolution_Internal_By__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time by which customer should be resolved as per internal commitment in SLA.</description>
+        <externalId>false</externalId>
+        <label>Resolution Internal By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Restoration_Customer_By__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Restoration Customer By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Restoration_Internal_By__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time by which customer should be restored as per internal commitment in SLA.</description>
+        <externalId>false</externalId>
+        <label>Restoration Internal By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SContract_Business_Hour__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>SVMXC__Service_Contract__r.SVMXC__Business_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SContract Business Hour</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Clock_Extension_Minutes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Clock Extension Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Clock_Pause_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Clock Pause Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Clock_Pause_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Clock Pause Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Clock_Pause_Minutes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Clock Pause Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Clock_Pause_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Clock Pause Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer Not Available</fullName>
+                    <default>false</default>
+                    <label>Customer Not Available</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Clock_Pause_Restart_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Clock Pause Restart Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Clock_Pause_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Clock Pause Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Clock_Paused__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA Clock Paused</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__SLA_Terms__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Service Level the customer is entitled to by this contract. Is a lookup to an existing service level record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Service Level the customer is entitled to by this contract. Is a lookup to an existing service level record.</inlineHelpText>
+        <label>SLA Terms</label>
+        <referenceTo>SVMXC__Service_Level__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Scheduled_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Scheduled Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Service_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Name of the service contract. Is a lookup to an existing service contract in ServiceMax</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the service contract. Is a lookup to an existing service contract in ServiceMax</inlineHelpText>
+        <label>Service/Maintenance Contract</label>
+        <referenceTo>SVMXC__Service_Contract__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The customer location where the contact is reporting the problem or the location of the installed product.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The customer location where the contact is reporting the problem or the location of the installed product.</inlineHelpText>
+        <label>Site</label>
+        <referenceTo>SVMXC__Site__c</referenceTo>
+        <relationshipLabel>Cases Reported From This Site</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Time_to_Initial_Response__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time taken to initial response as per commitment in SLA.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time taken to initial response as per commitment in SLA.</inlineHelpText>
+        <label>Time to Initial Response (in Minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Time_to_Onsite_Response__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time taken to onsite response as per commitment in SLA.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time taken to onsite response as per commitment in SLA.</inlineHelpText>
+        <label>Time to Onsite Response (in Minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Time_to_Resolve__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time taken to resolve as per commitment in SLA.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time taken to resolve as per commitment in SLA.</inlineHelpText>
+        <label>Time to Resolve (in Minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Time_to_Restore__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time taken to restore as per commitment in SLA.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time taken to restore as per commitment in SLA.</inlineHelpText>
+        <label>Time to Restore (in Minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Top_Level__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Serial number of the top-level installed product to which the component belongs. Is a lookup to an existing installed product record in ServiceMax.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Serial number of the top-level installed product to which the component belongs. Is a lookup to an existing installed product record in ServiceMax.</inlineHelpText>
+        <label>Product/System</label>
+        <referenceTo>SVMXC__Installed_Product__c</referenceTo>
+        <relationshipLabel>Cases (Top-Level)</relationshipLabel>
+        <relationshipName>Case2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SVMXC__Warranty__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Product Warranty</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product Warranty</inlineHelpText>
+        <label>Warranty</label>
+        <referenceTo>SVMXC__Warranty__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SlaExitDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SlaStartDate</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SourceId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StopStartDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedCompany</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedName</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>test_text__c</fullName>
+        <description>Only a test field used to test email function</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only a test field used to test email function</inlineHelpText>
+        <label>test text</label>
+        <length>21</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Open Cases</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.PRIORITY</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWriteTransfer</sharingModel>
+    <webLinks>
+        <fullName>Initial_Response_Completed</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Initial Response Completed</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/DateTimeFieldUtils?ObjId={!Case.Id}&amp;ObjAPIName=Case&amp;FieldAPIName=SVMXC__Actual_Initial_Response__c</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Issue_Resolved</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Issue Resolved</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/DateTimeFieldUtils?ObjId={!Case.Id}&amp;ObjAPIName=Case&amp;FieldAPIName=SVMXC__Actual_Resolution__c</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Onsite_Response_Completed</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Onsite Response Completed</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/DateTimeFieldUtils?ObjId={!Case.Id}&amp;ObjAPIName=Case&amp;FieldAPIName=SVMXC__Actual_Onsite_Response__c</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SVMXC__Booking_Window</fullName>
+        <availability>online</availability>
+        <description>VF Page to select booking window on case</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Book Appointment</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Site.Prefix+&apos;/apex/SVMXC__CASE_SelectBookingWindow?CaseId=&apos;+Case.Id)}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SVMXC__Entitlement</fullName>
+        <availability>online</availability>
+        <description>Check Entitlement</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Entitlement</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Site.Prefix+&apos;/apex/SVMXC__EVER_CaseEntitlement?cid=&apos;+Case.Id)}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SVMXC__New_RMA</fullName>
+        <availability>online</availability>
+        <description>Button to Launch create RMA screen</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create RMA</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Site.Prefix+&apos;/apex/SVMXC__ServiceMaxConsole?SVMX_recordId=&apos;+CASESAFEID(Case.Id)+&apos;&amp;SVMX_processId=TDM004&amp;SVMX_retURL=&apos;+URLFOR($Site.Prefix+&apos;/&apos;+CASESAFEID(Case.Id)))}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SVMXC__New_Service_Order</fullName>
+        <availability>online</availability>
+        <description>Launch New Work order screen</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create Work Order</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Site.Prefix+&apos;/apex/SVMXC__ServiceMaxConsole?SVMX_recordId=&apos;+CASESAFEID(Case.Id)+&apos;&amp;SVMX_processId=TDM014&amp;SVMX_retURL=&apos;+URLFOR($Site.Prefix+&apos;/&apos;+CASESAFEID(Case.Id)))}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SVMXC__New_Shipment</fullName>
+        <availability>online</availability>
+        <description>Button to launch new shipment screen</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create Shipment Order</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Site.Prefix+&apos;/apex/SVMXC__ServiceMaxConsole?SVMX_recordId=&apos;+CASESAFEID(Case.Id)+&apos;&amp;SVMX_processId=TDM005&amp;SVMX_retURL=&apos;+URLFOR($Site.Prefix+&apos;/&apos;+CASESAFEID(Case.Id)))}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>i__Send_Mail_To_Contact</fullName>
+        <availability>online</availability>
+        <description>Spawns a new mail window with the subject line pre-populated</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Mail To Contact</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&quot;mailto:{!IF( ISNULL( Case.ContactId ) ,  Case.SuppliedEmail , Contact.Email )}?subject=Case {!Case.CaseNumber} - {!Case.Subject}&quot;).close();</url>
+    </webLinks>
+</CustomObject>

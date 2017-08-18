@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Custom object to allow global action on a Service automating insertion of Product Consumed or Products Required</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <fields>
+        <fullName>Auto_Request_Part__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Auto Request Part to the Consumed Part</description>
+        <externalId>false</externalId>
+        <label>Auto Request Part</label>
+        <referenceTo>Request_Part__c</referenceTo>
+        <relationshipLabel>Service Parts Request</relationshipLabel>
+        <relationshipName>Service_Parts_Request</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product Item from Van Stock</description>
+        <externalId>false</externalId>
+        <label>Product Item</label>
+        <referenceTo>ProductItem</referenceTo>
+        <relationshipLabel>Service_Parts</relationshipLabel>
+        <relationshipName>Service_Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product_Item__r.Product2.Name</formula>
+        <label>Product Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_Consumed__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity Consumed</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service__c</fullName>
+        <externalId>false</externalId>
+        <label>Service</label>
+        <referenceTo>CKSW_BASE__Service__c</referenceTo>
+        <relationshipLabel>Service Parts</relationshipLabel>
+        <relationshipName>Service_Parts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Service Part</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SPN-{000000}</displayFormat>
+        <label>Service Part Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Service_Parts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Qty_Larger_than_0</fullName>
+        <active>true</active>
+        <description>Must be greater than zero</description>
+        <errorConditionFormula>Quantity_Consumed__c &lt; 1</errorConditionFormula>
+        <errorDisplayField>Quantity_Consumed__c</errorDisplayField>
+        <errorMessage>Quantity Consumed must one or more</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

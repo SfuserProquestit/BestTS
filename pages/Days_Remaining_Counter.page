@@ -1,0 +1,13 @@
+<apex:page showHeader="false" sidebar="false" controller="Days_Remaining_Counter">
+<apex:outputText rendered="{!TrialDays <= 0}">
+	<h5>Days Remaining: <font color="red">{!TrialDays}</font><br></br>	
+	Your trial has expired. If you would like to now activate your trial,
+	please contact your ServiceMax Sales Representative or email info@servicemax.com
+	</h5>
+</apex:outputText>
+<apex:outputText rendered="{!TrialDays > 0}">
+	<h5>Days Remaining: <font color="green">{!TrialDays}</font><br></br>
+	To activate your trial, please contact your ServiceMax Sales Representative or email info@servicemax.com
+	</h5>
+</apex:outputText>
+</apex:page>

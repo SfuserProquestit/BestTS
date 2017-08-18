@@ -1,0 +1,7 @@
+Case Reason: {!Case.Reason}
+Service Contract: {!SVMXC__Service_Contract__c.Name}
+Type: {!Case.Type}
+Case Number: {!Case.CaseNumber}
+PO Number: {!Case.Case_PO_Number__c}
+Test text: {!Case.test_text__c}
+Location: {!Case.SVMXC__Site__c}

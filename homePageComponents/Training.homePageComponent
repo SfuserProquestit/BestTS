@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Getting_Started</links>
+    <links>Video_on_Break_Fix_Process</links>
+    <links>Dispatch_Reference_Guide</links>
+    <links>ServiceMax_User_Guide</links>
+    <links>Technician_View_Part_1</links>
+    <links>Technician_View_Part_2</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

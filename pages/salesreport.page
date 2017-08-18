@@ -1,0 +1,327 @@
+<apex:page controller="salesreportcontroller"  showHeader="{!showBoolean}" sidebar="false" renderAs="{!showRender}"
+           standardStylesheets="false" applyBodyTag="{!showBoolean}" applyHtmlTag="{!showBoolean}">
+    <head>
+        <style>
+            #theGrid td{
+            border: none;
+            }
+            
+            table, th,td {
+            border: 1px solid black;
+            }
+            
+            @page
+            {
+            size:A4 landscape;
+            }
+            
+            body{
+            font-size:12px;
+            }
+            
+            tfoot{
+            font-weight: bold;
+            }
+        </style>
+    </head>
+    
+    <!--
+
+.page-break {
+display:block;
+page-break-after:always;
+}
+-->
+    
+    <h1>
+        Open Opportunities Sales Report    
+    </h1>
+    <body>
+        
+        <br/><br/>
+        
+        <table id="theGrid">
+            <tbody>
+                <tr>
+                    <td><span>Sold Last Week:</span></td>
+                    <td><span >{!totalSalesLastWeek}</span></td>
+                </tr>
+                <tr>
+                    <td><span>Sold Month to Date:</span></td>
+                    <td><span>{!totalSalesThisMonth}</span></td>
+                </tr>
+                <tr>
+                    <td><span>Montly Target:</span></td>
+                    <td><span>{!forcastThisMonth}</span></td>
+                </tr>
+                <tr>
+                    <td><span>Quarter to Date:</span></td>
+                    <td><span>{!totalSalesThisQtr}</span></td>
+                </tr>
+                <tr>
+                    <td><span>Quarter Targets:</span></td>
+                    <td><span>{!forcastThisQtr}</span></td>
+                </tr>
+                <tr>
+                    <td><span>New Opportunities this week:</span></td>
+                    <td><span>{!totalNewOppsThisWeek} ({!numNewOppsThisWeek} new opportunities)</span></td>
+                </tr>
+                <tr>
+                    <td><span>New Opportunities last week:</span></td>
+                    <td><span>{!totalNewOppslastWeek} ({!numNewOppslastWeek} new opportunities)</span></td>
+                </tr>
+                <tr>
+                    <td><span>Forecated Pipeline Value:</span></td>
+                    <td><span>{!forecastedPipeline}</span></td>
+                </tr>
+                <tr>
+                    <td><span>Weighted Pipeline Value:</span></td>
+                    <td>
+                        <span>
+                            $<apex:outputText value="{0, number, ###,###,###,##0.00}"><apex:param value="{!weightedPipeline}"/></apex:outputText>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <br/><hr/><br/>
+        
+        <div align="center">
+            
+            <apex:dataTable value="{!SolutionsTable}" var="row" id="theTable" rowClasses="odd,even" styleClass="tableClass" width="95%">
+                
+                <apex:facet name="caption"></apex:facet>            
+                <apex:facet name="header">
+                    <div style="text-align:center;">
+                        Solutions Group 70%
+                    </div></apex:facet>            
+                <apex:facet name="footer"></apex:facet>
+                
+                <apex:column >                
+                    <apex:facet name="header">Account Name</apex:facet>  
+                    <apex:outputText value="{!row.acc}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Opportunity Name</apex:facet>                
+                    <apex:outputText value="{!row.opp}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Opportunity Strategy</apex:facet>                
+                    <apex:outputText value="{!row.oppStrategy}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Next Step</apex:facet>                
+                    <apex:outputText value="{!row.nextStep}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Owner</apex:facet>                
+                    <apex:outputText value="{!row.owner}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Created Date</apex:facet>                
+                    <apex:outputText value="{!row.createdDate}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Close Date</apex:facet>                
+                    <apex:outputText value="{!row.closeDate}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Stage</apex:facet>                
+                    <apex:outputText value="{!row.stage}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Age</apex:facet>                
+                    <apex:outputText value="{!row.age}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Gross Margin Value</apex:facet>                
+                    <apex:facet name="footer">{!solutionsAggregate[0]}</apex:facet>                
+                    <apex:outputText value="{!row.gmv}"/>                
+                </apex:column>         
+                
+                <apex:column >                
+                    <apex:facet name="header">New Opportunity</apex:facet>                
+                    <apex:outputText value="{!row.newOpp}"/>                
+                </apex:column>
+                <!--
+<apex:column >                
+<apex:facet name="header">New Opportunity Amount</apex:facet>                
+<apex:facet name="footer">{!solutionsAggregate[1]}</apex:facet>                
+<apex:outputText value="{!row.newOppAmount}"/>                
+</apex:column>
+-->
+                <apex:column >                
+                    <apex:facet name="header">Forecasted Amount</apex:facet>                
+                    <apex:facet name="footer">{!solutionsAggregate[1]}</apex:facet>                
+                    <apex:outputText value="{!row.forecastedAmount}"/>                
+                </apex:column>
+                
+            </apex:dataTable>
+            
+            <br/><br/><hr/><br/>
+            
+            <apex:dataTable value="{!QuickQuoteTable}" var="row" rowClasses="odd,even" styleClass="tableClass" width="95%">
+                
+                <apex:facet name="caption"></apex:facet>            
+                <apex:facet name="header">
+                    <div style="text-align:center;">
+                        Quick Quote Group 33%
+                    </div>
+                </apex:facet>            
+                <apex:facet name="footer"></apex:facet>
+                
+                <apex:column >                
+                    <apex:facet name="header">Account Name</apex:facet>  
+                    <apex:outputText value="{!row.acc}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Opportunity Name</apex:facet>                
+                    <apex:outputText value="{!row.opp}"/>                
+                </apex:column> 
+                
+                <apex:column >                
+                    <apex:facet name="header">Opportunity Strategy</apex:facet>                
+                    <apex:outputText value="{!row.oppStrategy}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Next Step</apex:facet>                
+                    <apex:outputText value="{!row.nextStep}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Owner</apex:facet>                
+                    <apex:outputText value="{!row.owner}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Created Date</apex:facet>                
+                    <apex:outputText value="{!row.createdDate}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Close Date</apex:facet>                
+                    <apex:outputText value="{!row.closeDate}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Stage</apex:facet>                
+                    <apex:outputText value="{!row.stage}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Age</apex:facet>                
+                    <apex:outputText value="{!row.age}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Gross Margin Value</apex:facet>                
+                    <apex:facet name="footer">{!quoteAggregate[0]}</apex:facet>                
+                    <apex:outputText value="{!row.gmv}"/>                
+                </apex:column>         
+                
+                <apex:column >                
+                    <apex:facet name="header">New Opportunity</apex:facet>                
+                    <apex:outputText value="{!row.newOpp}"/>                
+                </apex:column>
+                <!--
+<apex:column >                
+<apex:facet name="header">New Opportunity Amount</apex:facet>                
+<apex:facet name="footer">{!quoteAggregate[1]}</apex:facet>                
+<apex:outputText value="{!row.newOppAmount}"/>                
+</apex:column>
+-->
+                <apex:column >                
+                    <apex:facet name="header">Forecasted Amount</apex:facet>                
+                    <apex:facet name="footer">{!quoteAggregate[1]}</apex:facet>                
+                    <apex:outputText value="{!row.forecastedAmount}"/>                
+                </apex:column>
+                
+            </apex:dataTable>
+            
+            <br/><br/><hr/><br/>
+            
+            <apex:dataTable value="{!GeneralPipelineTable}" var="row" rowClasses="odd,even" styleClass="tableClass" width="95%">
+                
+                <apex:facet name="caption"></apex:facet>            
+                <apex:facet name="header">
+                    <div style="text-align:center;">
+                        General Pipeline Group 47%
+                    </div>
+                </apex:facet>            
+                <apex:facet name="footer"></apex:facet>
+                
+                <apex:column >                
+                    <apex:facet name="header">Account Name</apex:facet>  
+                    <apex:outputText value="{!row.acc}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Opportunity Name</apex:facet>                
+                    <apex:outputText value="{!row.opp}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Opportunity Strategy</apex:facet>                
+                    <apex:outputText value="{!row.oppStrategy}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Next Step</apex:facet>                
+                    <apex:outputText value="{!row.nextStep}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Owner</apex:facet>                
+                    <apex:outputText value="{!row.owner}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Created Date</apex:facet>                
+                    <apex:outputText value="{!row.createdDate}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Close Date</apex:facet>                
+                    <apex:outputText value="{!row.closeDate}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Stage</apex:facet>                
+                    <apex:outputText value="{!row.stage}"/>                
+                </apex:column>
+                <apex:column >                
+                    <apex:facet name="header">Age</apex:facet>                
+                    <apex:outputText value="{!row.age}"/>                
+                </apex:column>
+                
+                <apex:column >                
+                    <apex:facet name="header">Gross Margin Value</apex:facet>                
+                    <apex:facet name="footer">{!pipelineAggregate[0]}</apex:facet>                
+                    <apex:outputText value="{!row.gmv}"/>                
+                </apex:column>         
+                
+                <apex:column >                
+                    <apex:facet name="header">New Opportunity</apex:facet>                
+                    <apex:outputText value="{!row.newOpp}"/>                
+                </apex:column>
+                <!--
+<apex:column >                
+<apex:facet name="header">New Opportunity Amount</apex:facet>                
+<apex:facet name="footer">{!pipelineAggregate[1]}</apex:facet>                
+<apex:outputText value="{!row.newOppAmount}"/>                
+</apex:column>
+-->
+                <apex:column >                
+                    <apex:facet name="header">Forecasted Amount</apex:facet>                
+                    <apex:facet name="footer">{!pipelineAggregate[1]}</apex:facet>                
+                    <apex:outputText value="{!row.forecastedAmount}"/>                
+                </apex:column>
+                
+            </apex:dataTable>
+            
+            <br/><br/><hr/><br/>
+        </div>         
+    </body>
+    
+</apex:page>

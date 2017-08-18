@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SVMXC__Service_Order__c$WO_Date_Recieved__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$Name</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$PO_Number__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__Street__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__City__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__State__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$Customer_Reference__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__Order_Status__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$Site_Scheduled_Date__c</field>
+    </columns>
+    <description>Report of all jobs received, scheduled and closed for the day</description>
+    <filter>
+        <booleanFilter>(1 AND 2) OR (1 AND 3) OR (1 AND 4)</booleanFilter>
+        <criteriaItems>
+            <column>SVMXC__Service_Order__c$Contract_Name__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Schneider Electric</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SVMXC__Service_Order__c$SVMXC__Order_Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Completed,New,Assigned,Scheduled,Confirmed,Restored,Follow up,On Hold,Escalated,Closed,Canceled,Futile</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SVMXC__Service_Order__c$SVMXC__Order_Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>New,Assigned,Scheduled,Confirmed,Follow up,On Hold,Escalated,Client Delay,Arrived,Restored</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SVMXC__Service_Order__c$SVMXC__Order_Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed,New,Assigned,Scheduled,Confirmed,Restored,Follow up,On Hold,Escalated,Completed,Canceled,Futile</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Engagis Ad hoc - Daily Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>BST_Work_Order_with_Installed_products__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>SVMXC__Service_Order__c$SVMXC__Actual_Initial_Response__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

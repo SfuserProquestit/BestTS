@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Best Sales Process</fullName>
+        <default>false</default>
+        <label>Best Sales Process</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Call in - Existing Client</fullName>
+        <default>false</default>
+        <label>Call in - Existing Client</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Dicker Quoting Team</fullName>
+        <default>false</default>
+        <label>Dicker Quoting Team</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Best Promotor</fullName>
+        <default>false</default>
+        <label>Best Promotor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Call in</fullName>
+        <default>false</default>
+        <label>Call in</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Previous Client</fullName>
+        <default>false</default>
+        <label>Previous Client</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ops Sales Step</fullName>
+        <default>false</default>
+        <label>Ops Sales Step</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Website</fullName>
+        <default>false</default>
+        <label>Website</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partner</fullName>
+        <default>false</default>
+        <label>Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SourceCon Request</fullName>
+        <default>false</default>
+        <label>SourceCon Request</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Installation request</fullName>
+        <default>false</default>
+        <label>Installation request</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Repair request</fullName>
+        <default>false</default>
+        <label>Repair request</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Routine maintenance</fullName>
+        <default>false</default>
+        <label>Routine maintenance</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Ad-hoc request</fullName>
+        <default>false</default>
+        <label>Ad-hoc request</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Project scheduled</fullName>
+        <default>false</default>
+        <label>Project scheduled</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+</StandardValueSet>
