@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>View VF page salesreport.vfp</description>
+    <displayType>link</displayType>
+    <linkType>page</linkType>
+    <masterLabel>View Sales Report</masterLabel>
+    <openType>replace</openType>
+    <page>salesreport</page>
+    <protected>false</protected>
+</CustomPageWebLink>

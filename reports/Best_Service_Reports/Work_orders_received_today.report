@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SVMXC__Service_Order__c$WO_Date_Recieved__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$Name</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SVMXC__Service_Order__c$SVMXC__Service_Contract__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Work orders received today</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>BST_Work_Order_with_Installed_products__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>SVMXC__Service_Order__c$WO_Date_Recieved__c</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

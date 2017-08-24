@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Email_Field__c</fullName>
+        <description>Name of the field in the Email</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Name of the field in the Email</inlineHelpText>
+        <label>Email Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SF_Field_Type__c</fullName>
+        <description>Field Type of the Salesforce Field</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Field Type of the Salesforce Field</inlineHelpText>
+        <label>SF Field Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Date</fullName>
+                    <default>false</default>
+                    <label>Date</label>
+                </value>
+                <value>
+                    <fullName>DateTime</fullName>
+                    <default>false</default>
+                    <label>DateTime</label>
+                </value>
+                <value>
+                    <fullName>Integer</fullName>
+                    <default>false</default>
+                    <label>Integer</label>
+                </value>
+                <value>
+                    <fullName>Decimal</fullName>
+                    <default>false</default>
+                    <label>Decimal</label>
+                </value>
+                <value>
+                    <fullName>Text</fullName>
+                    <default>false</default>
+                    <label>Text</label>
+                </value>
+                <value>
+                    <fullName>Phone</fullName>
+                    <default>false</default>
+                    <label>Phone</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Checkbox</fullName>
+                    <default>false</default>
+                    <label>Checkbox</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SF_Field__c</fullName>
+        <description>API Name of the Salesforce Field</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>API Name of the Salesforce Field</inlineHelpText>
+        <label>SF Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SF_Object_Type__c</fullName>
+        <description>API Name of the Salesforce objects</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>API Name of the Salesforce objects</inlineHelpText>
+        <label>SF Object Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>WorkOrder</fullName>
+                    <default>false</default>
+                    <label>WorkOrder</label>
+                </value>
+                <value>
+                    <fullName>CKSW_BASE__Service__c</fullName>
+                    <default>false</default>
+                    <label>CKSW_BASE__Service__c</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Email Parsing Field Mapping</label>
+    <pluralLabel>Email Parsing Field Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

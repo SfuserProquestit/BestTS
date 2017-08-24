@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>ncrservice@best-ts.com.au</email>
+    <name>NCR Email</name>
+    <queueSobject>
+        <sobjectType>CKSW_BASE__Service__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>WorkOrder</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitlementProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <SObjectType>WorkOrder</SObjectType>
+    <active>true</active>
+    <businessHours>Any Time</businessHours>
+    <description>NCR Fix - 24 hours from date &amp; time logged</description>
+    <entryStartDateField>WorkOrder.CreatedDate</entryStartDateField>
+    <exitCriteriaFilterItems>
+        <field>WorkOrder.Status</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </exitCriteriaFilterItems>
+    <milestones>
+        <businessHours>Any Time</businessHours>
+        <milestoneCriteriaFilterItems>
+            <field>WorkOrder.ServiceContractId</field>
+            <operation>equals</operation>
+            <value>00000111</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>NCR Service</milestoneName>
+        <minutesToComplete>1440</minutesToComplete>
+        <timeTriggers>
+            <actions>
+                <name>NCR_email_alert_2h_before_expiry</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>-2</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </timeTriggers>
+        <useCriteriaStartTime>true</useCriteriaStartTime>
+    </milestones>
+</EntitlementProcess>

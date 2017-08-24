@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SVMXC__Service_Order__c$Name</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__Dispatch_Status__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__Order_Status__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__Group_Member__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__Service_Contract__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$Site_Account__c</field>
+    </columns>
+    <columns>
+        <field>SVMXC__Service_Order__c$SVMXC__Scheduled_Date_Time__c</field>
+    </columns>
+    <description>Which work orders haven&apos;t been emailed to the Technician yet?</description>
+    <filter>
+        <criteriaItems>
+            <column>SVMXC__Service_Order__c$SVMXC__Order_Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Restored,Follow up,On Hold,Escalated,Completed,Closed,Canceled,Futile</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SVMXC__Service_Order__c.Activities$Subject</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Email:</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Internal - Work Order check</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Work_Order_and_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>SVMXC__Service_Order__c$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>SVMXC__Service_Order__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_LAST7</interval>
+    </timeFrameFilter>
+</Report>

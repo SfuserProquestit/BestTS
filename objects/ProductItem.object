@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Auto_Reorder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, any consumed parts will be reordered automatically and a technician will have to receipt items.</inlineHelpText>
+        <label>Auto Reorder</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LocationId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Minimum_SOH__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Minimum stock on hand - used for Auto Reorder Request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Minimum stock on hand - used for Auto Reorder Request</inlineHelpText>
+        <label>Minimum SOH</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName</formula>
+        <label>Owner Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product2.ProductCode</formula>
+        <label>Product Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <description>Created for related list view</description>
+        <externalId>false</externalId>
+        <formula>Product2.Description</formula>
+        <label>Product Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name_Text__c</fullName>
+        <description>Used to avoid selection off Product Name in Lightning view</description>
+        <externalId>false</externalId>
+        <formula>Product2.Name</formula>
+        <label>Product Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QuantityOnHand</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>QuantityUnitOfMeasure</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SerialNumber</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <listViews>
+        <fullName>All_ProductItems</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Product Item</label>
+    </listViews>
+    <listViews>
+        <fullName>All_ProductItems</fullName>
+        <columns>Name</columns>
+        <columns>Product2</columns>
+        <columns>Location</columns>
+        <columns>QuantityOnHand</columns>
+        <columns>CreatedBy</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Product Item</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_ProductItems</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Product Item</label>
+    </listViews>
+    <listViews>
+        <fullName>My_ProductItems</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Product Item</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>Product2</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Location</customTabListAdditionalFields>
+        <customTabListAdditionalFields>QuantityOnHand</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Product2</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Location</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>QuantityOnHand</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Product2</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Location</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>QuantityOnHand</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Product2</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Location</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QuantityOnHand</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Unit_Measures_must_be_same_as_product</fullName>
+        <active>false</active>
+        <description>Unit measures need to be same as product as this will cause product transfer errors if there is a mismatch</description>
+        <errorConditionFormula>TEXT(QuantityUnitOfMeasure) != TEXT( Product2.QuantityUnitOfMeasure )</errorConditionFormula>
+        <errorDisplayField>QuantityUnitOfMeasure</errorDisplayField>
+        <errorMessage>Unit of measure must match with the Product unit of measure</errorMessage>
+    </validationRules>
+</CustomObject>

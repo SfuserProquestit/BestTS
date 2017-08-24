@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OPPORTUNITY.NAME</field>
+    </columns>
+    <columns>
+        <field>FROM_OPPORTUNITY_STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <description>Opportunity Steps to date</description>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_CHANGE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STAGE_CHANGE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Opportunity Steps to Date</name>
+    <params>
+        <name>include</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityHistory</reportType>
+    <scope>all</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>LAST_UPDATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2013-11-05</startDate>
+    </timeFrameFilter>
+</Report>

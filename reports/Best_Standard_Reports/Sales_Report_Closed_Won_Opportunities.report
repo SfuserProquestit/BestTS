@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ForecastingFact_Opp.New_Opportunity_Amount__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Total Amount from New opportunities last week</description>
+        <developerName>FORMULA5</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>New Opportunity Amount</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>ForecastingQuota.QuotaAmount:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Quota Amount at the Owner Name Level</description>
+        <developerName>FORMULA6</developerName>
+        <downGroupingContext>ForecastingQuota.ForecastingQuotaItems$Owner</downGroupingContext>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Quota Amount</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>ForecastingQuota.QuotaAmount:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Total Quota at the Forecast Category Level</description>
+        <developerName>FORMULA7</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Quota Amount</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>ForecastingFact_Opp.Amount:SUM/ForecastingQuota.QuotaAmount:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Total Quota attained in %</description>
+        <developerName>FORMULA8</developerName>
+        <downGroupingContext>ForecastingQuota.ForecastingQuotaItems$ForecastCategoryName</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Quota Attained</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps*Opportunity$Account_Name__c</field>
+    </columns>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$Name</field>
+    </columns>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$CloseDate</field>
+    </columns>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps*Opportunity$Age__c</field>
+    </columns>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps*Opportunity$Start_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$Amount</field>
+    </columns>
+    <columns>
+        <field>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps*Opportunity$New_Opportunity2__c</field>
+    </columns>
+    <description>Closed Won Opportunities measured against the forecasted quota for the quarter</description>
+    <filter>
+        <criteriaItems>
+            <column>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$IsClosed</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ForecastingQuota.ForecastingQuotaItems$ForecastCategoryName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ForecastingQuota.ForecastingQuotaItems$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Sales Report - Closed Won Opportunities</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Forecast_Quota_and_Opportunities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>ForecastingQuota.ForecastingQuotaItems.ForecastingFactOpps$CloseDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>
