@@ -2485,6 +2485,15 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
+        <fullName>CHGC_Reason</fullName>
+        <active>true</active>
+        <description>CHGC Reason is required when CHGC is Yes</description>
+        <errorConditionFormula>RecordType.Name  &lt;&gt; &apos;Master Work Order&apos;
+&amp;&amp; ISPICKVAL( CHGC__c  , &apos;Yes&apos;) 
+&amp;&amp; (ISBLANK( CHGC_Reason__c ))</errorConditionFormula>
+        <errorMessage>Please enter a CHGC reason as CHGC is Yes</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Cancelled_Reason</fullName>
         <active>true</active>
         <description>When status is changed to Cancelled then a cancelled reason is required</description>
@@ -2514,6 +2523,15 @@ NOT( ISPICKVAL(Status, &apos;Closed&apos;) ))</description>
         <errorMessage>Cannot update record once invoice has been created</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Invoice_Created_Work_Order_Service</fullName>
+        <active>true</active>
+        <description>If the Invoice created checkbox is ticked on the WO Service then the WO service cannot be updated</description>
+        <errorConditionFormula>RecordType.Name  &lt;&gt; &quot;Master Work Order&quot;
+&amp;&amp; WOService_Invoice_Created__c = true
+&amp;&amp; NOT((PRIORVALUE( WOService_Invoice_Created__c ))=false)</errorConditionFormula>
+        <errorMessage>The Work Order Service cannot be updated as the Invoice has been created for the Master Work order</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Invoice_Created_on_Close_Only</fullName>
         <active>true</active>
         <description>Can only check invoice created if Work Order is closed</description>
@@ -2530,11 +2548,38 @@ NOT( ISPICKVAL(Status, &apos;Closed&apos;) ))</description>
         <errorMessage>Cannot change a Work order status back to new</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Onsite_Time_After_the_Travel_End</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.Name  &lt;&gt; &quot;Master Work Order&quot;
+&amp;&amp;  Start_Onsite_Date_Time__c &lt; Travel_End_Date_Time__c</errorConditionFormula>
+        <errorMessage>Onsite Time needs to be after the Travel End time.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>SLA_Required</fullName>
         <active>true</active>
         <description>If Service Contract has a SLA and no SLA is selected then an error will occur</description>
         <errorConditionFormula>AND ( SLA_Count__c &lt;&gt;0, ISBLANK( SLA__c ))</errorConditionFormula>
         <errorDisplayField>SLA__c</errorDisplayField>
         <errorMessage>This Service Contract has related SLA&apos;s, please select a SLA</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Total_Break_Time_minutes_is_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.Name  &lt;&gt; &apos;Master Work Order&apos;
+&amp;&amp;  $Profile.Name =&apos;Field Service Technician Community&apos;
+&amp;&amp;  ISCHANGED( Status) 
+&amp;&amp;  (ISPICKVAL( PRIORVALUE( Status ),&apos;Onsite&apos;) 
+&amp;&amp;  (ISPICKVAL( Status ,&apos;Completed&apos;) 
+||  ISPICKVAL( Status ,&apos;Incomplete&apos;)))
+&amp;&amp;  ISBLANK(ParentWorkOrder.Total_Break_Time_minutes__c)</errorConditionFormula>
+        <errorMessage>Please add data to Total Break Time (minutes) field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Travel_End_time_after_the_Travel_Start</fullName>
+        <active>true</active>
+        <description>Technician cannot change the Travel End time to be before the Travel Start time.</description>
+        <errorConditionFormula>RecordType.Name  &lt;&gt; &apos;Master Work Order&apos;
+&amp;&amp; Travel_Start_Date_Time__c &gt; Travel_End_Date_Time__c</errorConditionFormula>
+        <errorMessage>The Travel End time needs to be after the Travel Start time</errorMessage>
     </validationRules>
 </CustomObject>

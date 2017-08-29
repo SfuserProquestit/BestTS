@@ -2353,6 +2353,8 @@
         <members>Update_Scheduled_Start_to_equal_Technicians_ETA-1</members>
         <members>Update_WO_Contact_Email-1</members>
         <members>Update_WO_Contact_Email_on_Service_Object-1</members>
+        <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
+        <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <name>Flow</name>
     </types>
     <types>
@@ -2392,6 +2394,8 @@
         <members>Update_Scheduled_Start_to_equal_Technicians_ETA</members>
         <members>Update_WO_Contact_Email</members>
         <members>Update_WO_Contact_Email_on_Service_Object</members>
+        <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
+        <members>Work_Order_Service_Update_Master_WO_status</members>
         <name>FlowDefinition</name>
     </types>
     <types>
@@ -3758,12 +3762,17 @@
         <members>Usage_FSL__c.Tech_cant_reassign_Usage_to_Service</members>
         <members>Usage__c.Lock_Usage_after_Posted</members>
         <members>User.Select_Engagement_Type_Notifications</members>
+        <members>WorkOrder.CHGC_Reason</members>
         <members>WorkOrder.Cancelled_Reason</members>
         <members>WorkOrder.Change_Status_from_Closed</members>
         <members>WorkOrder.Invoice_Created_WorkOrder</members>
+        <members>WorkOrder.Invoice_Created_Work_Order_Service</members>
         <members>WorkOrder.Invoice_Created_on_Close_Only</members>
         <members>WorkOrder.Not_New</members>
+        <members>WorkOrder.Onsite_Time_After_the_Travel_End</members>
         <members>WorkOrder.SLA_Required</members>
+        <members>WorkOrder.Total_Break_Time_minutes_is_required</members>
+        <members>WorkOrder.Travel_End_time_after_the_Travel_Start</members>
         <name>ValidationRule</name>
     </types>
     <types>
