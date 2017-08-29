@@ -43,6 +43,15 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>true</enableFeeds>
     <fields>
+        <fullName>Accepted_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Accepted Date Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -60,10 +69,70 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Assigned_Resource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned Resource</label>
+        <referenceTo>AssignedResource</referenceTo>
+        <relationshipLabel>Work Orders</relationshipLabel>
+        <relationshipName>Work_Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>BusinessHoursId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CE_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Resource__r.CE_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CE Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CHGC_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>CHGC Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CHGC__c</fullName>
+        <externalId>false</externalId>
+        <label>CHGC</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Cancelled_Date_Time__c</fullName>
@@ -201,6 +270,26 @@
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>Customer_Satisfaction_Survey_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Customer Satisfaction Survey Completed?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Task_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Task No.</label>
+        <length>160</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Customer_Territory_No__c</fullName>
         <externalId>false</externalId>
         <label>Customer Territory No.</label>
@@ -251,6 +340,15 @@
         <fullName>Discount</fullName>
     </fields>
     <fields>
+        <fullName>Dispatched_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Dispatched Date Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Duration</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -273,6 +371,80 @@
     </fields>
     <fields>
         <fullName>GrandTotal</fullName>
+    </fields>
+    <fields>
+        <fullName>Incomplete_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Incomplete Date Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Incomplete_Reason_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Incomplete Reason Text</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Incomplete_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Incomplete Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incomplete - Customer not ready</fullName>
+                    <default>false</default>
+                    <label>Incomplete - Customer not ready</label>
+                </value>
+                <value>
+                    <fullName>Incomplete - Part Unavailable</fullName>
+                    <default>false</default>
+                    <label>Incomplete - Part Unavailable</label>
+                </value>
+                <value>
+                    <fullName>Incomplete - No access</fullName>
+                    <default>false</default>
+                    <label>Incomplete - No access</label>
+                </value>
+                <value>
+                    <fullName>Incomplete - Other</fullName>
+                    <default>false</default>
+                    <label>Incomplete - Other</label>
+                </value>
+                <value>
+                    <fullName>Reject - Not interested in Job</fullName>
+                    <default>false</default>
+                    <label>Reject - Not interested in Job</label>
+                </value>
+                <value>
+                    <fullName>Reject - Not Available Date/Time</fullName>
+                    <default>false</default>
+                    <label>Reject - Not Available Date/Time</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Internal_Service_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Service Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Internal_Work_Order_Notes__c</fullName>
@@ -403,6 +575,56 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Operational_Arrival__c</fullName>
+        <externalId>false</externalId>
+        <label>Operational Arrival</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Operational_Completion__c</fullName>
+        <externalId>false</externalId>
+        <label>Operational Completion</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -426,6 +648,15 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Parts_Used__c</fullName>
+        <externalId>false</externalId>
+        <label>Parts Used</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Pricebook2Id</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -436,6 +667,15 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Rejected_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejected Date Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Related_Work_Order__c</fullName>
@@ -449,6 +689,17 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Representing_Company__c</fullName>
+        <externalId>false</externalId>
+        <label>Representing Company</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Request_Description__c</fullName>
@@ -635,6 +886,16 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Scheduled_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Appointment__r.SchedStartTime</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scheduled Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Serial_Number__c</fullName>
         <description>Serial Number for Email-to-WO code</description>
         <externalId>false</externalId>
@@ -660,6 +921,206 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Service_Appointment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Appointment</label>
+        <referenceTo>ServiceAppointment</referenceTo>
+        <relationshipLabel>Work Orders</relationshipLabel>
+        <relationshipName>Work_Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Service_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>(((Stop_Onsite_Date_Time__c -  Start_Onsite_Date_Time__c )*24)-( Total_Break_Time_minutes__c /60))*60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Engineering_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Engineering Cost</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Engineering_Margin__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Pass_Through_Revenue__c -  Service_Pass_Through_Cost__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Engineering Margin ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Engineering_Margin_perc__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Service_Engineering_Revenue__c =0, 0, Service_Engineering_Margin__c / Service_Engineering_Revenue__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Engineering Margin (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Service_Engineering_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Engineering Revenue</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Gross_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Engineering_Cost__c + Service_Pass_Through_Cost__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Gross Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Gross_Margin__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Gross_Revenue__c - Service_Gross_Cost__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Gross Margin ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Gross_Margin_perc__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Service_Gross_Revenue__c =0,0, Service_Gross_Margin__c /Service_Gross_Revenue__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Gross Margin (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Service_Gross_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Engineering_Revenue__c + Service_Pass_Through_Revenue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Gross Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Pass_Through_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Pass Through Cost</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Pass_Through_Margin_Perc__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Service_Pass_Through_Revenue__c =0,0, Service_Pass_Through_Margin__c /Service_Pass_Through_Revenue__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Pass Through Margin (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Service_Pass_Through_Margin__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Pass_Through_Revenue__c - Service_Pass_Through_Cost__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Pass Through Margin ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Pass_Through_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Pass Through Revenue</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Resource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Resource</label>
+        <referenceTo>ServiceResource</referenceTo>
+        <relationshipLabel>Work Orders</relationshipLabel>
+        <relationshipName>Work_Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Service_Work_performed__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Work performed</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sign_off_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Sign-off Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Site_Address__c</fullName>
@@ -775,6 +1236,15 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Start_Onsite_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Onsite Date Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Status</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -789,6 +1259,15 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <fullName>StopStartDate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Stop_Onsite_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Stop Onsite Date Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Subject</fullName>
@@ -831,6 +1310,37 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>Technician_Email_address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Resource__r.Email__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Technician Email address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Technician_Phone_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Resource__r.Phone__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Technician Phone No.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Technician_s_ETA__c</fullName>
+        <externalId>false</externalId>
+        <label>Technician&apos;s ETA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Time_Since_Created__c</fullName>
         <externalId>false</externalId>
         <formula>NOW()- CreatedDate</formula>
@@ -849,6 +1359,18 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Total_Break_Time_minutes__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Break Time (minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Total_Service_Count__c</fullName>
         <externalId>false</externalId>
         <label>Total Service Count</label>
@@ -858,6 +1380,222 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Travel_End_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Travel End Date Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Travel_Start_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Travel Start Date Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>WOResponse_SLA_Response_Due__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Response_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Response Due</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>WOService_Customer_Close__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Customer_Close__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Close</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Customer_Open__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Customer_Open__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Open</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Customer_Territory_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Customer_Territory_No__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Territory No.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Invoice_Created__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Invoice_Created__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Created</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WOService_Model_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Model_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Model Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_PO_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.PO_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PO Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_SLA_Completion_Due__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Completion_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Completion Due</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>WOService_SLA_Fix_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.SLA_Fix_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Fix Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_SLA_Fix_Progress__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.SLA_Fix_Progress__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Fix Progress</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_SLA_Response_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.SLA_Response_Minutes__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Response Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_SLA_Response_Progress__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.SLA_Response_Progress__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Response Progress</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Serial_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Serial_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Serial Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Site_Contact_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Site_Contact_No__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Site Contact No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Site_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Site_Contact__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Site Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Site_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Site_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Site Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Technical_Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Technical_Contact_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Technical Contact Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WOService_Technical_Contact_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>ParentWorkOrder.Technical_Contact_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Technical Contact Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -1030,11 +1768,6 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <language>en_US</language>
     </listViews>
     <listViews>
-        <fullName>All_WorkOrders</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Work Orders</label>
-    </listViews>
-    <listViews>
         <fullName>Completed_Work_Orders</fullName>
         <columns>Name</columns>
         <columns>Account</columns>
@@ -1115,6 +1848,622 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <label>To Be Invoiced</label>
         <language>en_US</language>
     </listViews>
+    <recordTypes>
+        <fullName>Master_Work_Order</fullName>
+        <active>true</active>
+        <label>Master Work Order</label>
+        <picklistValues>
+            <picklist>CHGC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Incomplete_Reason__c</picklist>
+            <values>
+                <fullName>Incomplete - Customer not ready</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - No access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Part Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not Available Date%2FTime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not interested in Job</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Arrival__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Completion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dispatched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quoted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Read_Only_Tech</fullName>
+        <active>true</active>
+        <label>Read Only Tech</label>
+        <picklistValues>
+            <picklist>CHGC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Incomplete_Reason__c</picklist>
+            <values>
+                <fullName>Incomplete - Customer not ready</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - No access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Part Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not Available Date%2FTime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not interested in Job</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Arrival__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Completion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capture Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dispatched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service_Edit</fullName>
+        <active>true</active>
+        <label>Service Edit</label>
+        <picklistValues>
+            <picklist>CHGC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Incomplete_Reason__c</picklist>
+            <values>
+                <fullName>Incomplete - Customer not ready</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - No access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Part Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not Available Date%2FTime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not interested in Job</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Arrival__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Completion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capture Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dispatched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service_Edit_Call</fullName>
+        <active>true</active>
+        <label>Service Edit Call</label>
+        <picklistValues>
+            <picklist>CHGC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Incomplete_Reason__c</picklist>
+            <values>
+                <fullName>Incomplete - Customer not ready</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - No access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Part Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not Available Date%2FTime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not interested in Job</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Arrival__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Completion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capture Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dispatched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard_Service</fullName>
+        <active>true</active>
+        <label>Standard Service</label>
+        <picklistValues>
+            <picklist>CHGC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Incomplete_Reason__c</picklist>
+            <values>
+                <fullName>Incomplete - Customer not ready</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - No access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete - Part Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not Available Date%2FTime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject - Not interested in Job</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Arrival__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operational_Completion__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capture Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dispatched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>Subject</customTabListAdditionalFields>
         <customTabListAdditionalFields>Account</customTabListAdditionalFields>

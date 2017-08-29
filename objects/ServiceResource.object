@@ -35,8 +35,50 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>CE_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>CE Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.City</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>IsActive</fullName>
@@ -65,6 +107,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>RelatedRecordId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -72,6 +125,156 @@
     <fields>
         <fullName>ResourceType</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Resource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Resource</label>
+        <referenceTo>CKSW_BASE__Resource__c</referenceTo>
+        <relationshipLabel>Service Resources</relationshipLabel>
+        <relationshipName>Service_Resources</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Consultant</fullName>
+                    <default>false</default>
+                    <label>Consultant</label>
+                </value>
+                <value>
+                    <fullName>Partner Engineer</fullName>
+                    <default>false</default>
+                    <label>Partner Engineer</label>
+                </value>
+                <value>
+                    <fullName>Partner Manager</fullName>
+                    <default>false</default>
+                    <label>Partner Manager</label>
+                </value>
+                <value>
+                    <fullName>Planner</fullName>
+                    <default>false</default>
+                    <label>Planner</label>
+                </value>
+                <value>
+                    <fullName>R&amp;D Engineer</fullName>
+                    <default>false</default>
+                    <label>R&amp;D Engineer</label>
+                </value>
+                <value>
+                    <fullName>Repair Center Engineer</fullName>
+                    <default>false</default>
+                    <label>Repair Center Engineer</label>
+                </value>
+                <value>
+                    <fullName>Repair Center Manager</fullName>
+                    <default>false</default>
+                    <label>Repair Center Manager</label>
+                </value>
+                <value>
+                    <fullName>Sales Engineer</fullName>
+                    <default>false</default>
+                    <label>Sales Engineer</label>
+                </value>
+                <value>
+                    <fullName>Sales Manager</fullName>
+                    <default>false</default>
+                    <label>Sales Manager</label>
+                </value>
+                <value>
+                    <fullName>Service Engineer</fullName>
+                    <default>false</default>
+                    <label>Service Engineer</label>
+                </value>
+                <value>
+                    <fullName>Service manager</fullName>
+                    <default>false</default>
+                    <label>Service manager</label>
+                </value>
+                <value>
+                    <fullName>Support Engineer</fullName>
+                    <default>false</default>
+                    <label>Support Engineer</label>
+                </value>
+                <value>
+                    <fullName>Support Manager</fullName>
+                    <default>false</default>
+                    <label>Support Manager</label>
+                </value>
+                <value>
+                    <fullName>Technician</fullName>
+                    <default>false</default>
+                    <label>Technician</label>
+                </value>
+                <value>
+                    <fullName>Supplier</fullName>
+                    <default>false</default>
+                    <label>Supplier</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sole_Trader__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sole Trader?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.State</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.Street</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Technician_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Technician Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Zip_Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.PostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Zip/Postal Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <listViews>
         <fullName>All_ServiceResources</fullName>

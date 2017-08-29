@@ -1232,7 +1232,9 @@
         <members>ServiceAppointment.Status</members>
         <members>ServiceAppointment.StatusCategory</members>
         <members>ServiceAppointment.Subject</members>
+        <members>ServiceAppointment.Technician_Email_address__c</members>
         <members>ServiceAppointment.WorkTypeId</members>
+        <members>ServiceAppointment.Work_Order__c</members>
         <members>ServiceContract.AccountId</members>
         <members>ServiceContract.Account_Email__c</members>
         <members>ServiceContract.Account_Owner__c</members>
@@ -1294,15 +1296,27 @@
         <members>ServiceContract.TotalPrice</members>
         <members>ServiceContract.WO_Contact_Email__c</members>
         <members>ServiceContract.Weeks_To_Renewal__c</members>
+        <members>ServiceResource.CE_Code__c</members>
+        <members>ServiceResource.City__c</members>
         <members>ServiceResource.Description</members>
+        <members>ServiceResource.Email__c</members>
+        <members>ServiceResource.Employee_ID__c</members>
         <members>ServiceResource.IsActive</members>
         <members>ServiceResource.IsCapacityBased</members>
         <members>ServiceResource.IsOptimizationCapable</members>
         <members>ServiceResource.LocationId</members>
         <members>ServiceResource.Name</members>
         <members>ServiceResource.OwnerId</members>
+        <members>ServiceResource.Phone__c</members>
         <members>ServiceResource.RelatedRecordId</members>
         <members>ServiceResource.ResourceType</members>
+        <members>ServiceResource.Resource__c</members>
+        <members>ServiceResource.Role__c</members>
+        <members>ServiceResource.Sole_Trader__c</members>
+        <members>ServiceResource.State__c</members>
+        <members>ServiceResource.Street__c</members>
+        <members>ServiceResource.Technician_Notes__c</members>
+        <members>ServiceResource.Zip_Postal_Code__c</members>
         <members>ServiceResourceCapacity.CapacityInHours</members>
         <members>ServiceResourceCapacity.CapacityInWorkItems</members>
         <members>ServiceResourceCapacity.EndDate</members>
@@ -1586,10 +1600,15 @@
         <members>WorkBadgeDefinition.LimitStartDate</members>
         <members>WorkBadgeDefinition.Name</members>
         <members>WorkBadgeDefinition.OwnerId</members>
+        <members>WorkOrder.Accepted_Date_Time__c</members>
         <members>WorkOrder.AccountId</members>
         <members>WorkOrder.Address</members>
         <members>WorkOrder.AssetId</members>
+        <members>WorkOrder.Assigned_Resource__c</members>
         <members>WorkOrder.BusinessHoursId</members>
+        <members>WorkOrder.CE_Code__c</members>
+        <members>WorkOrder.CHGC_Reason__c</members>
+        <members>WorkOrder.CHGC__c</members>
         <members>WorkOrder.Cancelled_Date_Time__c</members>
         <members>WorkOrder.Cancelled_Reason__c</members>
         <members>WorkOrder.CaseId</members>
@@ -1604,17 +1623,24 @@
         <members>WorkOrder.Customer_Entered_On__c</members>
         <members>WorkOrder.Customer_Open__c</members>
         <members>WorkOrder.Customer_SLA_Completion_Due__c</members>
+        <members>WorkOrder.Customer_Satisfaction_Survey_Completed__c</members>
+        <members>WorkOrder.Customer_Task_No__c</members>
         <members>WorkOrder.Customer_Territory_No__c</members>
         <members>WorkOrder.Customer_s_Reference__c</members>
         <members>WorkOrder.Customers_Email__c</members>
         <members>WorkOrder.Date_Received__c</members>
         <members>WorkOrder.Description</members>
         <members>WorkOrder.Discount</members>
+        <members>WorkOrder.Dispatched_Date_Time__c</members>
         <members>WorkOrder.Duration</members>
         <members>WorkOrder.DurationType</members>
         <members>WorkOrder.EndDate</members>
         <members>WorkOrder.EntitlementId</members>
         <members>WorkOrder.GrandTotal</members>
+        <members>WorkOrder.Incomplete_Date_Time__c</members>
+        <members>WorkOrder.Incomplete_Reason_Text__c</members>
+        <members>WorkOrder.Incomplete_Reason__c</members>
+        <members>WorkOrder.Internal_Service_Notes__c</members>
         <members>WorkOrder.Internal_Work_Order_Notes__c</members>
         <members>WorkOrder.Invoice_Created__c</members>
         <members>WorkOrder.IsClosed</members>
@@ -1631,12 +1657,17 @@
         <members>WorkOrder.Number_of_Usages__c</members>
         <members>WorkOrder.Onsite_Time__c</members>
         <members>WorkOrder.Open_Service_Count__c</members>
+        <members>WorkOrder.Operational_Arrival__c</members>
+        <members>WorkOrder.Operational_Completion__c</members>
         <members>WorkOrder.OwnerId</members>
         <members>WorkOrder.PO_Number__c</members>
         <members>WorkOrder.ParentWorkOrderId</members>
+        <members>WorkOrder.Parts_Used__c</members>
         <members>WorkOrder.Pricebook2Id</members>
         <members>WorkOrder.Priority</members>
+        <members>WorkOrder.Rejected_Date_Time__c</members>
         <members>WorkOrder.Related_Work_Order__c</members>
+        <members>WorkOrder.Representing_Company__c</members>
         <members>WorkOrder.Request_Description__c</members>
         <members>WorkOrder.Response_SLA_Meet__c</members>
         <members>WorkOrder.Response_Time__c</members>
@@ -1650,10 +1681,28 @@
         <members>WorkOrder.Schedule_Start_Time__c</members>
         <members>WorkOrder.Scheduled_Date_and_Time__c</members>
         <members>WorkOrder.Scheduled_SLA_Met__c</members>
+        <members>WorkOrder.Scheduled_Start_Time__c</members>
         <members>WorkOrder.Serial_Number__c</members>
         <members>WorkOrder.ServiceAppointmentCount</members>
         <members>WorkOrder.ServiceContractId</members>
         <members>WorkOrder.ServiceTerritoryId</members>
+        <members>WorkOrder.Service_Appointment__c</members>
+        <members>WorkOrder.Service_Duration__c</members>
+        <members>WorkOrder.Service_Engineering_Cost__c</members>
+        <members>WorkOrder.Service_Engineering_Margin__c</members>
+        <members>WorkOrder.Service_Engineering_Margin_perc__c</members>
+        <members>WorkOrder.Service_Engineering_Revenue__c</members>
+        <members>WorkOrder.Service_Gross_Cost__c</members>
+        <members>WorkOrder.Service_Gross_Margin__c</members>
+        <members>WorkOrder.Service_Gross_Margin_perc__c</members>
+        <members>WorkOrder.Service_Gross_Revenue__c</members>
+        <members>WorkOrder.Service_Pass_Through_Cost__c</members>
+        <members>WorkOrder.Service_Pass_Through_Margin_Perc__c</members>
+        <members>WorkOrder.Service_Pass_Through_Margin__c</members>
+        <members>WorkOrder.Service_Pass_Through_Revenue__c</members>
+        <members>WorkOrder.Service_Resource__c</members>
+        <members>WorkOrder.Service_Work_performed__c</members>
+        <members>WorkOrder.Sign_off_Name__c</members>
         <members>WorkOrder.Site_Address__c</members>
         <members>WorkOrder.Site_Contact_No__c</members>
         <members>WorkOrder.Site_Contact__c</members>
@@ -1666,18 +1715,44 @@
         <members>WorkOrder.Special_Instructions__c</members>
         <members>WorkOrder.Standard_Instructions__c</members>
         <members>WorkOrder.StartDate</members>
+        <members>WorkOrder.Start_Onsite_Date_Time__c</members>
         <members>WorkOrder.Status</members>
         <members>WorkOrder.StatusCategory</members>
         <members>WorkOrder.StopStartDate</members>
+        <members>WorkOrder.Stop_Onsite_Date_Time__c</members>
         <members>WorkOrder.Subject</members>
         <members>WorkOrder.Subtotal</members>
         <members>WorkOrder.SuggestedMaintenanceDate</members>
         <members>WorkOrder.Tax</members>
         <members>WorkOrder.Technical_Contact_Name__c</members>
         <members>WorkOrder.Technical_Contact_Number__c</members>
+        <members>WorkOrder.Technician_Email_address__c</members>
+        <members>WorkOrder.Technician_Phone_No__c</members>
+        <members>WorkOrder.Technician_s_ETA__c</members>
         <members>WorkOrder.Time_Since_Created__c</members>
         <members>WorkOrder.TotalPrice</members>
+        <members>WorkOrder.Total_Break_Time_minutes__c</members>
         <members>WorkOrder.Total_Service_Count__c</members>
+        <members>WorkOrder.Travel_End_Date_Time__c</members>
+        <members>WorkOrder.Travel_Start_Date_Time__c</members>
+        <members>WorkOrder.WOResponse_SLA_Response_Due__c</members>
+        <members>WorkOrder.WOService_Customer_Close__c</members>
+        <members>WorkOrder.WOService_Customer_Open__c</members>
+        <members>WorkOrder.WOService_Customer_Territory_No__c</members>
+        <members>WorkOrder.WOService_Invoice_Created__c</members>
+        <members>WorkOrder.WOService_Model_Number__c</members>
+        <members>WorkOrder.WOService_PO_Number__c</members>
+        <members>WorkOrder.WOService_SLA_Completion_Due__c</members>
+        <members>WorkOrder.WOService_SLA_Fix_Hours__c</members>
+        <members>WorkOrder.WOService_SLA_Fix_Progress__c</members>
+        <members>WorkOrder.WOService_SLA_Response_Minutes__c</members>
+        <members>WorkOrder.WOService_SLA_Response_Progress__c</members>
+        <members>WorkOrder.WOService_Serial_Number__c</members>
+        <members>WorkOrder.WOService_Site_Contact_No__c</members>
+        <members>WorkOrder.WOService_Site_Contact__c</members>
+        <members>WorkOrder.WOService_Site_Name__c</members>
+        <members>WorkOrder.WOService_Technical_Contact_Name__c</members>
+        <members>WorkOrder.WOService_Technical_Contact_Number__c</members>
         <members>WorkOrder.Week_Ending__c</members>
         <members>WorkOrder.WorkTypeId</members>
         <members>WorkOrder.Work_Order_Engineering_Cost__c</members>
@@ -3042,6 +3117,13 @@
         <members>WorkBadgeDefinition-Badge Layout</members>
         <members>WorkOrder-BEST TS Technician Work Order</members>
         <members>WorkOrder-BEST TS Work Order</members>
+        <members>WorkOrder-Best Technician Work Order Service</members>
+        <members>WorkOrder-Best Technician Work Order Service %28Edit Call%29</members>
+        <members>WorkOrder-Best Technician Work Order Service %28Edit%29</members>
+        <members>WorkOrder-Best Technician Work Order Service %28Read Only%29</members>
+        <members>WorkOrder-Best Work Order Service</members>
+        <members>WorkOrder-Master Work Order BEST TS Page Layout</members>
+        <members>WorkOrder-Master Work order BEST TS Technician Page Layout</members>
         <members>WorkOrder-Work Order Layout</members>
         <members>WorkOrderLineItem-Work Order Line Item Layout</members>
         <members>WorkThanks-Thanks</members>
@@ -3204,6 +3286,8 @@
         <members>Customer Community Plus User</members>
         <members>Customer Portal Manager Standard</members>
         <members>CustomerUser</members>
+        <members>Field Service Dispatcher</members>
+        <members>Field Service Technician Community</members>
         <members>Field%C2%A0Service Administrator</members>
         <members>Field%C2%A0Service%C2%A0Dispatcher</members>
         <members>Field%C2%A0Service%C2%A0Mobile</members>
@@ -3287,6 +3371,11 @@
         <members>Usage_FSL__c.Standard_Usage</members>
         <members>Usage__c.Non_Standard_Usage</members>
         <members>Usage__c.Standard_Usage</members>
+        <members>WorkOrder.Master_Work_Order</members>
+        <members>WorkOrder.Read_Only_Tech</members>
+        <members>WorkOrder.Service_Edit</members>
+        <members>WorkOrder.Service_Edit_Call</members>
+        <members>WorkOrder.Standard_Service</members>
         <name>RecordType</name>
     </types>
     <types>
