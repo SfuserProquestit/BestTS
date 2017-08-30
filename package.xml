@@ -3729,6 +3729,7 @@
         <members>TaskType</members>
         <members>WorkOrderLineItemPriority</members>
         <members>WorkOrderLineItemStatus</members>
+        <members>WorkOrderStatus</members>
         <name>StandardValueSet</name>
     </types>
     <types>
