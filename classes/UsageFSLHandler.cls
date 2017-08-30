@@ -1,60 +1,77 @@
 public class UsageFSLHandler {
 
-	public static void calculateRollups(Map<Id, Usage_FSL__c> usages, Boolean isdelete) {
+    public static void calculateRollups(Map<Id, Usage_FSL__c> usages, Boolean isdelete) {
 
-	    Map<Id, Usage_FSL__c> usagesMap;
-	    List<Id> serviceIds = new List<Id>();
+        Map<Id, Usage_FSL__c> usagesMap;
+        Set<Id> woServiceIds = new Set<Id>();
 
-	    for(Usage_FSL__c usage : UsageDAO.getUsagesById(usages.keySet())) {
-			serviceIds.add(usage.Service__c); 
-	    }
+        for(Usage_FSL__c usage : UsageDAO.getUsagesById(usages.keySet())) {
+            woServiceIds.add(usage.Service_Work_Order__c); 
+        }
 
-	    if(serviceIds.isEmpty()) return;
+        if(woServiceIds.isEmpty()) return;
 
-	    usagesMap = (isdelete) ? UsageDAO.getUsageMap(serviceIds, usages.keySet()) : 
-	    						 UsageDAO.getUsageMap(serviceIds);
+        usagesMap = (isdelete) ? UsageDAO.getUsageMap(woServiceIds, usages.keySet()) : 
+                                 UsageDAO.getUsageMap(woServiceIds);
 
-	   	Map<Id, Decimal> serviceIdVsEnggCostMap = new Map<Id, Decimal>();
-	    Map<Id, Decimal> serviceIdVsEnggRevenueMap = new Map<Id, Decimal>();
-	    Map<Id, Decimal> serviceIdVsPassThrCostMap = new Map<Id, Decimal>();
-	    Map<Id, Decimal> serviceIdVsPassThrRevenueMap = new Map<Id, Decimal>();
+        Map<Id, Decimal> woServiceIdVsEnggCostMap = new Map<Id, Decimal>();
+        Map<Id, Decimal> woServiceIdVsEnggRevenueMap = new Map<Id, Decimal>();
+        Map<Id, Decimal> woServiceIdVsPassThrCostMap = new Map<Id, Decimal>();
+        Map<Id, Decimal> woServiceIdVsPassThrRevenueMap = new Map<Id, Decimal>();
 
-	    for(AggregateResult ar : UsageDAO.getUsagesAggregateResult(usagesMap.keySet())) {
+        for(AggregateResult ar : UsageDAO.getUsagesAggregateResult(usagesMap.keySet())) {
 
-	         	serviceIdVsEnggCostMap.put((Id)ar.get('Service__c'), (Decimal)ar.get('totalenggcost'));
-	         	serviceIdVsEnggRevenueMap.put((Id)ar.get('Service__c'), (Decimal)ar.get('totalenggrevenue'));
-	         	serviceIdVsPassThrCostMap.put((Id)ar.get('Service__c'), (Decimal)ar.get('totalpassthrcost'));
-	         	serviceIdVsPassThrRevenueMap.put((Id)ar.get('Service__c'), (Decimal)ar.get('totalpassthrrevenue'));
-	    }
-	    
-	    if(serviceIdVsEnggCostMap.isEmpty()) return;
+                woServiceIdVsEnggCostMap.put((Id)ar.get('Service_Work_Order__c'), (Decimal)ar.get('totalenggcost'));
+                woServiceIdVsEnggRevenueMap.put((Id)ar.get('Service_Work_Order__c'), (Decimal)ar.get('totalenggrevenue'));
+                woServiceIdVsPassThrCostMap.put((Id)ar.get('Service_Work_Order__c'), (Decimal)ar.get('totalpassthrcost'));
+                woServiceIdVsPassThrRevenueMap.put((Id)ar.get('Service_Work_Order__c'), (Decimal)ar.get('totalpassthrrevenue'));
+        }
+        
+        if(woServiceIdVsEnggCostMap.isEmpty()) return;
 
-	    List<CKSW_BASE__Service__c> servicesToBeUpdates = new List<CKSW_BASE__Service__c>();
-	    
-	    for(CKSW_BASE__Service__c service : ServiceDAO.getServicesById(serviceIdVsEnggCostMap.keySet())) {
+        List<WorkOrder> woServicesToBeUpdates = new List<WorkOrder>();
+        
+        for(WorkOrder woService : WorkOrderDAO.getWorkOrdersById(woServiceIdVsEnggCostMap.keySet())) {
 
-			service.Service_Engineering_Cost__c     = serviceIdVsEnggCostMap.get(service.Id);
-			service.Service_Engineering_Revenue__c  = serviceIdVsEnggRevenueMap.get(service.Id);
-			service.Service_Pass_Through_Cost__c    = serviceIdVsPassThrCostMap.get(service.Id);
-			service.Service_Pass_Through_Revenue__c = serviceIdVsPassThrRevenueMap.get(service.Id);
-			servicesToBeUpdates.add(service);
-	    }
+            woService.Service_Engineering_Cost__c     = woServiceIdVsEnggCostMap.get(woService.Id);
+            woService.Service_Engineering_Revenue__c  = woServiceIdVsEnggRevenueMap.get(woService.Id);
+            woService.Service_Pass_Through_Cost__c    = woServiceIdVsPassThrCostMap.get(woService.Id);
+            woService.Service_Pass_Through_Revenue__c = woServiceIdVsPassThrRevenueMap.get(woService.Id);
+            woServicesToBeUpdates.add(woService);
+        }
 
-	    if(!servicesToBeUpdates.isEmpty()) {
-	    	try {
-	    		update servicesToBeUpdates;
-    		} catch(Exception exp) {
-    			System.debug('==An exception occurred while updating service roll up fields==' + exp.getMessage());
-    			// add error
-    		}
-	    	
-	    }
-	    
-	}
+        if(!woServicesToBeUpdates.isEmpty()) {
+            try {
+                update woServicesToBeUpdates;
+            } catch(Exception exp) {
+                System.debug('==An exception occurred while updating service roll up fields==' + exp.getMessage());
+                // add error
+            }
+            
+        }
+ 
+    }
 
-	public static void preventInvoicedUsageDeletion(List<Usage_FSL__c> usages) {
-		for(Usage_FSL__c usage : usages) 
-			if(usage.Invoice_Created__c) 
-				usage.addError(Label.CannotDeleteUsage);
-	}
+    public static void preventInvoicedUsageDeletion(List<Usage_FSL__c> usages) {
+        for(Usage_FSL__c usage : usages) 
+            if(usage.Invoice_Created__c) 
+                usage.addError(Label.CannotDeleteUsage);
+    }
+
+    public static void setParentWorkOrder(List<Usage_FSL__c> usages){
+        Set<Id> workOrderIds = new Set<Id>();
+        for(Usage_FSL__c usage : usages){
+            if(usage.Service_Work_Order__c != null && (usage.Service_Work_Order__c == usage.Work_Order__c || usage.Work_Order__c==null)){
+                workOrderIds.add(usage.Service_Work_Order__c);
+            }
+        }
+
+        if(workOrderIds.size()>0){
+            Map<Id,WorkOrder> workOrders = new Map<Id,WorkOrder>(WorkOrderDAO.getWorkOrdersById(workOrderIds));
+            for(Usage_FSL__c usage : usages){
+                usage.Work_Order__c=workOrders.get(usage.Service_Work_Order__c).ParentWorkOrderId;
+                usage.Service_Contract__c=workOrders.get(usage.Service_Work_Order__c).ServiceContractId;
+            }
+        }
+    }
 }

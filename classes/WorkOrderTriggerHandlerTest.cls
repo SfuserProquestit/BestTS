@@ -187,4 +187,21 @@ public class WorkOrderTriggerHandlerTest {
         List<WorkOrderShare> workOrderShare = [SELECT Id FROM WorkOrderShare WHERE ParentId = :parentWorkOrders[0].Id AND UserOrGroupId IN :userIds];
         System.assertEquals(2,workOrderShare.size(), 'WorkOrderShare not created as expected');
     }
+
+    @isTest
+    static void testSetTimeStamps(){
+        Account account = TestUtility.createAccounts(1)[0];
+        insert account;
+
+        List<WorkOrder> parentWorkOrders = TestUtility.createWorkOrders(account, Constants.RECORD_TYPE_MASTER_WORK_ORDER, 1);
+        insert parentWorkOrders;
+        
+        Test.startTest();
+            parentWorkOrders[0].Status = 'Closed';
+            update parentWorkOrders[0];
+        Test.stopTest();
+
+        parentWorkOrders = [SELECT Closed_On__c FROM WorkOrder WHERE Id = :parentWorkOrders[0].Id];
+        System.assertNotEquals(null,parentWorkOrders[0].Closed_On__c);
+    }
 }

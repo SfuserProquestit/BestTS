@@ -62,7 +62,8 @@ public class TestUtility {
         return serviceAppointments;
     }
 
-    public static List<User> createCommunityUserTechnicians(Integer count){
+    public static 
+    List<User> createCommunityUserTechnicians(Integer count){
         Profile techProfile = [Select Id From Profile Where Name LIKE :Constants.PROFILE_NAME_FOR_COMMUNITY_TECHNICIAN];
         return createCommunityUsers(count, techProfile.Id);
     }
@@ -142,7 +143,70 @@ public class TestUtility {
         return serviceResources;
     }
 
+    public static List<ServiceContract> createServiceContracts(Account account, Integer count) {
 
+        List<ServiceContract> contractsList = new List<ServiceContract>();
+        for(Integer i=0; i<count; i++){
+            contractsList.add(new ServiceContract(AccountId = account.Id, Name = 'Test Service Contract ' + i));
+        }
+        return contractsList;
+    }
+
+
+    // create pricing category
+    public static List<Pricing_Category__c> createPricingCategory(Account account, Integer count) {
+
+        List<Pricing_Category__c> pricingCategoriesList = new List<Pricing_Category__c>();
+        for(Integer i=0; i<count; i++){
+            pricingCategoriesList.add(new Pricing_Category__c(Name = 'Test Pricing Category ' + i));
+        }
+        return pricingCategoriesList;
+    }
+
+    // create contract pricing
+    public static List<Contract_Pricing__c> createContractPricing(Id recTypeId, ServiceContract serviceContract, Pricing_Category__c pricingCategory, Integer count) {
+
+        List<Contract_Pricing__c> contractPricingList = new List<Contract_Pricing__c>();
+        for(Integer i=0; i<count; i++){
+            contractPricingList.add(new Contract_Pricing__c(Name = 'Test contract pricing ' + i, 
+                                                            RecordTypeId = recTypeId,
+                                                            Service_Contract__c = serviceContract.Id,
+                                                            Pricing_Category__c = pricingCategory.Id));
+        }
+        return contractPricingList;
+    }
+
+    //Create the custom settings Email Service Settings
+    public static void createEmailServiceSettingsCS(Id accountId){
+        Email_Service_Settings__c emailServiceSettingsCS = Email_Service_Settings__c.getOrgDefaults();
+        emailServiceSettingsCS.SetupOwnerId=UserInfo.getOrganizationId();
+        emailServiceSettingsCS.NCR_Account_Id__c = accountId;
+        upsert emailServiceSettingsCS;
+    }
+
+    public static void createLocationSettingsCS(){
+        CKSW_BASE__Location__c location = new CKSW_BASE__Location__c(Name = 'Test Location', 
+                                                         CKSW_BASE__Start_of_Day__c = '00:00', 
+                                                         CKSW_BASE__Time_Zone__c = 'Australia/Sydney');
+        insert location;
+
+        Location_Settings__c locationSettingsCS = Location_Settings__c.getOrgDefaults();
+        locationSettingsCS.Australia_Location_Id__c = location.Id;
+        upsert locationSettingsCS;
+    }
+
+    public static List<Usage_FSL__c> createUsages(Id recTypeId, WorkOrder parentWorkorder, ServiceContract serviceContract, Contract_Pricing__c contractPricing, WorkOrder childWorkOrder, Integer count) {
+
+        List<Usage_FSL__c> usages = new List<Usage_FSL__c>();
+        for(Integer i=0; i<count; i++){
+            usages.add(new Usage_FSL__c(RecordTypeId = recTypeId,
+                                        Work_Order__c = parentWorkorder.Id,
+                                        Service_Contract__c = serviceContract.Id,
+                                        Contract_Pricing__c = contractPricing.Id,
+                                        Service_Work_Order__c = childWorkOrder.Id));
+        }
+        return usages;
+    }
 //////////////
     public static List<CKSW_BASE__Service_Type__c> createServiceTypes(Integer count) {
         
@@ -180,54 +244,6 @@ public class TestUtility {
         return servicesList;
     }
 
-    public static List<ServiceContract> createServiceContracts(Account account, Integer count) {
-
-        List<ServiceContract> contractsList = new List<ServiceContract>();
-        for(Integer i=0; i<count; i++){
-            contractsList.add(new ServiceContract(AccountId = account.Id, Name = 'Test Service Contract ' + i));
-        }
-        return contractsList;
-    }
-
-
-    // create pricing category
-    public static List<Pricing_Category__c> createPricingCategory(Account account, Integer count) {
-
-        List<Pricing_Category__c> pricingCategoriesList = new List<Pricing_Category__c>();
-        for(Integer i=0; i<count; i++){
-            pricingCategoriesList.add(new Pricing_Category__c(Name = 'Test Pricing Category ' + i));
-        }
-        return pricingCategoriesList;
-    }
-
-    // create contract pricing
-    public static List<Contract_Pricing__c> createContractPricing(Id recTypeId, ServiceContract serviceContract, Pricing_Category__c pricingCategory, Integer count) {
-
-        List<Contract_Pricing__c> contractPricingList = new List<Contract_Pricing__c>();
-        for(Integer i=0; i<count; i++){
-            contractPricingList.add(new Contract_Pricing__c(Name = 'Test contract pricing ' + i, 
-                                                            RecordTypeId = recTypeId,
-                                                            Service_Contract__c = serviceContract.Id,
-                                                            Pricing_Category__c = pricingCategory.Id));
-        }
-        return contractPricingList;
-    }
-
-
-
-    public static List<Usage_FSL__c> createUsages(Id recTypeId, WorkOrder workorder, ServiceContract serviceContract, Contract_Pricing__c contractPricing, CKSW_BASE__Service__c service, Integer count) {
-
-        List<Usage_FSL__c> usages = new List<Usage_FSL__c>();
-        for(Integer i=0; i<count; i++){
-            usages.add(new Usage_FSL__c(RecordTypeId = recTypeId,
-                                        Work_Order__c = workorder.Id,
-                                        Service_Contract__c = serviceContract.Id,
-                                        Contract_Pricing__c = contractPricing.Id,
-                                        Service__c = service.Id));
-        }
-        return usages;
-    }
-
     public static List<CKSW_BASE__Resource__c> createResource(List<User> users, CKSW_BASE__Location__c location){
         List<CKSW_BASE__Resource__c> newResources = new List<CKSW_BASE__Resource__c>();
         for(User user: users){
@@ -237,23 +253,6 @@ public class TestUtility {
         }
         return newResources;
     }
+//////////////
 
-    //Create the custom settings Email Service Settings
-    public static void createEmailServiceSettingsCS(Id accountId){
-        Email_Service_Settings__c emailServiceSettingsCS = Email_Service_Settings__c.getOrgDefaults();
-        emailServiceSettingsCS.SetupOwnerId=UserInfo.getOrganizationId();
-        emailServiceSettingsCS.NCR_Account_Id__c = accountId;
-        upsert emailServiceSettingsCS;
-    }
-
-    public static void createLocationSettingsCS(){
-        CKSW_BASE__Location__c location = new CKSW_BASE__Location__c(Name = 'Test Location', 
-                                                         CKSW_BASE__Start_of_Day__c = '00:00', 
-                                                         CKSW_BASE__Time_Zone__c = 'Australia/Sydney');
-        insert location;
-
-        Location_Settings__c locationSettingsCS = Location_Settings__c.getOrgDefaults();
-        locationSettingsCS.Australia_Location_Id__c = location.Id;
-        upsert locationSettingsCS;
-    }
 }

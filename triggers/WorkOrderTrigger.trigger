@@ -3,6 +3,7 @@ trigger WorkOrderTrigger on WorkOrder (before insert, before update, before dele
     if(Trigger.isBefore){
         if(Trigger.isUpdate){
             WorkOrderTriggerHandler.deleteWorkOrderSharing(Trigger.new, Trigger.oldMap);
+            WorkOrderTriggerHandler.setTimeStamps(Trigger.new, Trigger.oldMap);
         }
         if(Trigger.isDelete) {
             WorkOrderTriggerHandler.preventInvoicedWODeletion(Trigger.old);

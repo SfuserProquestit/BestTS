@@ -1,5 +1,17 @@
 public class WorkOrderTriggerHandler {
 
+    public static void setTimeStamps(List<WorkOrder> newWorkOrders, Map<Id,WorkOrder> oldWorkOrders){
+        Map<String,Schema.RecordTypeInfo> rtMap = RecordTypeDAO.getRecordTypes(Schema.SObjectType.WorkOrder);
+        Id masterWORecordTypeId = rtMap.get(Constants.RECORD_TYPE_MASTER_WORK_ORDER).getRecordTypeId();
+
+        for(WorkOrder newWO : newWorkOrders){
+            WorkOrder oldWO = oldWorkOrders.get(newWO.Id);
+            if(newWo.RecordTypeId == masterWORecordTypeId && newWO.Status != oldWO.Status && newWo.Status == Constants.WORK_ORDER_STATUS_CLOSED){
+                newWO.Closed_On__c=Datetime.now();
+            }
+        }
+    }
+
     public static Boolean runUpdateSAStatus = true;
 
     public static void preventInvoicedWODeletion(List<WorkOrder> workOrders) {
