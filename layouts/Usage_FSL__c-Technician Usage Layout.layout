@@ -26,7 +26,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Service__c</field>
+                <field>Service_Work_Order__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -86,7 +86,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hN0000000Lw4N</masterLabel>
+        <masterLabel>00h9000000iIbqy</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

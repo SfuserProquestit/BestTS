@@ -1525,6 +1525,7 @@
         <members>Usage_FSL__c.Pricing_Category__c</members>
         <members>Usage_FSL__c.Revenue_per_Unit__c</members>
         <members>Usage_FSL__c.Service_Contract__c</members>
+        <members>Usage_FSL__c.Service_Work_Order__c</members>
         <members>Usage_FSL__c.Service__c</members>
         <members>Usage_FSL__c.Slips_Week_Ending__c</members>
         <members>Usage_FSL__c.Total_Cost_Usage__c</members>
@@ -3370,6 +3371,7 @@
         <members>Task.EditDescription</members>
         <members>Task.UpdatePriority</members>
         <members>Task.UpdateStatus</members>
+        <members>WorkOrder.Create_Expense</members>
         <members>WorkOrder.Create_Service</members>
         <members>WorkOrder.Invoice_Created</members>
         <members>WorkOrder.Notify_Customer</members>
@@ -3826,7 +3828,9 @@
         <members>Task.Send_an_Email_Custom</members>
         <members>Task.i__ViewSourceEmail</members>
         <members>Usage_FSL__c.Add_Expense_Item</members>
+        <members>Usage_FSL__c.Add_Expense_Item_WO</members>
         <members>Usage_FSL__c.Apply_Standard_Usage</members>
+        <members>Usage_FSL__c.Apply_Standard_Usage_WO</members>
         <members>Usage__c.New_Standard_Usage</members>
         <members>User.SBQQ__Select_Theme</members>
         <name>WebLink</name>

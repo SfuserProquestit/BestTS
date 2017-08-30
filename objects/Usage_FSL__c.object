@@ -46,7 +46,6 @@
     <description>BEST TS Usage for Field Service Lightning</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -390,6 +389,20 @@
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Service_Work_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Order Service</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Usages (Service Work Order)</relationshipLabel>
+        <relationshipName>Usages_Service</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Service__c</fullName>
@@ -753,7 +766,7 @@
         <displayType>massActionButton</displayType>
         <encodingKey>UTF-8</encodingKey>
         <linkType>url</linkType>
-        <masterLabel>Add Expense Item</masterLabel>
+        <masterLabel>Add Expense Item Service</masterLabel>
         <openType>replace</openType>
         <protected>false</protected>
         <requireRowSelection>false</requireRowSelection>
@@ -761,7 +774,33 @@
 &amp;retURL=/{!CKSW_BASE__Service__c.Id}</url>
     </webLinks>
     <webLinks>
+        <fullName>Add_Expense_Item_WO</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Add Expense Item</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a45/e?RecordType=01290000001QHHh&amp;CF00N9000000EEaYy={!WorkOrder.ServiceContract}&amp;CF00N9000000EEZUg={!WorkOrder.ParentWorkOrder}&amp;CF00N0k000000V8hw={!WorkOrder.WorkOrderNumber} 
+&amp;retURL=/{!WorkOrder.Id}</url>
+    </webLinks>
+    <webLinks>
         <fullName>Apply_Standard_Usage</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Apply Standard Usage Service</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a45/e?RecordType=01290000001QHHm&amp;CF00N9000000EEaYy={!CKSW_BASE__Service__c.Service_Contract__c}&amp;CF00N9000000EEZUg={!CKSW_BASE__Service__c.Work_Order__c}&amp;00N9000000EEcFJ={!CKSW_BASE__Service__c.PO_Number__c}&amp;CF00N9000000EEZUl={!CKSW_BASE__Service__c.Name}&amp;00N9000000EEcFc=1&amp;
+retURL=/{!CKSW_BASE__Service__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Apply_Standard_Usage_WO</fullName>
         <availability>online</availability>
         <displayType>massActionButton</displayType>
         <encodingKey>UTF-8</encodingKey>
@@ -770,7 +809,7 @@
         <openType>replace</openType>
         <protected>false</protected>
         <requireRowSelection>false</requireRowSelection>
-        <url>/a45/e?RecordType=01290000001QHHm&amp;CF00N9000000EEaYy={!CKSW_BASE__Service__c.Service_Contract__c}&amp;CF00N9000000EEZUg={!CKSW_BASE__Service__c.Work_Order__c}&amp;00N9000000EEcFJ={!CKSW_BASE__Service__c.PO_Number__c}&amp;CF00N9000000EEZUl={!CKSW_BASE__Service__c.Name}&amp;00N9000000EEcFc=1&amp;
-retURL=/{!CKSW_BASE__Service__c.Id}</url>
+        <url>/a45/e?RecordType=01290000001QHHm&amp;CF00N9000000EEaYy={!WorkOrder.ServiceContract}&amp;CF00N9000000EEZUg={!WorkOrder.ParentWorkOrder}&amp;00N9000000EEcFJ={!WorkOrder.PO_Number__c}&amp;CF00N0k000000V8hw={!WorkOrder.WorkOrderNumber}&amp;00N9000000EEcFc=1&amp;
+retURL=/{!WorkOrder.Id}</url>
     </webLinks>
 </CustomObject>
