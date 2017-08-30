@@ -1,7 +1,7 @@
 @isTest(seeAllData=true)
 public class ServiceTriggerHandlerTest {
 	static testmethod void testDynamicLicensing(){
-		List<Account> accounts = TestUtility.createAccounts(2);
+		/*List<Account> accounts = TestUtility.createAccounts(2);
                 insert accounts;
 
                 List<CKSW_BASE__Service_Type__c> serviceTypes = TestUtility.createServiceTypes(2);
@@ -81,6 +81,6 @@ public class ServiceTriggerHandlerTest {
                 Test.stopTest();
 
         
-
+*/
 	}
 }

@@ -1,6 +1,6 @@
 public class ServiceTriggerHandler {
 
-	public static void updateWorkOrdersStatus(Map<Id, CKSW_BASE__Service__c> services, Boolean isdelete) {
+	/*public static void updateWorkOrdersStatus(Map<Id, CKSW_BASE__Service__c> services, Boolean isdelete) {
 		
 	    List<Id> workOrderIds = new List<Id>();
 
@@ -224,5 +224,5 @@ public class ServiceTriggerHandler {
 		          + results[0].errors[0].message);
 		}
 
-	}
+	}*/
 }

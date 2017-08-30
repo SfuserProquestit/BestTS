@@ -1,6 +1,6 @@
 public class ServiceDAO {
 
-	public static List<CKSW_BASE__Service__c> getServicesById(Set<Id> serviceIds) {
+	/*public static List<CKSW_BASE__Service__c> getServicesById(Set<Id> serviceIds) {
 
 		return [SELECT 	Id, 
 						Name,
@@ -12,5 +12,5 @@ public class ServiceDAO {
 					   	Resource_User_Id__c 
 				FROM  	CKSW_BASE__Service__c 
 	            WHERE 	Id IN: serviceIds];
-	}
+	}*/
 }

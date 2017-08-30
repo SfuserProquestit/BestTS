@@ -2,6 +2,9 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>40.0</version>
     <types>
+        <members>AssigneResourceTriggerHandlerTest</members>
+        <members>AssignedResourceDAO</members>
+        <members>AssignedResourceTriggerHandler</members>
         <members>COMM_Controller</members>
         <members>COMM_Utils_Reports</members>
         <members>COMM_Utils_Reports_UT</members>
@@ -24,6 +27,7 @@
         <members>HomeNotification</members>
         <members>NCRIncomingEmailHandler</members>
         <members>NCRIncomingEmailHandlerTest</members>
+        <members>ObjectShareDAO</members>
         <members>PS_ServiceReport</members>
         <members>PS_ServiceReport_UT</members>
         <members>PaginatedSelectList</members>
@@ -74,6 +78,9 @@
         <members>SVMX_Work_Order_UT</members>
         <members>SendVFAsAttachment</members>
         <members>SendVFAsAttachmentTest</members>
+        <members>ServiceAppointmentDAO</members>
+        <members>ServiceAppointmentTriggerHandler</members>
+        <members>ServiceAppointmentTriggerHandlerTest</members>
         <members>ServiceContractDAO</members>
         <members>ServiceDAO</members>
         <members>ServiceMaxMassDataEdit</members>
@@ -144,11 +151,13 @@
         <name>ApexPage</name>
     </types>
     <types>
+        <members>AssignedResourceTrigger</members>
         <members>FeedCommentAcheivementCheckTrigger</members>
         <members>FeedItemAcheivementCheckTrigger</members>
         <members>Load_Ipad_Sample_Data</members>
         <members>ReceivedPartTrigger</members>
         <members>RequestPartTrigger</members>
+        <members>ServiceAppointmentTrigger</members>
         <members>ServicePartTrigger</members>
         <members>ServiceTrigger</members>
         <members>UsageFSLTrigger</members>
@@ -2310,6 +2319,7 @@
     <types>
         <members>Accepted_service-1</members>
         <members>Add_Closed_DateTime_on_WO-1</members>
+        <members>Add_Closed_DateTime_on_WO-2</members>
         <members>Add_Product_Request_and_Line_Items-1</members>
         <members>Australia_Location-1</members>
         <members>Australia_Location-2</members>

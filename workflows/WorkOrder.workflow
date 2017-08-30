@@ -103,7 +103,7 @@
             <name>Complete_Work_Order</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Open_Service_Count__c</field>
             <operation>equals</operation>

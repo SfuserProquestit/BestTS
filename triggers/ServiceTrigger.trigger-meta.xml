@@ -6,5 +6,5 @@
         <minorNumber>3</minorNumber>
         <namespace>CKSW_BASE</namespace>
     </packageVersions>
-    <status>Active</status>
+    <status>Inactive</status>
 </ApexTrigger>
