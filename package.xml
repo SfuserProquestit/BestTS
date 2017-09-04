@@ -84,6 +84,8 @@
         <members>ServiceContractDAO</members>
         <members>ServiceDAO</members>
         <members>ServiceMaxMassDataEdit</members>
+        <members>ServiceResourceTriggerHandler</members>
+        <members>ServiceResourceTriggerHandlerTest</members>
         <members>ServiceTriggerHandler</members>
         <members>ServiceTriggerHandlerTest</members>
         <members>Setup_Data_For_Ipad</members>
@@ -159,6 +161,7 @@
         <members>RequestPartTrigger</members>
         <members>ServiceAppointmentTrigger</members>
         <members>ServicePartTrigger</members>
+        <members>ServiceResourceTrigger</members>
         <members>ServiceTrigger</members>
         <members>UsageFSLTrigger</members>
         <members>WorkOrderTrigger</members>
