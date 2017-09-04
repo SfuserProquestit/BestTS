@@ -105,6 +105,14 @@
         <value>You cannot delete this work order as it is invoiced.</value>
     </labels>
     <labels>
+        <fullName>Cannot_Delete_Child_WO_When_Parent_Is_Invoiced</fullName>
+        <categories>Error Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cannot Delete Child WO When Parent Is Invoiced</shortDescription>
+        <value>The Work Order cannot be deleted as his Parent Work Order is invoiced</value>
+    </labels>
+    <labels>
         <fullName>Duplicate_SR_Number</fullName>
         <categories>Error Message</categories>
         <language>en_US</language>

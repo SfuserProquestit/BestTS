@@ -19,6 +19,9 @@ public class WorkOrderTriggerHandler {
             if(wo.Invoice_Created__c) {
                 wo.addError(Label.CannotDeleteWO);
             }
+            else if(wo.WOService_Invoice_Created__c) {
+                wo.addError(Label.Cannot_Delete_Child_WO_When_Parent_Is_Invoiced);
+            }
         }
     }
 
