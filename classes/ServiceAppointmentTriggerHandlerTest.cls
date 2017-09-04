@@ -57,4 +57,30 @@ private class ServiceAppointmentTriggerHandlerTest {
             System.assertEquals(sa.ParentRecordId, sa.Work_Order__c);
         }
     }
+
+    @isTest
+    static void testSetServiceAppointmentOnWorkOrder(){
+
+        Account account = TestUtility.createAccounts(1)[0];
+        insert account;
+
+        List<WorkOrder> parentWorkOrders = TestUtility.createWorkOrders(account, Constants.RECORD_TYPE_MASTER_WORK_ORDER, 1);
+        insert parentWorkOrders;
+
+        List<WorkOrder> childWorkOrders = TestUtility.createChildWorkOrders(account, parentWorkOrders[0], Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER, 2);
+        insert childWorkOrders;
+
+        Test.startTest();
+
+        List<ServiceAppointment> serviceAppointments = TestUtility.createServiceAppointments(new Map<Id,WorkOrder>(childWorkOrders).keySet(),1);
+        insert serviceAppointments;
+
+        Test.stopTest();
+
+        Set<Id> childWorkOrderIds = new Map<Id,WorkOrder>(childWorkOrders).keySet();
+        childWorkOrders = [SELECT Service_Appointment__c FROM WorkOrder WHERE Id IN :childWorkOrderIds];
+        for(WorkOrder wo : childWorkOrders){
+            System.assertNotEquals(null,wo.Service_Appointment__c, 'Service Appointment not set as expected on the Work Order');
+        }
+    }
 }

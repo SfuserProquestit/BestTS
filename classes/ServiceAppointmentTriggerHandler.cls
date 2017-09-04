@@ -31,4 +31,17 @@ public class ServiceAppointmentTriggerHandler {
             }
         }
     }
+
+    public static void setServiceAppointmentOnWorkOrder(List<ServiceAppointment> newServiceAppointments){
+        List<WorkOrder> workOrders = new List<WorkOrder>();
+        for(ServiceAppointment newSA : newServiceAppointments){
+            if(newSA.ParentRecordId.getSObjectType() == WorkOrder.sObjectType){
+                workOrders.add(new WorkOrder(Id=newSA.ParentRecordId,
+                                            Service_Appointment__c=newSA.Id));
+            }
+        }
+        if(workOrders.size()>0){
+            update workOrders;
+        }
+    }
 }
