@@ -4,9 +4,4 @@
     <availableInTouch>true</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <label>SignatureCapture</label>
-    <packageVersions>
-        <majorNumber>7</majorNumber>
-        <minorNumber>3</minorNumber>
-        <namespace>CKSW_BASE</namespace>
-    </packageVersions>
 </ApexPage>

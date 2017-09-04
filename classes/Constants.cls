@@ -36,6 +36,7 @@ public class Constants {
 
     public static final String SERVICE_APPOINTMENT_STATUS_IN_PROGRESS               = 'In Progress';
     public static final String SERVICE_APPOINTMENT_STATUS_ASSIGNED                  = 'Assigned';
+    public static final String SERVICE_APPOINTMENT_STATUS_CAPTURE_SIGN              = 'Capture Signature';
     
     public static final String WORK_ORDER_STATUS_IN_PROGRESS                        = 'In Progress';
     public static final String WORK_ORDER_STATUS_ASSIGNED                           = 'Assigned';

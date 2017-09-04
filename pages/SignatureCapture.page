@@ -1,4 +1,4 @@
-<apex:page standardController="CKSW_BASE__Service__c" title="Completion" standardStylesheets="false" docType="html-5.0" showQuickActionVfHeader="false" extensions="SignatureExt" showHeader="false" sidebar="false" id="thePage">
+<apex:page standardController="ServiceAppointment" title="Completion" standardStylesheets="false" docType="html-5.0" showQuickActionVfHeader="false" extensions="SignatureExt" showHeader="false" sidebar="false" id="thePage">
 
     <apex:stylesheet value="{!URLFOR($Resource.SLDS2014011, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
     <apex:stylesheet value="{!URLFOR($Resource.slds120,'assets/styles/salesforce-lightning-design-system.css')}"/> 
@@ -175,7 +175,7 @@
                 
                 
                 
-                <apex:inputHidden value="{!CKSW_BASE__Service__c.CKSW_BASE__Status__c}" />
+                <apex:inputHidden value="{!ServiceAppointment.Status}" />
                 <apex:commandButton action="{!cancel}" value="Cancel" styleClass="sf1buttonSFBlue"  reRender="thePage" status="actStatusId"/>
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature Capture
                 <input type="button" class="sf1buttonSFBlue" value="Save" onclick="uploadSignature();" style="float: right" id="buttonSearch"/>
