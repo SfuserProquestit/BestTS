@@ -6,4 +6,12 @@ public class ServiceAppointmentDAO {
                 FROM ServiceAppointment
                 WHERE ParentRecordId IN :parentRecordIds];
     }
+
+    public static List<ServiceAppointment> getSerAppointmentsById(Set<Id> serAppointmentIds){
+        return [SELECT  Id,
+                        Status,
+                        ParentRecordId
+                FROM ServiceAppointment
+                WHERE Id IN :serAppointmentIds];
+    }
 }

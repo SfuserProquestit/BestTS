@@ -5,6 +5,9 @@ trigger ServiceAppointmentTrigger on ServiceAppointment (before insert, before u
         }
     }
     if(Trigger.isAfter){
+        if(Trigger.isInsert){
+            ServiceAppointmentTriggerHandler.setServiceAppointmentOnWorkOrder(Trigger.new);
+        }
         if(Trigger.isUpdate){
             if(ServiceAppointmentTriggerHandler.runUpdateWorkOrderStatus){
                 ServiceAppointmentTriggerHandler.updateWorkOrderStatus(Trigger.new, Trigger.oldMap);
