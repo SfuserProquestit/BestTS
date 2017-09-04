@@ -47,7 +47,7 @@
     <fields>
         <fullName>City__c</fullName>
         <externalId>false</externalId>
-        <formula>$User.City</formula>
+        <formula>Related_User__r.City</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>City</label>
         <required>false</required>
@@ -62,7 +62,7 @@
     <fields>
         <fullName>Email__c</fullName>
         <externalId>false</externalId>
-        <formula>$User.Email</formula>
+        <formula>Related_User__r.Email</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Email</label>
         <required>false</required>
@@ -109,7 +109,7 @@
     <fields>
         <fullName>Phone__c</fullName>
         <externalId>false</externalId>
-        <formula>$User.Phone</formula>
+        <formula>Related_User__r.Phone</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Phone</label>
         <required>false</required>
@@ -119,6 +119,17 @@
     </fields>
     <fields>
         <fullName>RelatedRecordId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Service_Resources</relationshipName>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
@@ -238,7 +249,7 @@
     <fields>
         <fullName>State__c</fullName>
         <externalId>false</externalId>
-        <formula>$User.State</formula>
+        <formula>Related_User__r.State</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>State</label>
         <required>false</required>
@@ -249,7 +260,7 @@
     <fields>
         <fullName>Street__c</fullName>
         <externalId>false</externalId>
-        <formula>$User.Street</formula>
+        <formula>Related_User__r.Street</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Street</label>
         <required>false</required>
@@ -268,7 +279,7 @@
     <fields>
         <fullName>Zip_Postal_Code__c</fullName>
         <externalId>false</externalId>
-        <formula>$User.PostalCode</formula>
+        <formula>Related_User__r.PostalCode</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Zip/Postal Code</label>
         <required>false</required>

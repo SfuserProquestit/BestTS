@@ -1318,6 +1318,7 @@
         <members>ServiceResource.OwnerId</members>
         <members>ServiceResource.Phone__c</members>
         <members>ServiceResource.RelatedRecordId</members>
+        <members>ServiceResource.Related_User__c</members>
         <members>ServiceResource.ResourceType</members>
         <members>ServiceResource.Resource__c</members>
         <members>ServiceResource.Role__c</members>
@@ -1813,6 +1814,7 @@
         <members>WorkType.DurationType</members>
         <members>WorkType.EstimatedDuration</members>
         <members>WorkType.Name</members>
+        <members>WorkType.Search_Text__c</members>
         <members>WorkType.ServiceReportTemplateId</members>
         <members>WorkType.ShouldAutoCreateSvcAppt</members>
         <members>items_Best_ITE_SharePoint_Online__x.Author__c</members>
@@ -2365,6 +2367,7 @@
         <members>Update_Scheduled_Start_to_equal_Technicians_ETA-1</members>
         <members>Update_WO_Contact_Email-1</members>
         <members>Update_WO_Contact_Email_on_Service_Object-1</members>
+        <members>Work_Order_Service_Allow_Auto_Notification-3</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <name>Flow</name>
@@ -2406,6 +2409,7 @@
         <members>Update_Scheduled_Start_to_equal_Technicians_ETA</members>
         <members>Update_WO_Contact_Email</members>
         <members>Update_WO_Contact_Email_on_Service_Object</members>
+        <members>Work_Order_Service_Allow_Auto_Notification</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>
         <name>FlowDefinition</name>
@@ -3374,6 +3378,7 @@
         <members>Task.UpdateStatus</members>
         <members>WorkOrder.Create_Expense</members>
         <members>WorkOrder.Create_Service</members>
+        <members>WorkOrder.Create_Work_Order_Service</members>
         <members>WorkOrder.Invoice_Created</members>
         <members>WorkOrder.Notify_Customer</members>
         <members>WorkOrder.SendEmail</members>

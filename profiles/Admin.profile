@@ -4317,6 +4317,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceResource.Related_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceResource.Resource__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6302,6 +6307,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkType.Search_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkType.ServiceReportTemplateId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6831,10 +6841,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
-        <recordType>WorkOrder.Master_Work_Order</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrderLineItem-Work Order Line Item Layout</layout>

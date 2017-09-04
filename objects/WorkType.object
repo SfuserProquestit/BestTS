@@ -55,6 +55,16 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Search_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Search Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ServiceReportTemplateId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>

@@ -38,6 +38,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceResource.Related_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceResource.Resource__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -376,15 +381,16 @@
         <field>WorkOrder.WOService_Technical_Contact_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkType.Search_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>ServiceAppointment-Service Appointment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ServiceResource-Service Resource Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>WorkOrder-Best Technician Work Order Service</layout>
-        <recordType>WorkOrder.Standard_Service</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Best Technician Work Order Service %28Edit Call%29</layout>
@@ -399,11 +405,14 @@
         <recordType>WorkOrder.Read_Only_Tech</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>WorkOrder-Master Work order BEST TS Technician Page Layout</layout>
+        <layout>WorkOrder-Best Technician Work Order Service</layout>
+        <recordType>WorkOrder.Standard_Service</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Master Work order BEST TS Technician Page Layout</layout>
-        <recordType>WorkOrder.Master_Work_Order</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkType-Work Type Layout</layout>
     </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>

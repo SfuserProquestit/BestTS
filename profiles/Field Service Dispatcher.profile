@@ -38,6 +38,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceResource.Related_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceResource.Resource__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -376,6 +381,11 @@
         <field>WorkOrder.WOService_Technical_Contact_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkType.Search_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>ServiceAppointment-Service Appointment Layout</layout>
     </layoutAssignments>
@@ -402,8 +412,7 @@
         <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
-        <recordType>WorkOrder.Master_Work_Order</recordType>
+        <layout>WorkType-Work Type Layout</layout>
     </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>
