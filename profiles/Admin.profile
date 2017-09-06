@@ -110,6 +110,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ChatterPostForTechnician</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Constants</apexClass>
         <enabled>true</enabled>
     </classAccesses>

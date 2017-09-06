@@ -11,6 +11,7 @@
         <members>ChatterGameGoalAchievement</members>
         <members>ChatterGameGoalAchievementTest</members>
         <members>ChatterGameGoalSetupWizardController</members>
+        <members>ChatterPostForTechnician</members>
         <members>Constants</members>
         <members>CreateWOTests_UT</members>
         <members>CreateWOfromInstalledProduct</members>
@@ -530,6 +531,7 @@
         <members>CaseMilestone.TimeSinceTargetInDays</members>
         <members>CaseMilestone.TimeSinceTargetInHrs</members>
         <members>CaseMilestone.TimeSinceTargetInMins</members>
+        <members>CommunityNetworkId__c.Network_Id__c</members>
         <members>Contact.AccountId</members>
         <members>Contact.AssistantName</members>
         <members>Contact.AssistantPhone</members>
@@ -1869,6 +1871,7 @@
         <members>WORDREP001_REPTAG004</members>
         <members>WORDREP001_REPTAG005</members>
         <members>WORDREP001_REPTAG006</members>
+        <members>Work_Order_Dispatched</members>
         <name>CustomLabel</name>
     </types>
     <types>
@@ -1925,6 +1928,7 @@
         <members>Case</members>
         <members>CaseContactRole</members>
         <members>CaseMilestone</members>
+        <members>CommunityNetworkId__c</members>
         <members>Contact</members>
         <members>ContentVersion</members>
         <members>Contract</members>
@@ -2371,6 +2375,7 @@
         <members>Update_WO_Contact_Email-1</members>
         <members>Update_WO_Contact_Email_on_Service_Object-1</members>
         <members>Work_Order_Service_Allow_Auto_Notification-3</members>
+        <members>Work_Order_Service_Send_Chatter_notification-9</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <name>Flow</name>
@@ -2413,6 +2418,7 @@
         <members>Update_WO_Contact_Email</members>
         <members>Update_WO_Contact_Email_on_Service_Object</members>
         <members>Work_Order_Service_Allow_Auto_Notification</members>
+        <members>Work_Order_Service_Send_Chatter_notification</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>
         <name>FlowDefinition</name>

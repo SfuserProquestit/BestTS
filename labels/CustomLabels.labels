@@ -262,4 +262,11 @@
         <shortDescription>WORDREP001_REPTAG006</shortDescription>
         <value>Service Location:</value>
     </labels>
+    <labels>
+        <fullName>Work_Order_Dispatched</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Work Order Dispatched</shortDescription>
+        <value>A new Service has been assigned to you, please review and Accept or Reject this</value>
+    </labels>
 </CustomLabels>

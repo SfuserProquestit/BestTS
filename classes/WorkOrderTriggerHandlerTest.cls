@@ -204,4 +204,17 @@ public class WorkOrderTriggerHandlerTest {
         parentWorkOrders = [SELECT Closed_On__c FROM WorkOrder WHERE Id = :parentWorkOrders[0].Id];
         System.assertNotEquals(null,parentWorkOrders[0].Closed_On__c);
     }
+
+    @isTest(SeeAllData=true)
+    static void testChatterPost(){
+        List<User> techUsers = TestUtility.createCommunityUserTechnicians(2);
+        
+        Test.startTest();
+            List<Id> techIds = new List<Id>();
+            techIds.add(techUsers.get(0).Id);
+            List<Id> feedItemIds = ChatterPostForTechnician.createChatterPostForTechnician(techIds);
+            System.assertEquals(feedItemIds.size(), 1);
+        Test.stopTest();
+
+    }
 }
