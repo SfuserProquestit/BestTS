@@ -2399,6 +2399,7 @@
         <members>Work_Order_Service_Allow_Auto_Notification-3</members>
         <members>Work_Order_Service_Is_Dispatched-1</members>
         <members>Work_Order_Service_Is_changed_Technician_s_ETA-9</members>
+        <members>Work_Order_Service_Send_Chatter_notification-12</members>
         <members>Work_Order_Service_Send_Chatter_notification-9</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>

@@ -209,10 +209,20 @@ public class WorkOrderTriggerHandlerTest {
     static void testChatterPost(){
         List<User> techUsers = TestUtility.createCommunityUserTechnicians(2);
         
+        Account account = TestUtility.createAccounts(1)[0];
+        insert account;
+
+        List<WorkOrder> parentWorkOrders = TestUtility.createWorkOrders(account, Constants.RECORD_TYPE_MASTER_WORK_ORDER, 1);
+        insert parentWorkOrders;
+        
         Test.startTest();
-            List<Id> techIds = new List<Id>();
-            techIds.add(techUsers.get(0).Id);
-            List<Id> feedItemIds = ChatterPostForTechnician.createChatterPostForTechnician(techIds);
+	        ChatterPostForTechnician.ChatterPost chatPost = new ChatterPostForTechnician.ChatterPost();
+	        chatPost.workOrderNumber = parentWorkOrders.get(0).WorkOrderNumber;
+	        chatPost.woId = parentWorkOrders.get(0).Id;
+	        chatPost.resourceId = techUsers.get(0).Id;        
+            List<ChatterPostForTechnician.ChatterPost> posts = new List<ChatterPostForTechnician.ChatterPost>();
+            posts.add(chatPost);
+            List<Id> feedItemIds = ChatterPostForTechnician.createChatterPostForTechnician(posts);
             System.assertEquals(feedItemIds.size(), 1);
         Test.stopTest();
 
