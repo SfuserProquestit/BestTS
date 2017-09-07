@@ -8,6 +8,8 @@
         <members>COMM_Controller</members>
         <members>COMM_Utils_Reports</members>
         <members>COMM_Utils_Reports_UT</members>
+        <members>ChangeStatusControllerExtension</members>
+        <members>ChangeStatusControllerExtensionTest</members>
         <members>ChatterGameGoalAchievement</members>
         <members>ChatterGameGoalAchievementTest</members>
         <members>ChatterGameGoalSetupWizardController</members>
@@ -110,6 +112,7 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>ChangeStatus</members>
         <members>ChatterGameGettingStarted</members>
         <members>ChatterGameGoalSetupSuccess</members>
         <members>ChatterGameGoalSetupWizard</members>
@@ -196,6 +199,10 @@
     <types>
         <members>Internal Ideas</members>
         <name>Community</name>
+    </types>
+    <types>
+        <members>WorkOrder.Technician_WO_Layout</members>
+        <name>CompactLayout</name>
     </types>
     <types>
         <members>Field_Service_Console</members>
@@ -1486,6 +1493,10 @@
         <members>Task.Type</members>
         <members>Task.WhatId</members>
         <members>Task.WhoId</members>
+        <members>Technician_Status_Transition__mdt.From_Status_API_Name__c</members>
+        <members>Technician_Status_Transition__mdt.From_Status__c</members>
+        <members>Technician_Status_Transition__mdt.To_Status_API_Name__c</members>
+        <members>Technician_Status_Transition__mdt.To_Status__c</members>
         <members>Territory_Contract_Mapping__c.Contract_Number__c</members>
         <members>TimeSheet.EndDate</members>
         <members>TimeSheet.OwnerId</members>
@@ -1910,6 +1921,15 @@
         <members>Month_Mapping.November</members>
         <members>Month_Mapping.October</members>
         <members>Month_Mapping.September</members>
+        <members>Technician_Status_Transition.Accepted_to_Travel_Start</members>
+        <members>Technician_Status_Transition.Assigned_to_In_Progress</members>
+        <members>Technician_Status_Transition.Capture_Signature_to_Complete</members>
+        <members>Technician_Status_Transition.Capture_Signature_to_Incomplete</members>
+        <members>Technician_Status_Transition.Dispatched_to_Accepted</members>
+        <members>Technician_Status_Transition.Dispatched_to_Rejected</members>
+        <members>Technician_Status_Transition.Onsite_to_Capture_Signature</members>
+        <members>Technician_Status_Transition.Travel_End_to_Onsite</members>
+        <members>Technician_Status_Transition.Travel_Start_to_Travel_End</members>
         <name>CustomMetadata</name>
     </types>
     <types>
@@ -2015,6 +2035,7 @@
         <members>Solution</members>
         <members>StreamingChannel</members>
         <members>Task</members>
+        <members>Technician_Status_Transition__mdt</members>
         <members>Territory_Contract_Mapping__c</members>
         <members>TimeSheet</members>
         <members>TimeSheetEntry</members>
@@ -3136,6 +3157,7 @@
         <members>SkillRequirement-Skill Requirement Layout</members>
         <members>Solution-Solution Layout</members>
         <members>Task-Task Layout</members>
+        <members>Technician_Status_Transition__mdt-Status Transition Layout</members>
         <members>TimeSheet-Time Sheet Layout</members>
         <members>TimeSheetEntry-Time Sheet Entry Layout</members>
         <members>TimeSlot-Time Slot Layout</members>
@@ -3391,6 +3413,7 @@
         <members>Task.EditDescription</members>
         <members>Task.UpdatePriority</members>
         <members>Task.UpdateStatus</members>
+        <members>WorkOrder.Change_Status</members>
         <members>WorkOrder.Create_Expense</members>
         <members>WorkOrder.Create_Service</members>
         <members>WorkOrder.Create_Work_Order_Service</members>

@@ -1,4 +1,4 @@
-<apex:page standardController="ServiceAppointment" title="Completion" standardStylesheets="false" docType="html-5.0" showQuickActionVfHeader="false" extensions="SignatureExt" showHeader="false" sidebar="false" id="thePage">
+<apex:page standardController="WorkOrder" title="Completion" standardStylesheets="false" docType="html-5.0" showQuickActionVfHeader="false" extensions="SignatureExt" showHeader="false" sidebar="false" id="thePage">
 
     <apex:stylesheet value="{!URLFOR($Resource.SLDS2014011, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
     <apex:stylesheet value="{!URLFOR($Resource.slds120,'assets/styles/salesforce-lightning-design-system.css')}"/> 
@@ -81,7 +81,8 @@
     <script>
         var signaturePad;
         var canvas;
-        var recId = '{!$CurrentPage.parameters.Id}'
+        var recId = '{!$CurrentPage.parameters.Id}';
+        //var recId = '{!WorkOrder.Id}'
         var signatureData;
         Sfdc.canvas.publisher.subscribe({name: "publisher.showPanel",
             onData:function(e) {
@@ -119,9 +120,9 @@
                                 var res = JSON.parse(result);
                                 if(res.success){
                                     document.getElementById("loader").style.display = "none";
-                                    saveRecord();
-                                 //Sfdc.canvas.publisher.publish({name:"publisher.close",payload:{refresh:"true"}});
-    
+                                    // saveRecord();
+                                    //Sfdc.canvas.publisher.publish({name:"publisher.close",payload:{refresh:"true"}});
+                                    sforce.one.navigateToSObject ('{!WorkOrder.Id}');
                                 }else{
                                     alert('Error:' +  res.message);
                                 }    
@@ -129,8 +130,6 @@
                                 alert('Error in calling controller to upload signature');
                             }
                             document.getElementById("buttonSearch").disabled = true;
-                            
-                            
                     },{escape: false});
                 
                  
@@ -175,7 +174,7 @@
                 
                 
                 
-                <apex:inputHidden value="{!ServiceAppointment.Status}" />
+                <apex:inputHidden value="{!WorkOrder.Status}" />
                 <apex:commandButton action="{!cancel}" value="Cancel" styleClass="sf1buttonSFBlue"  reRender="thePage" status="actStatusId"/>
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature Capture
                 <input type="button" class="sf1buttonSFBlue" value="Save" onclick="uploadSignature();" style="float: right" id="buttonSearch"/>

@@ -41,6 +41,11 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Technician_WO_Layout</fullName>
+        <fields>WorkOrderNumber</fields>
+        <label>Technician WO Layout</label>
+    </compactLayouts>
     <enableFeeds>true</enableFeeds>
     <fields>
         <fullName>Accepted_Date_Time__c</fullName>

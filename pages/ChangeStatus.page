@@ -1,0 +1,37 @@
+<apex:page standardController="WorkOrder" title="Change Status" standardStylesheets="false" docType="html-5.0" showQuickActionVfHeader="true" extensions="ChangeStatusControllerExtension" showHeader="false" sidebar="false" id="thePage">
+    <apex:pageMessages />
+    <script type='text/javascript' src='/canvas/sdk/js/publisher.js'/>
+    <style>
+        .mypage {
+            font-family: "ProximaNovaSoft-Regular",Arial; 
+            font-size: 110%;
+            padding-top: 12px;
+        }
+        .mypagebutton {
+            webkit-appearance: button;
+            border-radius: 3px;
+            display: block;
+            padding: 12px;
+            margin: 8px 0;
+            width: 95%;
+            background: #eee;
+            border: solid 1px #ccc;
+            text-decoration:none;
+            color:black;
+            text-align:center;
+          }
+    </style>
+    <apex:form >
+        <div class="mypage">
+            <apex:inputHidden value="{!WorkOrder.Status}" />
+            <apex:repeat value="{!nextStatusSelected}" var="status" rendered="{!nextStatusSelected.size>0}">
+                <apex:commandLink action="{!updateWorkOrderStatus}" value="{!status}" styleClass="mypagebutton">
+                    <apex:param name="woStatus" value="{!status}" assignTo="{!woStatus}"/>
+                </apex:commandLink>
+            </apex:repeat>
+            <apex:pageBlock rendered="{!nextStatusSelected.size==0}">
+                Work Order is {!WorkOrder.Status}
+            </apex:pageBlock>
+        </div>   
+   </apex:form>
+</apex:page>

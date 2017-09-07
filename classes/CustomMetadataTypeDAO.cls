@@ -15,4 +15,10 @@ public with sharing class CustomMetadataTypeDAO {
                 FROM Month_Mapping__mdt 
                 WHERE Month_Text__c IN :monthTexts];
     }
+
+    public static List<Technician_Status_Transition__mdt> getTechnStatusTransitionByFromStatusAPI(List<String> fromStatus){
+        return [SELECT From_Status__c, From_Status_API_Name__c, To_Status__c, To_Status_API_Name__c
+                FROM Technician_Status_Transition__mdt 
+                WHERE From_Status_API_Name__c IN :fromStatus];
+    }   
 }
