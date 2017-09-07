@@ -2368,6 +2368,7 @@
         <members>SLA_Times_on_Work_Order-1</members>
         <members>Schedule_Start_Date-1</members>
         <members>Scheduled_Work_Order-1</members>
+        <members>Service_appointment_Is_changed_scheduled_start-7</members>
         <members>Travel_on_Work_order-1</members>
         <members>Update_Invoiced_Checkbox_on_Usage_record_from_WO-1</members>
         <members>Update_Product_Item_Owner-1</members>
@@ -2375,6 +2376,8 @@
         <members>Update_WO_Contact_Email-1</members>
         <members>Update_WO_Contact_Email_on_Service_Object-1</members>
         <members>Work_Order_Service_Allow_Auto_Notification-3</members>
+        <members>Work_Order_Service_Is_Dispatched-1</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-9</members>
         <members>Work_Order_Service_Send_Chatter_notification-9</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
@@ -2411,6 +2414,7 @@
         <members>SLA_Times_on_Work_Order</members>
         <members>Schedule_Start_Date</members>
         <members>Scheduled_Work_Order</members>
+        <members>Service_appointment_Is_changed_scheduled_start</members>
         <members>Travel_on_Work_order</members>
         <members>Update_Invoiced_Checkbox_on_Usage_record_from_WO</members>
         <members>Update_Product_Item_Owner</members>
@@ -2418,6 +2422,8 @@
         <members>Update_WO_Contact_Email</members>
         <members>Update_WO_Contact_Email_on_Service_Object</members>
         <members>Work_Order_Service_Allow_Auto_Notification</members>
+        <members>Work_Order_Service_Is_Dispatched</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA</members>
         <members>Work_Order_Service_Send_Chatter_notification</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>
