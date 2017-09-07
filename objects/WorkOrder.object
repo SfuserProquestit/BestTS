@@ -2563,7 +2563,7 @@ NOT( ISPICKVAL(Status, &apos;Closed&apos;) ))</description>
         <fullName>SLA_Required</fullName>
         <active>true</active>
         <description>If Service Contract has a SLA and no SLA is selected then an error will occur</description>
-        <errorConditionFormula>AND ( SLA_Count__c &lt;&gt;0, ISBLANK( SLA__c ))</errorConditionFormula>
+        <errorConditionFormula>AND (RecordType.Name = &quot;Master Work Order&quot; , SLA_Count__c &lt;&gt;0, ISBLANK( SLA__c ))</errorConditionFormula>
         <errorDisplayField>SLA__c</errorDisplayField>
         <errorMessage>This Service Contract has related SLA&apos;s, please select a SLA</errorMessage>
     </validationRules>

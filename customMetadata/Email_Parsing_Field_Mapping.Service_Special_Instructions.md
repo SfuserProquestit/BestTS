@@ -16,6 +16,6 @@
     </values>
     <values>
         <field>SF_Object_Type__c</field>
-        <value xsi:type="xsd:string">CKSW_BASE__Service__c</value>
+        <value xsi:type="xsd:string">WorkOrderService</value>
     </values>
 </CustomMetadata>

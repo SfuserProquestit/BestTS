@@ -103,6 +103,11 @@
                     <default>false</default>
                     <label>CKSW_BASE__Service__c</label>
                 </value>
+                <value>
+                    <fullName>WorkOrderService</fullName>
+                    <default>false</default>
+                    <label>WorkOrderService</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

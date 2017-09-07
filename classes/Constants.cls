@@ -16,9 +16,10 @@ public class Constants {
     public static String CONTRACT_PRICING_RECORD_TYPE_MARKUP_BASED = 'Markup Based';
     public static String USAGE_RECORD_TYPE_STANDARD_USAGE = 'Standard Usage';
 
-    public static String API_OBJECT_NAME_WORK_ORDER     = 'WorkOrder';
-    public static String API_OBJECT_NAME_SERVICE        = 'CKSW_BASE__Service__c';
-
+    public static String API_OBJECT_NAME_WORK_ORDER              = 'WorkOrder';
+    public static String API_OBJECT_NAME_SERVICE                 = 'CKSW_BASE__Service__c';
+    public static String API_OBJECT_NAME_WORK_ORDER_SERVICE      = 'WorkOrderService';
+    
     public static String FIELD_TYPE_DATETIME            = 'DateTime';
 
     public static String QUEUE_FAILED_EMAIL_PARSING     = 'Failed_Email_Parsing';

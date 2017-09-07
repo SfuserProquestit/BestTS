@@ -37,9 +37,9 @@ global class NCRIncomingEmailHandler implements Messaging.InboundEmailHandler {
                     }
 
                     WorkOrder wo = new WorkOrder();
-                    CKSW_BASE__Service__c service = new CKSW_BASE__Service__c();
+                    WorkOrder woService = new WorkOrder();
                     
-                    setRecordsFromEmail(fieldValueMap,wo,service);
+                    setRecordsFromEmail(fieldValueMap,wo,woService);
 
                     String contractNumber = Territory_Contract_Mapping__c.getValues(wo.Customer_Territory_No__c) != null ? Territory_Contract_Mapping__c.getValues(wo.Customer_Territory_No__c).Contract_Number__c : '';
                     List<ServiceContract> contract = ServiceContractDAO.getServiceContractByContractNumber(new List<String>{contractNumber});
@@ -49,6 +49,9 @@ global class NCRIncomingEmailHandler implements Messaging.InboundEmailHandler {
 
                         Group ncrQueue = QueueDAO.getQueueByDeveloperNames(new List<String>{Constants.QUEUE_NCR_EMAIL})[0];
 
+                        Map<String,Schema.RecordTypeInfo> rtMap = RecordTypeDAO.getRecordTypes(Schema.SObjectType.WorkOrder);
+                        Id masterWORecordTypeId = rtMap.get(Constants.RECORD_TYPE_MASTER_WORK_ORDER).getRecordTypeId();
+                        wo.RecordTypeId=masterWORecordTypeId;
                         wo.Customer_s_Reference__c = srNumber;
                         wo.ServiceContractId = contractId;
                         wo.AccountId = Email_Service_Settings__c.getOrgDefaults().NCR_Account_Id__c;
@@ -67,15 +70,17 @@ global class NCRIncomingEmailHandler implements Messaging.InboundEmailHandler {
                         }
                         insert wo;
 
-                        service.Work_Order__c = wo.Id;
-                        service.Customer_s_Reference__c = srNumber;
-                        service.CKSW_BASE__Account__c = Email_Service_Settings__c.getOrgDefaults().NCR_Account_Id__c;
-                        service.Service_Contract__c = contractId;
-                        service.OwnerId = ncrQueue.Id;
-                        service.CKSW_BASE__City__c = wo.City__c;
-                        service.CKSW_BASE__State__c = wo.Site_State__c;
-                        service.CKSW_BASE__Zip__c = wo.Site_Post_Code__c;
-                        insert service;
+                        Id childWORecordTypeId = rtMap.get(Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER).getRecordTypeId();
+                        woService.RecordTypeId = childWORecordTypeId;
+                        woService.ParentWorkOrderId = wo.Id;
+                        woService.Customer_s_Reference__c = srNumber;
+                        woService.AccountId = Email_Service_Settings__c.getOrgDefaults().NCR_Account_Id__c;
+                        woService.ServiceContractId = contractId;
+                        woService.OwnerId = ncrQueue.Id;
+                        woService.City__c = wo.City__c;
+                        woService.Site_State__c = wo.Site_State__c;
+                        woService.Site_Post_Code__c = wo.Site_Post_Code__c;
+                        insert woService;
                     }
                     else{
                         emailLog.OwnerId = errorQueue.Id;
@@ -150,7 +155,7 @@ global class NCRIncomingEmailHandler implements Messaging.InboundEmailHandler {
         return values;
     }
 
-    public static void setRecordsFromEmail(Map<String,String> fieldValueMap, WorkOrder wo, CKSW_BASE__Service__c service){
+    public static void setRecordsFromEmail(Map<String,String> fieldValueMap, WorkOrder wo, WorkOrder woService){
         List<Email_Parsing_Field_Mapping__mdt> fieldMapping = CustomMetadataTypeDAO.getEmailParsingMapping();
 
         for(String fieldKey : fieldValueMap.keySet()){
@@ -158,12 +163,14 @@ global class NCRIncomingEmailHandler implements Messaging.InboundEmailHandler {
                 if(mapping.Email_Field__c == fieldKey){
                     
                     if(mapping.SF_Field_Type__c == Constants.FIELD_TYPE_DATETIME){
-                        DateTime fieldDateTime = DateHelper.convertStringToDateTime(fieldValueMap.get(fieldKey));
-                        if(mapping.SF_Object_Type__c == Constants.API_OBJECT_NAME_WORK_ORDER){
-                            wo.put(mapping.SF_Field__c, fieldDateTime);
-                        }
-                        else if(mapping.SF_Object_Type__c == Constants.API_OBJECT_NAME_SERVICE){
-                            service.put(mapping.SF_Field__c, fieldDateTime);
+                        if(fieldValueMap.get(fieldKey) != '' && fieldValueMap.get(fieldKey) != null){
+                            DateTime fieldDateTime = DateHelper.convertStringToDateTime(fieldValueMap.get(fieldKey));
+                            if(mapping.SF_Object_Type__c == Constants.API_OBJECT_NAME_WORK_ORDER){
+                                wo.put(mapping.SF_Field__c, fieldDateTime);
+                            }
+                            else if(mapping.SF_Object_Type__c == Constants.API_OBJECT_NAME_WORK_ORDER_SERVICE){
+                                woService.put(mapping.SF_Field__c, fieldDateTime);
+                            }
                         }
                     }
                     else{
@@ -171,8 +178,8 @@ global class NCRIncomingEmailHandler implements Messaging.InboundEmailHandler {
                         if(mapping.SF_Object_Type__c == Constants.API_OBJECT_NAME_WORK_ORDER){
                             wo.put(mapping.SF_Field__c, fieldString);
                         }
-                        else if(mapping.SF_Object_Type__c == Constants.API_OBJECT_NAME_SERVICE){
-                            service.put(mapping.SF_Field__c, fieldString);
+                        else if(mapping.SF_Object_Type__c == Constants.API_OBJECT_NAME_WORK_ORDER_SERVICE){
+                            woService.put(mapping.SF_Field__c, fieldString);
                         }
                     }
                 }

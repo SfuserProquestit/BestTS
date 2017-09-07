@@ -57,11 +57,14 @@ public class NCRIncomingEmailHandlerTest {
         Test.stopTest();
         
         System.assert(result.success, 'InboundEmailResult returned a failure message');
-        List<WorkOrder> workOrders = [SELECT Id FROM WorkOrder];
-        System.assertEquals(1,workOrders.size(),'Work Order not created as expected');
+        Map<String,Schema.RecordTypeInfo> rtMap = RecordTypeDAO.getRecordTypes(Schema.SObjectType.WorkOrder);
+        Id masterWORecordTypeId = rtMap.get(Constants.RECORD_TYPE_MASTER_WORK_ORDER).getRecordTypeId();
+        List<WorkOrder> workOrders = [SELECT Id FROM WorkOrder WHERE RecordTypeId = :masterWORecordTypeId];
+        System.assertEquals(1,workOrders.size(),'Master Work Order not created as expected');
 
-        List<CKSW_BASE__Service__c> services = [SELECT Id FROM CKSW_BASE__Service__c];
-        System.assertEquals(1,services.size(),'Service not created as expected');
+        Id childWORecordTypeId = rtMap.get(Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER).getRecordTypeId();
+        workOrders = [SELECT Id FROM WorkOrder WHERE RecordTypeId = :childWORecordTypeId];
+        System.assertEquals(1,workOrders.size(),'Master Work Order not created as expected');
 	}
 
     @isTest

@@ -3229,6 +3229,7 @@
         <members>Customer_Feedback__c.All</members>
         <members>Email_Log__c.All</members>
         <members>Email_Log__c.Failed_Email_Parsing_Email_Log</members>
+        <members>Email_Parsing_Field_Mapping__mdt.All_Fields</members>
         <members>Entitlement.All_Entitlements</members>
         <members>Goal__c.All</members>
         <members>Idea.Ideas_Last_7_Days</members>
@@ -3285,6 +3286,7 @@
         <members>SocialPost.AllSocialPosts</members>
         <members>Solution.AllReviewedSolutions</members>
         <members>Solution.AllUnreviewedSolutions</members>
+        <members>Technician_Status_Transition__mdt.All_Fields</members>
         <members>TimeSheet.All_TimeSheets</members>
         <members>TimeSheet.My_TimeSheets</members>
         <members>User.ActiveUsers</members>
