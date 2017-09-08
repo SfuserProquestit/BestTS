@@ -50,7 +50,6 @@
     <description>Record triggers process builder and flows to create new product request with line items.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>false</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
@@ -134,18 +133,17 @@
     </fields>
     <fields>
         <fullName>Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>Service this Part request is for</description>
         <externalId>false</externalId>
         <label>Service</label>
         <referenceTo>CKSW_BASE__Service__c</referenceTo>
         <relationshipLabel>Requested Parts</relationshipLabel>
         <relationshipName>Requested_Parts</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
-        <type>MasterDetail</type>
-        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Status__c</fullName>
@@ -187,6 +185,33 @@
         <summaryOperation>sum</summaryOperation>
         <trackTrending>false</trackTrending>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Work_Order_Service__c</fullName>
+        <externalId>false</externalId>
+        <label>Work Order Service</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Request Parts (Work Order Service)</relationshipLabel>
+        <relationshipName>Request_Parts1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Work_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Order</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Request Parts</relationshipLabel>
+        <relationshipName>Request_Parts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <label>Request Part</label>
     <listViews>

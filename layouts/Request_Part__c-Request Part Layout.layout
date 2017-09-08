@@ -15,11 +15,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Service__c</field>
+                <field>Work_Order_Service__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Product_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Work_Order__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

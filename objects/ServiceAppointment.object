@@ -96,6 +96,15 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Invoice_Created__c</fullName>
+        <externalId>false</externalId>
+        <formula>Work_Order__r.WOService_Invoice_Created__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Created</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -199,4 +208,11 @@
         <searchResultsAdditionalFields>ArrivalWindowEndTime</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Invoice_is_created_on_master_Work_order</fullName>
+        <active>true</active>
+        <errorConditionFormula>Invoice_Created__c = true
+&amp;&amp; NOT((PRIORVALUE( Invoice_Created__c ))=false)</errorConditionFormula>
+        <errorMessage>The Service Appointment cannot be updated as the Invoice has been created for the Master Work order</errorMessage>
+    </validationRules>
 </CustomObject>

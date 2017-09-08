@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>Allow_Auto_Status_Notification</fullName>
+        <ccEmails>sfuser@proquestit.com</ccEmails>
+        <description>Allow Auto. Status Notification</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>CKSW_BASE__Field_Service_Lightning_Templates/NCR_Field_Service_Closure</template>
+    </alerts>
+    <alerts>
+        <fullName>NCR_Field_Work_Order_Service_ACCEPTED_Notification_Email</fullName>
+        <ccEmails>laura.plotton@proquestit.com</ccEmails>
+        <description>NCR Field Work Order Service ACCEPTED Notification Email</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>CKSW_BASE__Field_Service_Lightning_Templates/NCR_Field_Service_Accepted</template>
+    </alerts>
+    <alerts>
         <fullName>NCR_email_alert_2h_before_expiry</fullName>
         <ccEmails>ncrservice@best-ts.com.au</ccEmails>
         <ccEmails>jonb@best-ts.com.au</ccEmails>
@@ -68,6 +84,25 @@
         <field>Onsite_Time__c</field>
         <formula>NOW()</formula>
         <name>Onsite Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Schedule_Start</fullName>
+        <description>This will update Schedule start same as Technician&apos;s ETA</description>
+        <field>Scheduled_Date_and_Time__c</field>
+        <formula>Technician_s_ETA__c</formula>
+        <name>Update Schedule Start</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Standard_Instruction</fullName>
+        <field>Standard_Instructions__c</field>
+        <formula>ParentWorkOrder.Standard_Instructions__c</formula>
+        <name>Update Standard Instruction</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>

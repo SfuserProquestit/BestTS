@@ -32,8 +32,8 @@
                 <field>SLA__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Related_Work_Order__c</field>
+                <behavior>Readonly</behavior>
+                <field>WO_record_type__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -362,7 +362,7 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>WorkOrder.Create_Service</actionName>
+            <actionName>WorkOrder.Create_Work_Order_Service</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>
@@ -466,13 +466,12 @@
     </quickActionList>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>CKSW_BASE__Account__c</fields>
-        <fields>CKSW_BASE__Service_Type__c</fields>
-        <fields>CKSW_BASE__Date__c</fields>
-        <fields>CKSW_BASE__Status__c</fields>
-        <fields>CKSW_BASE__Resource__c</fields>
-        <relatedList>CKSW_BASE__Service__c.Work_Order__c</relatedList>
+        <fields>Name</fields>
+        <fields>Account</fields>
+        <fields>Priority</fields>
+        <fields>Status</fields>
+        <fields>Customer_s_Reference__c</fields>
+        <relatedList>ChildWorkOrders</relatedList>
     </relatedLists>
     <relatedLists>
         <excludeButtons>New</excludeButtons>
@@ -498,15 +497,6 @@
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>Name</fields>
-        <fields>Subject</fields>
-        <fields>Account</fields>
-        <fields>Priority</fields>
-        <fields>Status</fields>
-        <relatedList>ChildWorkOrders</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>ACTIVITY.TASK</fields>
         <fields>TASK.DUE_DATE</fields>
@@ -516,6 +506,7 @@
         <relatedList>RelatedActivityList</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>Contract_Pricing__c</fields>
         <fields>Pricing_Category_Formula__c</fields>
@@ -543,19 +534,6 @@
         <fields>LAST_UPDATE</fields>
         <fields>CREATEDBY_USER</fields>
         <relatedList>RelatedLinkedArticleList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>Name</fields>
-        <fields>ParentRecord</fields>
-        <fields>ParentRecordType</fields>
-        <fields>Status</fields>
-        <fields>ArrivalWindowStartTime</fields>
-        <fields>ArrivalWindowEndTime</fields>
-        <relatedList>ServiceAppointment.Work_Order__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Service_Part__c.Work_Order__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

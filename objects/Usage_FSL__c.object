@@ -637,7 +637,7 @@
         <referenceTo>WorkOrder</referenceTo>
         <relationshipLabel>Usages</relationshipLabel>
         <relationshipName>Usages</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
+        <relationshipOrder>1</relationshipOrder>
         <reparentableMasterDetail>true</reparentableMasterDetail>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>

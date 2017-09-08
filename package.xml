@@ -1217,6 +1217,8 @@
         <members>Request_Part__c.Service__c</members>
         <members>Request_Part__c.Status__c</members>
         <members>Request_Part__c.Total_Quantity_Received__c</members>
+        <members>Request_Part__c.Work_Order_Service__c</members>
+        <members>Request_Part__c.Work_Order__c</members>
         <members>ResourceAbsence.Address</members>
         <members>ResourceAbsence.Description</members>
         <members>ResourceAbsence.End</members>
@@ -1242,6 +1244,7 @@
         <members>ServiceAppointment.Duration</members>
         <members>ServiceAppointment.DurationType</members>
         <members>ServiceAppointment.EarliestStartTime</members>
+        <members>ServiceAppointment.Invoice_Created__c</members>
         <members>ServiceAppointment.OwnerId</members>
         <members>ServiceAppointment.ParentRecordId</members>
         <members>ServiceAppointment.ParentRecordStatusCategory</members>
@@ -1372,6 +1375,8 @@
         <members>Service_Part__c.Product_Name__c</members>
         <members>Service_Part__c.Quantity_Consumed__c</members>
         <members>Service_Part__c.Service__c</members>
+        <members>Service_Part__c.Work_Order_Service__c</members>
+        <members>Service_Part__c.Work_Order__c</members>
         <members>Shipment.ActualDeliveryDate</members>
         <members>Shipment.DeliveredToId</members>
         <members>Shipment.Description</members>
@@ -1707,6 +1712,7 @@
         <members>WorkOrder.SLA__c</members>
         <members>WorkOrder.Schedule_Start_Time__c</members>
         <members>WorkOrder.Scheduled_Date_and_Time__c</members>
+        <members>WorkOrder.Scheduled_End_Date__c</members>
         <members>WorkOrder.Scheduled_SLA_Met__c</members>
         <members>WorkOrder.Scheduled_Start_Time__c</members>
         <members>WorkOrder.Serial_Number__c</members>
@@ -2389,6 +2395,7 @@
         <members>SLA_Times_on_Work_Order-1</members>
         <members>Schedule_Start_Date-1</members>
         <members>Scheduled_Work_Order-1</members>
+        <members>Service_Appointment_Send_Email_to_tech_when_SA_status_is_Dispatched-6</members>
         <members>Service_appointment_Is_changed_scheduled_start-7</members>
         <members>Travel_on_Work_order-1</members>
         <members>Update_Invoiced_Checkbox_on_Usage_record_from_WO-1</members>
@@ -2397,12 +2404,16 @@
         <members>Update_WO_Contact_Email-1</members>
         <members>Update_WO_Contact_Email_on_Service_Object-1</members>
         <members>Work_Order_Service_Allow_Auto_Notification-3</members>
+        <members>Work_Order_Service_Auto_Create_Part_request-3</members>
         <members>Work_Order_Service_Is_Dispatched-1</members>
         <members>Work_Order_Service_Is_changed_Technician_s_ETA-9</members>
+        <members>Work_Order_Service_Populate_Service_Territory-1</members>
         <members>Work_Order_Service_Send_Chatter_notification-12</members>
         <members>Work_Order_Service_Send_Chatter_notification-9</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
+        <members>Work_Order_Service_Update_Record_Type-3</members>
+        <members>Work_Order_Service_Update_Standard_Instructions_from_Master_Work_order-1</members>
         <name>Flow</name>
     </types>
     <types>
@@ -2436,6 +2447,7 @@
         <members>SLA_Times_on_Work_Order</members>
         <members>Schedule_Start_Date</members>
         <members>Scheduled_Work_Order</members>
+        <members>Service_Appointment_Send_Email_to_tech_when_SA_status_is_Dispatched</members>
         <members>Service_appointment_Is_changed_scheduled_start</members>
         <members>Travel_on_Work_order</members>
         <members>Update_Invoiced_Checkbox_on_Usage_record_from_WO</members>
@@ -2444,8 +2456,10 @@
         <members>Update_WO_Contact_Email</members>
         <members>Update_WO_Contact_Email_on_Service_Object</members>
         <members>Work_Order_Service_Allow_Auto_Notification</members>
+        <members>Work_Order_Service_Auto_Create_Part_request</members>
         <members>Work_Order_Service_Is_Dispatched</members>
         <members>Work_Order_Service_Is_changed_Technician_s_ETA</members>
+        <members>Work_Order_Service_Populate_Service_Territory</members>
         <members>Work_Order_Service_Send_Chatter_notification</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>
@@ -3302,6 +3316,9 @@
         <members>WorkOrder.My_WorkOrders</members>
         <members>WorkOrder.NCR_Email_WorkOrder</members>
         <members>WorkOrder.To_Be_Invoiced</members>
+        <members>WorkOrder.To_be_Accepted</members>
+        <members>WorkOrder.WO_Service_My_Current_Jobs</members>
+        <members>WorkOrder.WO_Service_My_Old_Jobs</members>
         <members>WorkType.All_WorkTypes</members>
         <members>items_Best_ITE_SharePoint_Online__x.All</members>
         <members>items_Best_ITE_SharePoint_Online__x.All_My_Updated_Files</members>
@@ -3417,11 +3434,13 @@
         <members>Task.UpdatePriority</members>
         <members>Task.UpdateStatus</members>
         <members>WorkOrder.Change_Status</members>
+        <members>WorkOrder.Consume_Parts</members>
         <members>WorkOrder.Create_Expense</members>
         <members>WorkOrder.Create_Service</members>
         <members>WorkOrder.Create_Work_Order_Service</members>
         <members>WorkOrder.Invoice_Created</members>
         <members>WorkOrder.Notify_Customer</members>
+        <members>WorkOrder.Request_Parts</members>
         <members>WorkOrder.SendEmail</members>
         <members>WorkOrderLineItem.SendEmail</members>
         <name>QuickAction</name>
@@ -3817,6 +3836,7 @@
         <members>Received_Part__c.Can_not_edit_Qty_Received</members>
         <members>Received_Part__c.Qty_Received_larger_than_Qty_Order</members>
         <members>Request_Part__c.Qty_has_to_be_1_or_more</members>
+        <members>ServiceAppointment.Invoice_is_created_on_master_Work_order</members>
         <members>Service_Part__c.Qty_Larger_than_0</members>
         <members>Usage_FSL__c.Invoice_Created_Usage</members>
         <members>Usage_FSL__c.Tech_cant_reassign_Usage_to_Service</members>
@@ -3824,6 +3844,7 @@
         <members>User.Select_Engagement_Type_Notifications</members>
         <members>WorkOrder.CHGC_Reason</members>
         <members>WorkOrder.Cancelled_Reason</members>
+        <members>WorkOrder.Cannot_Cancel_WO_when_Complete</members>
         <members>WorkOrder.Change_Status_from_Closed</members>
         <members>WorkOrder.Invoice_Created_WorkOrder</members>
         <members>WorkOrder.Invoice_Created_Work_Order_Service</members>
@@ -3831,6 +3852,8 @@
         <members>WorkOrder.Not_New</members>
         <members>WorkOrder.Onsite_Time_After_the_Travel_End</members>
         <members>WorkOrder.SLA_Required</members>
+        <members>WorkOrder.Technician_ETA_should_be_blank</members>
+        <members>WorkOrder.Technicians_ETA_Non_Editable</members>
         <members>WorkOrder.Total_Break_Time_minutes_is_required</members>
         <members>WorkOrder.Travel_End_time_after_the_Travel_Start</members>
         <name>ValidationRule</name>
@@ -3890,8 +3913,13 @@
         <members>Opportunity.OPPORTUNITY_Notify_Closed_Won_for_Engagement_Type_Services</members>
         <members>Opportunity.OPPORTUNITY_Notify_Closed_Won_for_Engagement_Type_Workforce</members>
         <members>Received_Part__c.REQUEST_PART_Partially_Received_Order_Notification</members>
+        <members>Request_Part__c.OLD_REQUEST_PART_New_Order_Request_Notification</members>
+        <members>Request_Part__c.OLD_REQUEST_PART_Receive_Order_Notification</members>
         <members>Request_Part__c.REQUEST_PART_New_Order_Request_Notification</members>
         <members>Request_Part__c.REQUEST_PART_Receive_Order_Notification</members>
+        <members>ServiceAppointment.Send_Email_when_Service_Appointment_is_Dispatched</members>
+        <members>WorkOrder.Allow_Auto_Status_Notification</members>
+        <members>WorkOrder.NCR_Field_Work_Order_Service_ACCEPTED_Notification_Email</members>
         <members>WorkOrder.NCR_email_alert_2h_before_expiry</members>
         <members>WorkOrder.Notify_Customer</members>
         <name>WorkflowAlert</name>
@@ -3930,6 +3958,8 @@
         <members>WorkOrder.Completed_On</members>
         <members>WorkOrder.Invoice_Created</members>
         <members>WorkOrder.Onsite_Time</members>
+        <members>WorkOrder.Update_Schedule_Start</members>
+        <members>WorkOrder.Update_Standard_Instruction</members>
         <members>WorkOrder.WO_Update_Standard_Description</members>
         <name>WorkflowFieldUpdate</name>
     </types>

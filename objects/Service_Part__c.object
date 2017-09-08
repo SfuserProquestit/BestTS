@@ -46,7 +46,6 @@
     <description>Custom object to allow global action on a Service automating insertion of Product Consumed or Products Required</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>false</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -102,16 +101,40 @@
     </fields>
     <fields>
         <fullName>Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Service</label>
         <referenceTo>CKSW_BASE__Service__c</referenceTo>
         <relationshipLabel>Service Parts</relationshipLabel>
         <relationshipName>Service_Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Work_Order_Service__c</fullName>
+        <externalId>false</externalId>
+        <label>Work Order Service</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Service_Parts (Work Order Service)</relationshipLabel>
+        <relationshipName>Service_Parts1</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Work_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Order</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Service_Parts</relationshipLabel>
+        <relationshipName>Service_Parts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <label>Service Part</label>
     <listViews>

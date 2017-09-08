@@ -26,6 +26,10 @@
                 <behavior>Readonly</behavior>
                 <field>SLA_Response_Minutes__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>WO_record_type__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
@@ -162,10 +166,10 @@
     </platformActionList>
     <relatedLists>
         <fields>Name</fields>
-        <fields>Subject</fields>
         <fields>Account</fields>
         <fields>Priority</fields>
         <fields>Status</fields>
+        <fields>Customer_s_Reference__c</fields>
         <relatedList>ChildWorkOrders</relatedList>
     </relatedLists>
     <relatedLists>
@@ -173,8 +177,8 @@
         <fields>ParentRecord</fields>
         <fields>ParentRecordType</fields>
         <fields>Status</fields>
-        <fields>ArrivalWindowStartTime</fields>
-        <fields>ArrivalWindowEndTime</fields>
+        <fields>SchedStartTime</fields>
+        <fields>SchedEndTime</fields>
         <relatedList>ServiceAppointment.Work_Order__c</relatedList>
     </relatedLists>
     <relatedLists>

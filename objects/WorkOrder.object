@@ -880,6 +880,16 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>Scheduled_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Appointment__r.SchedEndTime</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scheduled End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Scheduled_SLA_Met__c</fullName>
         <externalId>false</externalId>
         <formula>IF(  Schedule_Start_Time__c &gt;  Onsite_Time__c , &apos;Yes&apos;, &apos;No&apos;)</formula>
@@ -1853,6 +1863,74 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <label>To Be Invoiced</label>
         <language>en_US</language>
     </listViews>
+    <listViews>
+        <fullName>To_be_Accepted</fullName>
+        <columns>Name</columns>
+        <columns>Customer_s_Reference__c</columns>
+        <columns>Scheduled_Start_Time__c</columns>
+        <columns>Account</columns>
+        <columns>WOService_Site_Name__c</columns>
+        <columns>Representing_Company__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>Dispatched</value>
+        </filters>
+        <filters>
+            <field>ParentWorkOrder</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>To be Accepted</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>WO_Service_My_Current_Jobs</fullName>
+        <columns>Name</columns>
+        <columns>Customer_s_Reference__c</columns>
+        <columns>Scheduled_Start_Time__c</columns>
+        <columns>Account</columns>
+        <columns>WorkType</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>On Hold,Onsite,Travel Start,Travel End,Accepted</value>
+        </filters>
+        <filters>
+            <field>ParentWorkOrder</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>My Current Jobs</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>WO_Service_My_Old_Jobs</fullName>
+        <columns>Name</columns>
+        <columns>Customer_s_Reference__c</columns>
+        <columns>Scheduled_Start_Time__c</columns>
+        <columns>Account</columns>
+        <columns>WorkType</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>Incomplete,Complete,Completed</value>
+        </filters>
+        <filters>
+            <field>ParentWorkOrder</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>My Old Jobs</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <recordTypes>
         <fullName>Master_Work_Order</fullName>
         <active>true</active>
@@ -2502,9 +2580,23 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <fullName>Cancelled_Reason</fullName>
         <active>true</active>
         <description>When status is changed to Cancelled then a cancelled reason is required</description>
-        <errorConditionFormula>AND(ISPICKVAL( Status , &apos;Cancelled&apos;), ISBLANK( Cancelled_Reason__c )  )</errorConditionFormula>
+        <errorConditionFormula>AND(
+ RecordType.Name  = &apos;Master Work Order&apos;,
+ISPICKVAL( Status , &apos;Cancelled&apos;), 
+ISBLANK( Cancelled_Reason__c )  )</errorConditionFormula>
         <errorDisplayField>Cancelled_Reason__c</errorDisplayField>
         <errorMessage>A Cancelled Reason is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_Cancel_WO_when_Complete</fullName>
+        <active>true</active>
+        <description>Cannot_Cancel_WO_when_Complete or Incomplete</description>
+        <errorConditionFormula>RecordType.Name  = &apos;Master Work Order&apos;
+&amp;&amp; ISCHANGED( Status )
+&amp;&amp; ISPICKVAL(Status,&apos;Cancelled&apos;) 
+&amp;&amp; (ISPICKVAL ( PRIORVALUE(Status), &apos;Complete&apos;)
+|| ISPICKVAL ( PRIORVALUE(Status), &apos;Incomplete&apos;))</errorConditionFormula>
+        <errorMessage>You cannot cancel a Work Order when it is Complete or Incomplete</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Change_Status_from_Closed</fullName>
@@ -2568,15 +2660,67 @@ NOT( ISPICKVAL(Status, &apos;Closed&apos;) ))</description>
         <errorMessage>This Service Contract has related SLA&apos;s, please select a SLA</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Technician_ETA_should_be_blank</fullName>
+        <active>true</active>
+        <errorConditionFormula>( ISPICKVAL( Status ,&apos;In Progress&apos;) 
+|| ISPICKVAL( Status ,&apos;Assigned&apos;) )
+&amp;&amp; NOT( ISBLANK( Technician_s_ETA__c))</errorConditionFormula>
+        <errorMessage>The Technician&apos;s ETA should remain blank when the status is In Progress or Assigned</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Technicians_ETA_Non_Editable</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(
+   AND (
+       RecordType.Name  &lt;&gt; &quot;Master Work Order&quot;,
+       $User.ProfileId  &lt;&gt; &quot;00e0k000000QJlA&quot;,
+       $User.ProfileId  &lt;&gt; &quot;00e900000010xth&quot;,
+       $User.ProfileId  &lt;&gt; &quot;00e0k000000QJYG&quot;,
+           OR(
+               ISPICKVAL( Status , &quot;Assigned&quot;),
+               ISPICKVAL( Status , &quot;Dispatched&quot;),
+               ISPICKVAL( Status , &quot;Travel Start&quot;),
+               ISPICKVAL( Status , &quot;Onsite&quot;),
+               ISPICKVAL( Status , &quot;Complete&quot;),
+               ISPICKVAL( Status , &quot;Incomplete&quot;),
+               ISPICKVAL( Status , &quot;Rejected&quot;),
+               ISPICKVAL( Status , &quot;Travel End&quot;),
+               ISPICKVAL( Status , &quot;Accepted&quot;)
+               ),
+       ISCHANGED( Technician_s_ETA__c )
+      ),
+
+
+   AND(
+       RecordType.Name  &lt;&gt; &quot;Master Work Order&quot;,
+       $User.ProfileId  &lt;&gt; &quot;00e900000010xth&quot;,
+           OR(
+               ISPICKVAL( Status , &quot;In Progress&quot;),
+               ISPICKVAL( Status , &quot;Canceled&quot;),
+               ISPICKVAL( Status , &quot;Assigned&quot;),
+               ISPICKVAL( Status , &quot;Closed&quot;),
+               ISPICKVAL( Status , &quot;On Hold&quot;)
+           ),
+       ISCHANGED( Technician_s_ETA__c )
+       )
+
+)</errorConditionFormula>
+        <errorMessage>You are not allowed to change the Technician&apos;s ETA date.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Total_Break_Time_minutes_is_required</fullName>
         <active>true</active>
-        <errorConditionFormula>RecordType.Name  &lt;&gt; &apos;Master Work Order&apos;
-&amp;&amp;  $Profile.Name =&apos;Field Service Technician Community&apos;
-&amp;&amp;  ISCHANGED( Status) 
-&amp;&amp;  (ISPICKVAL( PRIORVALUE( Status ),&apos;Onsite&apos;) 
-&amp;&amp;  (ISPICKVAL( Status ,&apos;Completed&apos;) 
-||  ISPICKVAL( Status ,&apos;Incomplete&apos;)))
-&amp;&amp;  ISBLANK(ParentWorkOrder.Total_Break_Time_minutes__c)</errorConditionFormula>
+        <errorConditionFormula>AND( 
+ RecordType.Name  &lt;&gt; &apos;Master Work Order&apos;,
+$Profile.Name = &apos;Field Service Technician Community&apos;, 
+ISCHANGED( Status ), 
+ISPICKVAL(PRIORVALUE( Status),&apos;Capture Signature&apos;), 
+OR( 
+ISPICKVAL(Status, &apos;Complete&apos;), 
+ISPICKVAL(Status, &apos;Incomplete&apos;) 
+), 
+ISBLANK( Total_Break_Time_minutes__c  ) 
+)</errorConditionFormula>
         <errorMessage>Please add data to Total Break Time (minutes) field.</errorMessage>
     </validationRules>
     <validationRules>
