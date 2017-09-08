@@ -185,9 +185,12 @@ public class TestUtility {
     }
 
     public static void createLocationSettingsCS(){
-        CKSW_BASE__Location__c location = new CKSW_BASE__Location__c(Name = 'Test Location', 
-                                                         CKSW_BASE__Start_of_Day__c = '00:00', 
-                                                         CKSW_BASE__Time_Zone__c = 'Australia/Sydney');
+        OperatingHours opHours = new OperatingHours(Name='Operating Hours', TimeZone='Australia/Sydney');
+        insert opHours;
+
+        ServiceTerritory location = new ServiceTerritory(Name = 'Test Location', 
+                                                         OperatingHoursId = opHours.Id,
+                                                         IsActive=true);
         insert location;
 
         Location_Settings__c locationSettingsCS = Location_Settings__c.getOrgDefaults();
@@ -207,8 +210,18 @@ public class TestUtility {
         }
         return usages;
     }
+
+    public static List<WorkType> createWorkTypes(Integer count) {
+        List<WorkType> workTypes = new List<WorkType>();
+        for(Integer i=0; i<count; i++){
+            workTypes.add(new WorkType(Name = 'Test Work Type', 
+                                        EstimatedDuration = 60.00, 
+                                        DurationType='Minutes'));
+        }
+        return workTypes;
+    }
 //////////////
-    public static List<CKSW_BASE__Service_Type__c> createServiceTypes(Integer count) {
+    /*public static List<CKSW_BASE__Service_Type__c> createServiceTypes(Integer count) {
         
         List<CKSW_BASE__Service_Type__c> serviceTypeList = new List<CKSW_BASE__Service_Type__c>();
         for(Integer i=0; i<count; i++){
@@ -252,7 +265,7 @@ public class TestUtility {
                                                             CKSW_BASE__Location__c = location.Id));
         }
         return newResources;
-    }
+    }*/
 //////////////
 
 }

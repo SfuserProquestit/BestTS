@@ -5,8 +5,8 @@ public class WorkOrderTriggerHandlerTest {
         List<Account> accounts = TestUtility.createAccounts(2);
         insert accounts;
 
-        List<CKSW_BASE__Service_Type__c> serviceTypes = TestUtility.createServiceTypes(2);
-        insert serviceTypes;
+        List<WorkType> workTypes = TestUtility.createWorkTypes(2);
+        insert workTypes;
 
         List<WorkOrder> workorders = TestUtility.createWorkOrders(accounts.get(0), Constants.RECORD_TYPE_MASTER_WORK_ORDER, 2);
         insert workorders;
@@ -216,10 +216,10 @@ public class WorkOrderTriggerHandlerTest {
         insert parentWorkOrders;
         
         Test.startTest();
-	        ChatterPostForTechnician.ChatterPost chatPost = new ChatterPostForTechnician.ChatterPost();
-	        chatPost.workOrderNumber = parentWorkOrders.get(0).WorkOrderNumber;
-	        chatPost.woId = parentWorkOrders.get(0).Id;
-	        chatPost.resourceId = techUsers.get(0).Id;        
+            ChatterPostForTechnician.ChatterPost chatPost = new ChatterPostForTechnician.ChatterPost();
+            chatPost.workOrderNumber = parentWorkOrders.get(0).WorkOrderNumber;
+            chatPost.woId = parentWorkOrders.get(0).Id;
+            chatPost.resourceId = techUsers.get(0).Id;        
             List<ChatterPostForTechnician.ChatterPost> posts = new List<ChatterPostForTechnician.ChatterPost>();
             posts.add(chatPost);
             List<Id> feedItemIds = ChatterPostForTechnician.createChatterPostForTechnician(posts);
