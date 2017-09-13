@@ -31,10 +31,6 @@
                 <behavior>Edit</behavior>
                 <field>SLA__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>WO_record_type__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

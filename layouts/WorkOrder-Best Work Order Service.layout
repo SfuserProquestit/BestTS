@@ -386,10 +386,6 @@
                 <behavior>Edit</behavior>
                 <field>Service_Appointment__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>To_Change_Status__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>

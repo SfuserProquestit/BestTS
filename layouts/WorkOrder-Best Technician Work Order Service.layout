@@ -17,10 +17,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>To_Change_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>WOResponse_SLA_Response_Due__c</field>
             </layoutItems>
             <layoutItems>
