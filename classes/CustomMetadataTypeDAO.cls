@@ -24,13 +24,17 @@ public with sharing class CustomMetadataTypeDAO {
     
     
     public static boolean getTriggerSettingForFSLMigration(){
+        boolean enabled = true;
+        if(Test.isRunningTest()){
+            return enabled;
+        }
        
-       ActivateTriggers__c trigSetting = ActivateTriggers__c.getOrgDefaults();
-       boolean enabled = true;
+        ActivateTriggers__c trigSetting = ActivateTriggers__c.getOrgDefaults();
+      
        
-       if(trigSetting!=null  && trigSetting.Enabled__c == false) {
+        if(trigSetting!=null  && trigSetting.Enabled__c == false) {
            enabled = false;
-       }
-       return enabled;        
+        }
+        return enabled;        
    }
 }
