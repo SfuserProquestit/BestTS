@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>40.0</version>
+    <version>39.0</version>
     <types>
         <members>AssigneResourceTriggerHandlerTest</members>
         <members>AssignedResourceDAO</members>
@@ -283,6 +283,7 @@
         <members>Achievement__c.Object_Modified__c</members>
         <members>Achievement__c.Points_Awarded__c</members>
         <members>Achievement__c.User__c</members>
+        <members>ActivateTriggers__c.Enabled__c</members>
         <members>Activity.CKSW_BASE__Employee_Absence__c</members>
         <members>Activity.CKSW_BASE__Event_Type__c</members>
         <members>Activity.CKSW_BASE__Service__c</members>
@@ -1942,6 +1943,7 @@
         <members>Account</members>
         <members>AccountContactRole</members>
         <members>Achievement__c</members>
+        <members>ActivateTriggers__c</members>
         <members>Activity</members>
         <members>Address</members>
         <members>Asset</members>
@@ -2379,6 +2381,7 @@
         <members>Email_Alert_to_Technician-1</members>
         <members>Email_Log_Send_email_notification_when_Status_Error-1</members>
         <members>Expense_Calculations-1</members>
+        <members>Expense_Calculations-2</members>
         <members>Identify_Sole_Trader_on_Usage-1</members>
         <members>In_Progress_Work_Order-1</members>
         <members>Incomplete_Work_order-1</members>
@@ -2393,12 +2396,22 @@
         <members>Reparenting_Services-1</members>
         <members>Resources_Email_Address-1</members>
         <members>SLA_Times_on_Work_Order-1</members>
+        <members>SLA_Times_on_Work_Order-2</members>
         <members>Schedule_Start_Date-1</members>
         <members>Scheduled_Work_Order-1</members>
         <members>Service_Appointment_Send_Email_to_tech_when_SA_status_is_Dispatched-6</members>
+        <members>Service_appointment_Is_changed_scheduled_start-1</members>
+        <members>Service_appointment_Is_changed_scheduled_start-2</members>
+        <members>Service_appointment_Is_changed_scheduled_start-3</members>
+        <members>Service_appointment_Is_changed_scheduled_start-4</members>
+        <members>Service_appointment_Is_changed_scheduled_start-5</members>
+        <members>Service_appointment_Is_changed_scheduled_start-6</members>
         <members>Service_appointment_Is_changed_scheduled_start-7</members>
+        <members>Service_appointment_Is_changed_scheduled_start-8</members>
+        <members>Service_appointment_Is_changed_scheduled_start-9</members>
         <members>Travel_on_Work_order-1</members>
         <members>Update_Invoiced_Checkbox_on_Usage_record_from_WO-1</members>
+        <members>Update_Invoiced_Checkbox_on_Usage_record_from_WO-2</members>
         <members>Update_Product_Item_Owner-1</members>
         <members>Update_Scheduled_Start_to_equal_Technicians_ETA-1</members>
         <members>Update_WO_Contact_Email-1</members>
@@ -2406,8 +2419,27 @@
         <members>Work_Order_Service_Allow_Auto_Notification-3</members>
         <members>Work_Order_Service_Auto_Create_Part_request-3</members>
         <members>Work_Order_Service_Is_Dispatched-1</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-1</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-10</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-11</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-2</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-3</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-4</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-5</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-6</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-7</members>
+        <members>Work_Order_Service_Is_changed_Technician_s_ETA-8</members>
         <members>Work_Order_Service_Is_changed_Technician_s_ETA-9</members>
         <members>Work_Order_Service_Populate_Service_Territory-1</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-1</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-2</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-3</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-4</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-5</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-6</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-7</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-8</members>
+        <members>Work_Order_Service_Reparenting_WO_Services-9</members>
         <members>Work_Order_Service_Send_Chatter_notification-12</members>
         <members>Work_Order_Service_Send_Chatter_notification-9</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
@@ -2460,6 +2492,7 @@
         <members>Work_Order_Service_Is_Dispatched</members>
         <members>Work_Order_Service_Is_changed_Technician_s_ETA</members>
         <members>Work_Order_Service_Populate_Service_Territory</members>
+        <members>Work_Order_Service_Reparenting_WO_Services</members>
         <members>Work_Order_Service_Send_Chatter_notification</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>

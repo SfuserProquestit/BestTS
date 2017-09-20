@@ -1,5 +1,9 @@
 trigger UsageFSLTrigger on Usage_FSL__c (before insert, after insert, before update, after update, before delete, after undelete) {
 
+    if(CustomMetadataTypeDAO.getTriggerSettingForFSLMigration() == false){
+        return;
+    }
+
     if(Trigger.isBefore){
         if(Trigger.isInsert){
             UsageFSLHandler.setParentWorkOrder(Trigger.new);

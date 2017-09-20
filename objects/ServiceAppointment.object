@@ -211,7 +211,8 @@
     <validationRules>
         <fullName>Invoice_is_created_on_master_Work_order</fullName>
         <active>true</active>
-        <errorConditionFormula>Invoice_Created__c = true
+        <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
+Invoice_Created__c = true
 &amp;&amp; NOT((PRIORVALUE( Invoice_Created__c ))=false)</errorConditionFormula>
         <errorMessage>The Service Appointment cannot be updated as the Invoice has been created for the Master Work order</errorMessage>
     </validationRules>

@@ -168,7 +168,8 @@ Units__c *  Revenue_per_Unit__c )</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>Contract_Pricing__r.RecordType.Name = &quot;Margin Based&quot; &amp;&amp; NOT(ISBLANK( Units__c ))</formula>
+        <formula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp; 
+Contract_Pricing__r.RecordType.Name = &quot;Margin Based&quot; &amp;&amp; NOT(ISBLANK( Units__c ))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -190,7 +191,8 @@ Units__c *  Revenue_per_Unit__c )</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>Contract_Pricing__r.RecordType.Name = &quot;Markup Based&quot; &amp;&amp; NOT(ISBLANK( Units__c ))</formula>
+        <formula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp; 
+Contract_Pricing__r.RecordType.Name = &quot;Markup Based&quot; &amp;&amp; NOT(ISBLANK( Units__c ))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -204,11 +206,8 @@ Units__c *  Revenue_per_Unit__c )</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Usage_FSL__c.Use_Standard_Price__c</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </criteriaItems>
+        <formula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp; 
+Use_Standard_Price__c  = true</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>

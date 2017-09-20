@@ -748,14 +748,16 @@
         <fullName>Invoice_Created_Usage</fullName>
         <active>true</active>
         <description>Unable to update usage if Invoice has been created on Work Order</description>
-        <errorConditionFormula>Invoiced__c  = true
+        <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
+Invoiced__c  = true
 &amp;&amp;NOT((PRIORVALUE( Invoiced__c))=false)</errorConditionFormula>
         <errorMessage>Unable to update usage as Work Order has been invoiced</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Tech_cant_reassign_Usage_to_Service</fullName>
         <active>true</active>
-        <errorConditionFormula>ISCHANGED( Service__c ) &amp;&amp; $User.ProfileId =&quot;00eN0000000I5Bu&quot;</errorConditionFormula>
+        <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
+ISCHANGED( Service__c ) &amp;&amp; $User.ProfileId =&quot;00eN0000000I5Bu&quot;</errorConditionFormula>
         <errorDisplayField>Service__c</errorDisplayField>
         <errorMessage>Cannot reassign a Usage record to a different Service</errorMessage>
     </validationRules>

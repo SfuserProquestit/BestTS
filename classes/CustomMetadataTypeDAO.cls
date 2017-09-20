@@ -20,5 +20,17 @@ public with sharing class CustomMetadataTypeDAO {
         return [SELECT From_Status__c, From_Status_API_Name__c, To_Status__c, To_Status_API_Name__c
                 FROM Technician_Status_Transition__mdt 
                 WHERE From_Status_API_Name__c IN :fromStatus];
-    }   
+    }
+    
+    
+    public static boolean getTriggerSettingForFSLMigration(){
+       
+       ActivateTriggers__c trigSetting = ActivateTriggers__c.getOrgDefaults();
+       boolean enabled = true;
+       
+       if(trigSetting!=null  && trigSetting.Enabled__c == false) {
+           enabled = false;
+       }
+       return enabled;        
+   }
 }

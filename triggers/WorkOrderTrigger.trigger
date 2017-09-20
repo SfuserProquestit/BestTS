@@ -1,5 +1,9 @@
 trigger WorkOrderTrigger on WorkOrder (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
     
+    if(CustomMetadataTypeDAO.getTriggerSettingForFSLMigration() == false){
+        return;
+    }
+
     if(Trigger.isBefore){
         if(Trigger.isUpdate){
             WorkOrderTriggerHandler.deleteWorkOrderSharing(Trigger.new, Trigger.oldMap);
