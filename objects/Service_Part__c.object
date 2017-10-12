@@ -119,7 +119,7 @@
         <relationshipLabel>Service_Parts (Work Order Service)</relationshipLabel>
         <relationshipName>Service_Parts1</relationshipName>
         <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>

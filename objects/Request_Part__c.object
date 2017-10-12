@@ -194,7 +194,7 @@
         <relationshipLabel>Request Parts (Work Order Service)</relationshipLabel>
         <relationshipName>Request_Parts1</relationshipName>
         <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>

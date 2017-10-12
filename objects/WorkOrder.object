@@ -2058,6 +2058,7 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
     <recordTypes>
         <fullName>Read_Only_Tech</fullName>
         <active>true</active>
+        <compactLayoutAssignment>Technician_WO_Layout</compactLayoutAssignment>
         <label>Read Only Tech</label>
         <picklistValues>
             <picklist>CHGC__c</picklist>
@@ -2170,6 +2171,10 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
                 <default>false</default>
             </values>
             <values>
+                <fullName>Travel End</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Travel Start</fullName>
                 <default>false</default>
             </values>
@@ -2178,6 +2183,7 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
     <recordTypes>
         <fullName>Service_Edit</fullName>
         <active>true</active>
+        <compactLayoutAssignment>Technician_WO_Layout</compactLayoutAssignment>
         <label>Service Edit</label>
         <picklistValues>
             <picklist>CHGC__c</picklist>
@@ -2302,6 +2308,7 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
     <recordTypes>
         <fullName>Service_Edit_Call</fullName>
         <active>true</active>
+        <compactLayoutAssignment>Technician_WO_Layout</compactLayoutAssignment>
         <label>Service Edit Call</label>
         <picklistValues>
             <picklist>CHGC__c</picklist>
@@ -2426,6 +2433,7 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
     <recordTypes>
         <fullName>Standard_Service</fullName>
         <active>true</active>
+        <compactLayoutAssignment>Technician_WO_Layout</compactLayoutAssignment>
         <label>Standard Service</label>
         <picklistValues>
             <picklist>CHGC__c</picklist>
