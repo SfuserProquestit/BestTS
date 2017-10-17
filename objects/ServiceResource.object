@@ -240,11 +240,27 @@
     </fields>
     <fields>
         <fullName>Sole_Trader__c</fullName>
-        <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Sole Trader?</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
-        <type>Checkbox</type>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>State__c</fullName>

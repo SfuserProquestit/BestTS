@@ -2446,6 +2446,7 @@
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <members>Work_Order_Service_Update_Record_Type-3</members>
         <members>Work_Order_Service_Update_Standard_Instructions_from_Master_Work_order-1</members>
+        <members>Work_order_Service_Indentify_Sole_Trader_on_Usage-1</members>
         <name>Flow</name>
     </types>
     <types>
@@ -2496,6 +2497,7 @@
         <members>Work_Order_Service_Send_Chatter_notification</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>
+        <members>Work_order_Service_Indentify_Sole_Trader_on_Usage</members>
         <name>FlowDefinition</name>
     </types>
     <types>
