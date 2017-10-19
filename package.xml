@@ -2309,6 +2309,7 @@
     <types>
         <members>FSL</members>
         <members>FSL/Log_Error</members>
+        <members>FSL/OLD_REQUEST_PART_Received_Order_Email</members>
         <members>OPPORTUNITY_Templates</members>
         <members>OPPORTUNITY_Templates/OPPORTUNITY_Notify_Closed_Won_Ops_with_Engagement_Type</members>
         <members>OPPORTUNITY_Templates/Request_for_availability</members>
