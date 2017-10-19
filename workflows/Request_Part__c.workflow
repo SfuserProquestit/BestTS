@@ -13,7 +13,7 @@
         </recipients>
         <senderAddress>ncrservice@best-ts.com.au</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>CKSW_BASE__Field_Service_Lightning_Templates/OLD_REQUEST_PART_New_Order_Email</template>
+        <template>FSL/OLD_REQUEST_PART_New_Order_Email</template>
     </alerts>
     <alerts>
         <fullName>OLD_REQUEST_PART_Receive_Order_Notification</fullName>
@@ -28,7 +28,7 @@
         </recipients>
         <senderAddress>ncrservice@best-ts.com.au</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>CKSW_BASE__Field_Service_Lightning_Templates/OLD_REQUEST_PART_Received_Order_Email</template>
+        <template>FSL/OLD_REQUEST_PART_Received_Order_Email</template>
     </alerts>
     <alerts>
         <fullName>REQUEST_PART_New_Order_Request_Notification</fullName>
@@ -39,7 +39,7 @@
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>CKSW_BASE__Field_Service_Lightning_Templates/OLD_REQUEST_PART_New_Order_Email</template>
+        <template>FSL/OLD_REQUEST_PART_New_Order_Email</template>
     </alerts>
     <alerts>
         <fullName>REQUEST_PART_Receive_Order_Notification</fullName>
@@ -50,6 +50,6 @@
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>CKSW_BASE__Field_Service_Lightning_Templates/OLD_REQUEST_PART_Received_Order_Email</template>
+        <template>FSL/OLD_REQUEST_PART_Received_Order_Email</template>
     </alerts>
 </Workflow>

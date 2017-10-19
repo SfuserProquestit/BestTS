@@ -6,7 +6,7 @@
         <description>Allow Auto. Status Notification</description>
         <protected>false</protected>
         <senderType>CurrentUser</senderType>
-        <template>CKSW_BASE__Field_Service_Lightning_Templates/NCR_Field_Service_Closure</template>
+        <template>FSL/NCR_Field_Service_Closure</template>
     </alerts>
     <alerts>
         <fullName>NCR_Field_Work_Order_Service_ACCEPTED_Notification_Email</fullName>
@@ -14,7 +14,7 @@
         <description>NCR Field Work Order Service ACCEPTED Notification Email</description>
         <protected>false</protected>
         <senderType>CurrentUser</senderType>
-        <template>CKSW_BASE__Field_Service_Lightning_Templates/NCR_Field_Service_Accepted</template>
+        <template>FSL/NCR_Field_Service_Accepted</template>
     </alerts>
     <alerts>
         <fullName>NCR_email_alert_2h_before_expiry</fullName>

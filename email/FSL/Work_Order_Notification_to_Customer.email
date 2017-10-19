@@ -1,0 +1,57 @@
+<messaging:emailTemplate subject="Work Order is dispatched" recipientType="Contact" relatedToType="WorkOrder">
+   <messaging:htmlEmailBody >
+      <html>
+         <body>
+            <STYLE type="text/css">
+            
+               table{font-size: 12px; text-align: left; padding-right: 30px; font-face: Calibiri}
+               td{font-size: 12px; text-align: left; padding-right: 30px; font-face: Calibiri}
+               .tdFont{ padding-right:30px; font-family:Calibiri; }
+
+          
+            </STYLE>
+            <font face="Calibiri" size="2">
+               <p>Dear {!relatedTo.Site_Contact__c}, </p>
+             
+               <p>
+                  Best Technology Services has organised for our engineers to attend to the following activity. Our team will keep you updated as to the progress of this work. <br/>
+                  <br/>
+               <p><b>Best WO Number:</b>&emsp;&emsp; {!relatedTo.WorkOrderNumber}</p>
+               <p><b>Customers Reference:</b> &nbsp;&nbsp; {!relatedTo.Customer_s_Reference__c}  </p>
+               <!--<p>Scheduled Date:&emsp;&emsp;&emsp;
+                    <apex:outputText value="{0, date, dd-MM-yyyy}">
+                        <apex:Param value="{!relatedTo.Schedule_Date__c}" />
+                    </apex:OutputText> 
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;   Scheduled Time: 
+                    <apex:outputText value="{0,date,HH:mm }">
+                         <apex:param value="{!relatedTo.Schedule_Start_Time__c}" /> 
+                    </apex:outputText>
+                    </p>-->
+               <p><b>Scheduled Date/Time : </b> &nbsp; <b><apex:outputField value="{!relatedTo.Schedule_Start_Time__c}" /></b> </p>
+               <p><b>Site Name: </b> &nbsp;&emsp; {!relatedTo.Site_Name__c}</p>
+               <p><b>Site Address: </b> &nbsp;&nbsp; <apex:outputField value="{!relatedTo.Site_Address__c}"/> </p>
+               <p><b>Engineers: </b> </p>
+               <apex:variable var="count" value="{!1}"/>
+               <table border="0">
+                  <apex:repeat var="woService" value="{!relatedTo.ChildWorkOrders}">
+                     <tr>
+                        <td style="padding-right:30px; font-family:Calibiri;">{!count}</td>
+                        <td style="padding-right:30px; font-family:Calibiri;">{!woService.WorkOrderNumber}</td>
+                        <td style="padding-right:30px; font-family:Calibiri;">{!woService.Service_Resource__r.Phone__c}</td>
+                     </tr>
+                     <apex:variable var="count" value="{!count + 1}"/>
+                  </apex:repeat>
+               </table>
+               <br/>
+               <br/>
+               <b>Work to be completed: </b> <br/>
+              <apex:outputField value="{!relatedTo.Request_Description__c}"/><br/><br/><br/>
+               If you require an amendment to the above details, please do not hesitate to contact us on 1300 896 608 or email {service@best-ts.com.au}.<br/><br/>
+               Many thanks<br/><br/>
+               <b>The Team at Best Technology Services</b><br/>
+               </p>
+            </font>
+         </body>
+      </html>
+   </messaging:htmlEmailBody>
+</messaging:emailTemplate>

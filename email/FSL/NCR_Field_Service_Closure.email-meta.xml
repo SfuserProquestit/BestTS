@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Best_Technology</letterhead>
+    <name>NCR Field Service CLOSURE Notification</name>
+    <style>freeForm</style>
+    <subject>{!WorkOrder.ServiceContract} - Best Notification - {!WorkOrder.Customer_s_Reference__c}</subject>
+    <textOnly>Hi,
+
+The following call has been updated by Best Technology Services.
+
+Service Call Details
+----------------------------------------------------------------------------------
+Service Request: 
+{!WorkOrder.Customer_s_Reference__c}
+Site Name: {!WorkOrder.WOService_Site_Name__c}
+CE Number: {!WorkOrder.CE_Code__c}
+
+Status: {!WorkOrder.Status}
+Serial Number: {!WorkOrder.WOService_Serial_Number__c}
+Operational Arrival: {!WorkOrder.Operational_Arrival__c}
+Operational Completion:{!WorkOrder.Operational_Completion__c}
+Travel Start: {!WorkOrder.Travel_Start_Date_Time__c}
+Travel End: {!WorkOrder.Travel_End_Date_Time__c}
+Onsite Time:{!WorkOrder.Start_Onsite_Date_Time__c}
+Completed Time: {!WorkOrder.Stop_Onsite_Date_Time__c}
+Parts Used: {!WorkOrder.Parts_Used__c}
+
+CHGC: {!WorkOrder.CHGC__c}
+CHGC Reason: {!WorkOrder.CHGC_Reason__c}
+Work Performed Notes: 
+{!WorkOrder.Service_Work_performed__c}
+----------------------------------------------------------------------------------
+
+Regards,
+
+The Best Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Best_Technology</letterhead>
+    <name>NCR Field Service Suspension Notification</name>
+    <style>freeForm</style>
+    <subject>{!CKSW_BASE__Service__c.Service_Contract__c} - Best Notification - {!CKSW_BASE__Service__c.Customer_s_Reference__c}</subject>
+    <textOnly>Hi,
+
+The following call has been suspended by Best Technology Services.
+
+Service Call Details
+----------------------------------------------------------------------------------
+Service Request: {!CKSW_BASE__Service__c.Customer_s_Reference__c}
+Site Name: {!CKSW_BASE__Service__c.Site_Name__c}
+CE Number: {!CKSW_BASE__Service__c.CE_Code__c}
+ETA: {!CKSW_BASE__Service__c.Scheduled_Date_Time__c}
+
+Status: {!CKSW_BASE__Service__c.CKSW_BASE__Status__c}
+Operational Arrival: {!CKSW_BASE__Service__c.Operational_Arrival__c}
+Operational Completion: {!CKSW_BASE__Service__c.Operational_Completion__c}
+Onsite Time: {!CKSW_BASE__Service__c.Onsite_Date_Time__c}
+Completed Time: {!CKSW_BASE__Service__c.Complete_Date_Time__c}
+Parts Used: 
+{!CKSW_BASE__Service__c.Parts_Used__c}
+
+CHGC: {!CKSW_BASE__Service__c.CHGC__c}
+CHGC Reason: {!CKSW_BASE__Service__c.CHGC_Reason__c}
+
+Work Performed Notes: 
+{!CKSW_BASE__Service__c.Service_Work_Performed__c}
+----------------------------------------------------------------------------------
+
+Regards,
+
+The Best Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

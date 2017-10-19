@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Best_Technology</letterhead>
+    <name>OLD-NCR Field Service ACCEPTED Notification</name>
+    <style>freeForm</style>
+    <subject>{!CKSW_BASE__Service__c.Service_Contract__c} - Best ACCEPTED notification - {!CKSW_BASE__Service__c.Customer_s_Reference__c}</subject>
+    <textOnly>Hi,
+
+The following call has been accepted by Best Technology Services.
+
+
+
+Service Call Details
+
+----------------------------------------------------------------------------------
+
+Site Name: {!CKSW_BASE__Service__c.Site_Name__c}
+
+CE Code: {!CKSW_BASE__Service__c.CE_Code__c}
+
+ETA: {!CKSW_BASE__Service__c.CKSW_BASE__Start__c}
+
+SLA: {!CKSW_BASE__Service__c.SLA_Completion_Due__c}
+
+----------------------------------------------------------------------------------
+
+
+
+Regards,
+
+The Best Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

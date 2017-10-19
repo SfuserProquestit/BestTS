@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Best_Technology</letterhead>
+    <name>New Service Appointment Notification</name>
+    <style>freeForm</style>
+    <subject>BEST has a new job for you</subject>
+    <textOnly>Hi,
+
+Great News - Best has allocated a job to you. Please click the link below to access and review all the job details.
+
+ACCEPT the job if you can complete it at the allocated date and time.
+
+Or
+
+REJECT the job. Once rejected you are required to select either:
+      Reject - Not interested in job (we will reallocate to another tech)
+      Reject - Not available date/time (we will contact you to reschedule) 
+
+{!WorkOrder.Link}
+
+The Best Team
+
+Did you know?
+
+All the details on how to use our system and heaps of other information, can be found on Yammer. If you don’t have an account please contact us at service@best-ts.com.au or call us on 1300 896 608.</textOnly>
+    <type>html</type>
+</EmailTemplate>

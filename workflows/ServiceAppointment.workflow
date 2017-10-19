@@ -10,6 +10,6 @@
         </recipients>
         <senderAddress>service@best-ts.com.au</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>CKSW_BASE__Field_Service_Lightning_Templates/New_Service_Appointment_Notification</template>
+        <template>FSL/New_Service_Appointment_Notification</template>
     </alerts>
 </Workflow>

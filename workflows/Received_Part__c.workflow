@@ -13,6 +13,6 @@
         </recipients>
         <senderAddress>ncrservice@best-ts.com.au</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>CKSW_BASE__Field_Service_Lightning_Templates/REQUEST_PART_Partial_Received</template>
+        <template>FSL/OLD_REQUEST_PART_Partial_Received</template>
     </alerts>
 </Workflow>

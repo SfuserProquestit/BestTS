@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to Net Promotor Score recipients</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Best_Technology</letterhead>
+    <name>Net Promoter Score</name>
+    <style>freeForm</style>
+    <subject>Customer Feedback for Best Technology Services</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+We really appreciate your support of Best Technology Services.
+
+We are passionate about delivering the Best service and would love it if you could tell us how we are doing, by completing this very short survey (less than 60 seconds).
+
+https://www.getfeedback.com/r/a5A1hOjT?ContactID={!Contact.Id}
+
+Thanks in advance for taking the time to give us your feedback.
+
+Dean Yates
+Chief Customer Officer</textOnly>
+    <type>html</type>
+</EmailTemplate>

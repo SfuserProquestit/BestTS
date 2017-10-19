@@ -1,0 +1,10 @@
+This is an Email to NCR advising that a new part has been requested for Service {!Request_Part__c.Work_Order_Service__c} with the following details:
+
+Customer Ref: {!Request_Part__c.Customer_Ref__c}
+Part Requested: {!Request_Part__c.Product_Name__c} 
+Product Code: {!Request_Part__c.Product_Code__c}
+Qty: {!Request_Part__c.Quantity__c}
+
+Status: {!Request_Part__c.Status__c}
+Request by: {!ServiceResource.CE_Code__c}
+Request Date: {!Request_Part__c.CreatedDate}

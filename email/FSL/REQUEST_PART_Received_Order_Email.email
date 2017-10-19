@@ -1,0 +1,10 @@
+The Service {!Request_Part__c.Work_Order_Service__c} has items that have been collected and receipted in system:
+
+Customer Ref: {!Request_Part__c.Customer_Ref__c}
+Part Requested: {!Request_Part__c.Product_Name__c}
+Product Code: {!Request_Part__c.Product_Code__c}
+Qty: {!Request_Part__c.Quantity__c}
+
+Status: {!Request_Part__c.Status__c}
+Received by: {!ServiceResource.CE_Code__c}
+Date Receipted: {!Request_Part__c.LastModifiedDate}

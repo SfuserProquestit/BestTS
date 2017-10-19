@@ -2309,7 +2309,25 @@
     <types>
         <members>FSL</members>
         <members>FSL/Log_Error</members>
+        <members>FSL/NCR_Field_Service_Accepted</members>
+        <members>FSL/NCR_Field_Service_Closure</members>
+        <members>FSL/NCR_Field_Service_Closure_Notification2</members>
+        <members>FSL/NCR_Field_Service_Rejected</members>
+        <members>FSL/NCR_Field_Service_Suspension_Notification</members>
+        <members>FSL/NCR_Field_Service_Update</members>
+        <members>FSL/NCR_SLA_ALERT</members>
+        <members>FSL/Net_Promoter_Score</members>
+        <members>FSL/New_Service_Appointment_Notification</members>
+        <members>FSL/New_Service_Notification</members>
+        <members>FSL/OLDNCR_Field_Service_Accepted</members>
+        <members>FSL/OLD_NCR_Field_Service_Closure</members>
+        <members>FSL/OLD_REQUEST_PART_New_Order_Email</members>
+        <members>FSL/OLD_REQUEST_PART_Partial_Received</members>
         <members>FSL/OLD_REQUEST_PART_Received_Order_Email</members>
+        <members>FSL/REQUEST_PART_New_Order_Email</members>
+        <members>FSL/REQUEST_PART_Partial_Received</members>
+        <members>FSL/REQUEST_PART_Received_Order_Email</members>
+        <members>FSL/Work_Order_Notification_to_Customer</members>
         <members>OPPORTUNITY_Templates</members>
         <members>OPPORTUNITY_Templates/OPPORTUNITY_Notify_Closed_Won_Ops_with_Engagement_Type</members>
         <members>OPPORTUNITY_Templates/Request_for_availability</members>
@@ -3945,6 +3963,12 @@
         <name>WebLink</name>
     </types>
     <types>
+        <members>CKSW_BASE__Service__c.Dispatched_Service_Email</members>
+        <members>CKSW_BASE__Service__c.NCR_Field_Service_ACCEPTED_Notification_email</members>
+        <members>CKSW_BASE__Service__c.NCR_Field_Service_Accepted_Notification</members>
+        <members>CKSW_BASE__Service__c.NCR_Field_Service_Closure_Notification2</members>
+        <members>CKSW_BASE__Service__c.NCR_Field_Service_Suspension_Notification</members>
+        <members>CKSW_BASE__Service__c.OLD_Allow_Auto_Status_Notification</members>
         <members>Email_Log__c.Email_alert_when_a_new_email_log_error_is_created</members>
         <members>Event.EVENT_Send_notification_email_for_WO_Event_change</members>
         <members>Opportunity.OPPORTUNITY_Notify_Closed_Won_for_Engagement_Type_Projects</members>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Partially received orders notificaitonsent to internal and exterl</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>REQUEST PART: Partial Received</name>
+    <style>none</style>
+    <subject>Partially Received Order Notification - {!Request_Part__c.Customer_Ref__c}</subject>
+    <type>text</type>
+</EmailTemplate>
