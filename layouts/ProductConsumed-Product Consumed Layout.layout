@@ -12,7 +12,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Consumed_by_Service__c</field>
+                <field>Consumed_by_Service_Work_Order__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

@@ -394,7 +394,7 @@
         <fullName>Service_Work_Order__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Work Order Service</label>
+        <label>Service Work Order</label>
         <referenceTo>WorkOrder</referenceTo>
         <relationshipLabel>Usages (Service Work Order)</relationshipLabel>
         <relationshipName>Usages_Service</relationshipName>

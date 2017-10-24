@@ -16,13 +16,13 @@ Service Call Details
 
 ----------------------------------------------------------------------------------
 
-Site Name: {!CKSW_BASE__Service__c.Site_Name__c}
+Site Name: {!WorkOrder.WOService_Site_Name__c}
 
-CE Code: {!CKSW_BASE__Service__c.CE_Code__c}
+CE Code: {!WorkOrder.CE_Code__c}
 
-ETA: {!CKSW_BASE__Service__c.CKSW_BASE__Start__c}
+ETA: {!WorkOrder.Scheduled_Start_Time__c}
 
-SLA: {!CKSW_BASE__Service__c.SLA_Completion_Due__c}
+SLA: {!WorkOrder.WOService_SLA_Completion_Due__c}
 
 ----------------------------------------------------------------------------------
 

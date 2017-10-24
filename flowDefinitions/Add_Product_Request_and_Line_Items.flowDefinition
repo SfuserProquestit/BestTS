@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionNumber>1</activeVersionNumber>
+    <activeVersionNumber>4</activeVersionNumber>
+    <description>Triggered by Process Builder Flow &quot;Auto Create Part Request on WO&quot; and adds stock to van</description>
+    <masterLabel>New Product Request on Service Work Order</masterLabel>
 </FlowDefinition>

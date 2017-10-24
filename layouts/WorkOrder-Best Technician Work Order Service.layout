@@ -310,6 +310,11 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>Product_Item__c</fields>
+        <fields>Product_Name__c</fields>
+        <fields>Quantity_Consumed__c</fields>
+        <fields>Auto_Request_Part__c</fields>
+        <fields>Work_Order__c</fields>
         <relatedList>Service_Part__c.Work_Order_Service__c</relatedList>
     </relatedLists>
     <relatedLists>

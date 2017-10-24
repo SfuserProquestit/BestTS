@@ -114,9 +114,9 @@
     <fields>
         <fullName>Work_Order_Service__c</fullName>
         <externalId>false</externalId>
-        <label>Work Order Service</label>
+        <label>Service Work Order</label>
         <referenceTo>WorkOrder</referenceTo>
-        <relationshipLabel>Service_Parts (Work Order Service)</relationshipLabel>
+        <relationshipLabel>Service Parts (Service Work Order)</relationshipLabel>
         <relationshipName>Service_Parts1</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>true</reparentableMasterDetail>

@@ -27,6 +27,21 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ProductConsumed.Consumed_by_Service__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Request_Part__c.CE_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Request_Part__c.Customer_Ref__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Request_Part__c.Service__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -144,6 +159,11 @@
         <editable>false</editable>
         <field>Technician_Status_Transition__mdt.To_Status__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Usage_FSL__c.Service_Work_Order__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -460,6 +480,9 @@
         <field>WorkType.Search_Text__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <layoutAssignments>
+        <layout>ProductConsumed-Product Consumed Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>Request_Part__c-Request Part Layout</layout>
     </layoutAssignments>

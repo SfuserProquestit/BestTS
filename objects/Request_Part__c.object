@@ -57,9 +57,20 @@
     <enableSharing>false</enableSharing>
     <enableStreamingApi>false</enableStreamingApi>
     <fields>
+        <fullName>CE_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Work_Order_Service__r.Service_Resource__r.CE_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CE Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Customer_Ref__c</fullName>
         <externalId>false</externalId>
-        <formula>Service__r.Customer_s_Reference__c</formula>
+        <formula>Work_Order_Service__r.Customer_s_Reference__c</formula>
         <label>Customer Ref</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -189,9 +200,9 @@
     <fields>
         <fullName>Work_Order_Service__c</fullName>
         <externalId>false</externalId>
-        <label>Work Order Service</label>
+        <label>Service Work Order</label>
         <referenceTo>WorkOrder</referenceTo>
-        <relationshipLabel>Request Parts (Work Order Service)</relationshipLabel>
+        <relationshipLabel>Request Parts (Service Work Order)</relationshipLabel>
         <relationshipName>Request_Parts1</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>true</reparentableMasterDetail>

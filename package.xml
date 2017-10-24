@@ -1108,6 +1108,7 @@
         <members>Product2.SVMXC__Stockable__c</members>
         <members>Product2.SVMXC__Tracking__c</members>
         <members>Product2.SVMXC__Unit_Of_Measure__c</members>
+        <members>ProductConsumed.Consumed_by_Service_Work_Order__c</members>
         <members>ProductConsumed.Consumed_by_Service__c</members>
         <members>ProductConsumed.Description</members>
         <members>ProductConsumed.Matching_Service_Part__c</members>
@@ -1209,6 +1210,7 @@
         <members>Received_Part__c.Related_Service__c</members>
         <members>Received_Part__c.Request_Part__c</members>
         <members>Received_Part__c.Requested_Part__c</members>
+        <members>Request_Part__c.CE_Code__c</members>
         <members>Request_Part__c.Customer_Ref__c</members>
         <members>Request_Part__c.Product_Code__c</members>
         <members>Request_Part__c.Product_Name__c</members>
@@ -2382,6 +2384,7 @@
         <members>Add_Closed_DateTime_on_WO-1</members>
         <members>Add_Closed_DateTime_on_WO-2</members>
         <members>Add_Product_Request_and_Line_Items-1</members>
+        <members>Add_Product_Request_and_Line_Items-4</members>
         <members>Australia_Location-1</members>
         <members>Australia_Location-2</members>
         <members>Australia_Location-3</members>
@@ -2392,10 +2395,13 @@
         <members>Auto_Receive_Part_Process-1</members>
         <members>Auto_Receive_Part_Process-2</members>
         <members>Auto_Receive_Part_Process-3</members>
+        <members>Auto_Receive_Part_Process-5</members>
         <members>Auto_Reorder_of_Product_Item_Check-1</members>
         <members>Auto_Reorder_of_Product_Item_Check-2</members>
+        <members>Auto_Reorder_of_Product_Item_Check-5</members>
         <members>Completed_Services_Completed_On_Date_Copy_to_WO-1</members>
         <members>Create_New_Product_Transfer-1</members>
+        <members>Create_New_Product_Transfer-3</members>
         <members>Dispatched_Service_Chatter_Feed-1</members>
         <members>Dispatched_Service_Chatter_Feed-2</members>
         <members>Dispatched_Work_Order_Status-1</members>
@@ -2438,6 +2444,7 @@
         <members>Update_WO_Contact_Email-1</members>
         <members>Update_WO_Contact_Email_on_Service_Object-1</members>
         <members>Work_Order_Service_Allow_Auto_Notification-3</members>
+        <members>Work_Order_Service_Auto_Create_Part_request-1</members>
         <members>Work_Order_Service_Auto_Create_Part_request-3</members>
         <members>Work_Order_Service_Is_Dispatched-1</members>
         <members>Work_Order_Service_Is_changed_Technician_s_ETA-1</members>
@@ -2467,6 +2474,7 @@
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <members>Work_Order_Service_Update_Record_Type-3</members>
         <members>Work_Order_Service_Update_Standard_Instructions_from_Master_Work_order-1</members>
+        <members>Work_order_Service_Auto_create_Product_consumed_on_WO-1</members>
         <members>Work_order_Service_Indentify_Sole_Trader_on_Usage-1</members>
         <name>Flow</name>
     </types>
@@ -2518,6 +2526,7 @@
         <members>Work_Order_Service_Send_Chatter_notification</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>
+        <members>Work_order_Service_Auto_create_Product_consumed_on_WO</members>
         <members>Work_order_Service_Indentify_Sole_Trader_on_Usage</members>
         <name>FlowDefinition</name>
     </types>

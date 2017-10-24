@@ -1,9 +1,9 @@
-The Service {!Received_Part__c.Related_Service__c} has items that have been PARTIALLY collected and receipted in system:
+The Service Work Order {!Received_Part__c.Work_Order_Service__c} has items that have been PARTIALLY collected and receipted in system:
 
 Customer Ref: {!Received_Part__c.Requested_Part__c}
 Part Requested: {!Received_Part__c.Product_Name__c}
 Product Code: {!Received_Part__c.Product_Code__c}
 Part Qty Collected: {!Received_Part__c.Quantity_Received__c} out of {!Received_Part__c.Quantity_Ordered__c}
 
-Received by: {!CKSW_BASE__Resource__c.CE_Code__c}
+Received by: {!Request_Part__c.CE_Code__c}
 Date Receipted: {!Received_Part__c.Date_Received__c}

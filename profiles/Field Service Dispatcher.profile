@@ -3,6 +3,21 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ProductConsumed.Consumed_by_Service__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Request_Part__c.CE_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Request_Part__c.Customer_Ref__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Request_Part__c.Service__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -99,6 +114,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Service_Part__c.Work_Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Usage_FSL__c.Service_Work_Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -417,6 +437,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>ProductConsumed-Product Consumed Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Request_Part__c-Request Part Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -572,6 +595,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ExportReport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>FieldServiceAccess</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
