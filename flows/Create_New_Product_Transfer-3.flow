@@ -36,7 +36,7 @@
             <targetReference>Update_Product_Transfer_on_Received_Part</targetReference>
         </connector>
         <inputAssignments>
-            <field>DestinationLocationId__NotFound</field>
+            <field>DestinationLocationId</field>
             <value>
                 <elementReference>sObjVanLocation.Id</elementReference>
             </value>
@@ -48,13 +48,13 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Product2Id__NotFound</field>
+            <field>Product2Id</field>
             <value>
                 <elementReference>varProduct2Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>ProductRequestLineItemId__NotFound</field>
+            <field>ProductRequestLineItemId</field>
             <value>
                 <elementReference>sObjProductRequestLineItem.Id</elementReference>
             </value>
@@ -123,7 +123,7 @@
             <targetReference>Create_Product_Transfer</targetReference>
         </connector>
         <filters>
-            <field>ParentId__NotFound</field>
+            <field>ParentId</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varProductRequestId</elementReference>
