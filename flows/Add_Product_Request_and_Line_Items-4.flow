@@ -6,7 +6,7 @@
         <locationX>802</locationX>
         <locationY>802</locationY>
         <assignmentItems>
-            <assignToReference>sObjProductRequestLineItem.null</assignToReference>
+            <assignToReference>sObjProductRequestLineItem.Product2Id</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varRequestedProduct2Id</elementReference>
@@ -20,7 +20,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>sObjProductRequestLineItem.null</assignToReference>
+            <assignToReference>sObjProductRequestLineItem.Product2Id</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>sObjProduct2.Id</elementReference>
@@ -41,21 +41,21 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>sObjProductRequestLineItem.null</assignToReference>
+            <assignToReference>sObjProductRequestLineItem.DestinationLocationId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>sObjVanLocation.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>sObjProductRequestLineItem.null</assignToReference>
+            <assignToReference>sObjProductRequestLineItem.ParentId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>sObjProductRequest.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>sObjProductRequestLineItem.null</assignToReference>
+            <assignToReference>sObjProductRequestLineItem.WorkOrderId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varRequestingWO_Id</elementReference>
@@ -71,21 +71,21 @@
         <locationX>803</locationX>
         <locationY>682</locationY>
         <assignmentItems>
-            <assignToReference>sObjProductRequest.null</assignToReference>
+            <assignToReference>sObjProductRequest.DestinationLocationId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>sObjVanLocation.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>sObjProductRequest.null</assignToReference>
+            <assignToReference>sObjProductRequest.OwnerId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varRequestingOwnerId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>sObjProductRequest.null</assignToReference>
+            <assignToReference>sObjProductRequest.WorkOrderId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varRequestingWO_Id</elementReference>
