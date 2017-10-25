@@ -118,6 +118,16 @@
         <type>Hierarchy</type>
     </fields>
     <fields>
+        <fullName>New_Salesforce_User_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>New Salesforce User Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Notify_Closed_Won_Opportunities__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Closed Won Opportunities will be notified to this person if checked</description>
@@ -136,6 +146,16 @@
         <label>Notify Custom Apex Erros</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Old_Salesforce_User_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Old Salesforce User Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>SBQQ__DefaultProductLookupTab__c</fullName>

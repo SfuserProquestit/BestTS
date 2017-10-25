@@ -1689,6 +1689,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Old_Salesforce_User_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.OtherAddress</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5329,12 +5334,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>User.New_Salesforce_User_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>User.Notify_Closed_Won_Opportunities__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>User.Notify_Custom_Apex_Erros__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User.Old_Salesforce_User_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

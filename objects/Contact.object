@@ -256,6 +256,16 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Old_Salesforce_User_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Old Salesforce User Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>OtherAddress</fullName>
         <trackHistory>false</trackHistory>
     </fields>

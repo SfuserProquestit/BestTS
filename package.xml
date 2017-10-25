@@ -564,6 +564,7 @@
         <members>Contact.MailingAddress</members>
         <members>Contact.MobilePhone</members>
         <members>Contact.Name</members>
+        <members>Contact.Old_Salesforce_User_Id__c</members>
         <members>Contact.OtherAddress</members>
         <members>Contact.OtherPhone</members>
         <members>Contact.OwnerId</members>
@@ -1596,8 +1597,10 @@
         <members>User.Email_Weekly_Sales_Report__c</members>
         <members>User.Engagement_Type_Notifications__c</members>
         <members>User.ManagerId</members>
+        <members>User.New_Salesforce_User_Id__c</members>
         <members>User.Notify_Closed_Won_Opportunities__c</members>
         <members>User.Notify_Custom_Apex_Erros__c</members>
+        <members>User.Old_Salesforce_User_Id__c</members>
         <members>User.SBQQ__DefaultProductLookupTab__c</members>
         <members>User.SBQQ__OutputFormatChangeAllowed__c</members>
         <members>User.SBQQ__ProductSortPreference__c</members>
