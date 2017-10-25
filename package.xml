@@ -3373,6 +3373,7 @@
         <members>TimeSheet.My_TimeSheets</members>
         <members>User.ActiveUsers</members>
         <members>User.Active_Chatter_Users</members>
+        <members>User.Active_Community_Users</members>
         <members>User.Active_Field_Service_Technicians</members>
         <members>User.AdminUsers</members>
         <members>User.AllUsers</members>
