@@ -6335,7 +6335,24 @@
         <layout>WorkBadgeDefinition-Badge Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>WorkOrder-BEST TS Work Order</layout>
+        <layout>WorkOrder-Best Work Order Service</layout>
+        <recordType>WorkOrder.Service_Edit</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkOrder-Best Work Order Service</layout>
+        <recordType>WorkOrder.Read_Only_Tech</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkOrder-Best Work Order Service</layout>
+        <recordType>WorkOrder.Service_Edit_Call</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkOrder-Best Work Order Service</layout>
+        <recordType>WorkOrder.Standard_Service</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
+        <recordType>WorkOrder.Master_Work_Order</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
