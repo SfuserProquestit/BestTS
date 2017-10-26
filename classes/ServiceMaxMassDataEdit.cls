@@ -269,7 +269,8 @@ public with sharing class ServiceMaxMassDataEdit {
 		myPageCon1.getAccounts(); myPageCon1.getLocations(); myPageCon1.getTechs();
 		myPageCon1.getWorkOrders(); myPageCon1.getProducts(); myPageCon1.getInstalledProducts();
 		myPageCon1.getSortDirection(); myPageCon1.setSortDirection('ASC'); myPageCon1.QuickSave(); myPageCon1.Save();
-		myPageCon1.updateDateButton(); myPageCon1.AutoDateCorrect();
+		myPageCon1.updateDateButton(); 
+        //myPageCon1.AutoDateCorrect();
 		Test.stopTest();		
 	}
 }

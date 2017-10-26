@@ -4,7 +4,7 @@
 */
 @isTest
 public class TestDataFactory{
-
+/*
 	//Return list of ProductItems of a Van given length of number of products to create
 	public static list<ProductItem> createNewProductItems(integer len){
 		list<Product2> prodList = new list<Product2>();
@@ -119,4 +119,5 @@ public class TestDataFactory{
         service.CKSW_BASE__Service_Type__c = sType.Id;
         insert service;       
     }
+*/
 }

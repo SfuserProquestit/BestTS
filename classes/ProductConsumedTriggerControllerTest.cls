@@ -6,12 +6,29 @@
 public class ProductConsumedTriggerControllerTest {
  @testSetup
     private static void init(){
-        TestDataFactory.setData();
+
+        TestUtility.createActivateTriggerCS();
+        TestUtility.createLocationSettingsCS();
+
+        List<ProductItem> productItems = TestUtility.createNewProductItems(5);
+        insert productItems;
+
+        Account account = TestUtility.createAccounts(1)[0];
+        insert account;
+
+        ServiceContract sContract = TestUtility.createServiceContracts(account, 1)[0];
+        insert sContract;
+
+        List<WorkOrder> parentWorkOrders = TestUtility.createWorkOrders(account,Constants.RECORD_TYPE_MASTER_WORK_ORDER, 1);
+        insert parentWorkOrders;
+
+        List<WorkOrder> childWorkOrders = TestUtility.createChildWorkOrders(account, parentWorkOrders[0], Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER, 2);
+        insert childWorkOrders;
     }
     
     //Add and update new Service Part on Service 
     static testmethod void addNewServiceParts(){
-		CKSW_BASE__Service__c s = [SELECT id FROM CKSW_BASE__Service__c LIMIT 1];
+        WorkOrder woService = [SELECT id, ParentWorkOrderId FROM WorkOrder WHERE RecordType.Name=:Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER LIMIT 1];
         list<productItem> listPIs = [SELECT id,Product2Id,LocationId,QuantityUnitOfMeasure,QuantityOnHand FROM productItem];
         
         list<Service_Part__c> sparts = new list<Service_Part__c>();
@@ -19,8 +36,8 @@ public class ProductConsumedTriggerControllerTest {
         list<Service_Part__c> over_sparts = new list<Service_Part__c>();
 
         for(ProductItem pi:listPIs){
-            sparts.add(new Service_Part__c(Service__c=s.Id,Product_Item__c=pi.Id,Quantity_Consumed__c=pi.QuantityOnHand));
-            over_sparts.add(new Service_Part__c(Service__c=s.Id,Product_Item__c=pi.Id,Quantity_Consumed__c=pi.QuantityOnHand+10));
+            sparts.add(new Service_Part__c(Work_Order__c=woService.ParentWorkOrderId,Work_Order_Service__c=woService.Id,Product_Item__c=pi.Id,Quantity_Consumed__c=pi.QuantityOnHand));
+            over_sparts.add(new Service_Part__c(Work_Order__c=woService.ParentWorkOrderId,Work_Order_Service__c=woService.Id,Product_Item__c=pi.Id,Quantity_Consumed__c=pi.QuantityOnHand+10));
         }
         
         test.startTest();
@@ -34,7 +51,7 @@ public class ProductConsumedTriggerControllerTest {
         
         //Adding items not in stock
         for(ProductItem pi:listPIs){
-            add_sparts.add(new Service_Part__c(Service__c=s.Id,Product_Item__c=pi.Id,Quantity_Consumed__c=1));
+            add_sparts.add(new Service_Part__c(Work_Order__c=woService.ParentWorkOrderId, Work_Order_Service__c=woService.Id,Product_Item__c=pi.Id,Quantity_Consumed__c=1));
         }        
         try{
             insert add_sparts;
@@ -47,18 +64,18 @@ public class ProductConsumedTriggerControllerTest {
         try{
             insert spa;
         }Catch(Exception e){}
-	*/  
+    */  
         test.stopTest();
     }
     
     //Update Service Parts 
     static testmethod void updateServiceParts(){
-		CKSW_BASE__Service__c s = [SELECT id FROM CKSW_BASE__Service__c LIMIT 1];
+        WorkOrder woService = [SELECT id, ParentWorkOrderId FROM WorkOrder WHERE RecordType.Name=:Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER LIMIT 1];
         list<productItem> listPIs = [SELECT id,Product2Id,LocationId,QuantityUnitOfMeasure,QuantityOnHand FROM productItem];  
         list<Service_Part__c> sparts = new list<Service_Part__c>();
         
         for(ProductItem pi:listPIs){
-            sparts.add(new Service_Part__c(Service__c=s.Id,Product_Item__c=pi.Id,Quantity_Consumed__c=pi.QuantityOnHand-1));
+            sparts.add(new Service_Part__c(Work_Order__c=woService.ParentWorkOrderId,Work_Order_Service__c=woService.Id,Product_Item__c=pi.Id,Quantity_Consumed__c=pi.QuantityOnHand-1));
         }
         insert sparts;
         

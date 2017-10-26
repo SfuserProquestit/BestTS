@@ -7,44 +7,59 @@ public class ProductRequestLineItemTriggerTest {
     
     @testSetup
     private static void init(){
-        TestDataFactory.setData(); 
+        TestUtility.createActivateTriggerCS();
+        TestUtility.createLocationSettingsCS();
         
-        CKSW_BASE__Service__c sss = [SELECT id,CKSW_BASE__Duration__c FROM CKSW_BASE__Service__c Limit 1];
+        List<ProductItem> productItems = TestUtility.createNewProductItems(5);
+        insert productItems;
+
+        Account account = TestUtility.createAccounts(1)[0];
+        insert account;
+
+        ServiceContract sContract = TestUtility.createServiceContracts(account, 1)[0];
+        insert sContract;
+
+        List<WorkOrder> parentWorkOrders = TestUtility.createWorkOrders(account,Constants.RECORD_TYPE_MASTER_WORK_ORDER, 1);
+        insert parentWorkOrders;
+
+        List<WorkOrder> childWorkOrders = TestUtility.createChildWorkOrders(account, parentWorkOrders[0], Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER, 2);
+        insert childWorkOrders;
+        
+        WorkOrder woService = [SELECT id FROM WorkOrder WHERE RecordType.Name=:Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER LIMIT 1];
         list<productItem> listPIs = [SELECT id,Product2Id,LocationId,QuantityUnitOfMeasure,QuantityOnHand FROM productItem];
         
-        list<Request_Part__c> rplist = TestDataFactory.createNewPartRequest(sss,listPIs);
+        list<Request_Part__c> rplist = TestUtility.createNewPartRequest(woService,listPIs);
         insert rplist;
+
     }
     
-    //Add and update new Request Part on Service 
+    //Add and update new Request Part on Service Work Order
     static testmethod void addNewRequestLines(){
         
         //Check 5 units from Service Contract
-        CKSW_BASE__Service__c s = [SELECT id,Work_Order__c, (SELECT Id,Quantity__c FROM Requested_Parts__r) FROM CKSW_BASE__Service__c LIMIT 1];
-        //system.assertEquals(5,s.Requested_Parts__r.size());
-        
-        //Get the Product Line Item Request
-        list<ProductRequestLineItem> prli_list = [SELECT id, QuantityRequested FROM ProductRequestLineItem WHERE WorkOrderId=:s.Work_Order__c];
-        
+        WorkOrder woService = [SELECT id,ParentWorkOrderId, (SELECT Id,Quantity__c,Product_Name__c  FROM Request_Parts1__r) FROM WorkOrder WHERE RecordType.Name=:Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER LIMIT 1];
+
         Test.startTest();
-                
-        //system.assertEquals(5,prli_list.size());        
-		        
-        system.debug('---prli_list--- '+prli_list);
+     
+		ProductRequest pr = new ProductRequest(WorkOrderId=woService.ParentWorkOrderId);
+        insert pr;
+
+        list<Request_Part__c> rp1 = woService.Request_Parts1__r;
+        for(Request_Part__c rp:rp1){
+            rp.Product_Request__c = pr.Id;
+        }
+        update rp1;
+
         list<ProductRequestLineItem> rList = new list<ProductRequestLineItem>();
-        for(ProductRequestLineItem rp: prli_list){
-            ProductRequestLineItem p = new ProductRequestLineItem(Id=rp.id,QuantityRequested=rp.QuantityRequested+1);
-            //rp.QuantityRequested++;
+        for(Request_Part__c rp: woService.Request_Parts1__r){
+            ProductRequestLineItem p = new ProductRequestLineItem(Product2Id = rp.Product_Name__c, ParentId=pr.Id, QuantityRequested=rp.Quantity__c+1);
             rList.add(p);
         }
-        system.debug('---rList--- '+rList);
-        //Update from a Work Order - Product Request Line Item
-        ProductRequestLineItemTriggerController.flag_updateProductRequestLineItems = false;
-        update rList;
+        insert rList;
         
         //Update from Service Request Part records
         ProductRequestLineItemTriggerController.flag_updateProductRequestLineItems = false;
-        list<Request_Part__c> rr = s.Requested_Parts__r;
+        list<Request_Part__c> rr = woService.Request_Parts1__r;
         for(Request_Part__c rp:rr){
             rp.Quantity__c++;
         }
@@ -64,14 +79,14 @@ public class ProductRequestLineItemTriggerTest {
     
     //Deleting Require Part items
     static testmethod void deletingRequestParts(){        
-        CKSW_BASE__Service__c s = [SELECT id,Work_Order__c, (SELECT Id,Quantity__c FROM Requested_Parts__r) FROM CKSW_BASE__Service__c LIMIT 1];
-		delete s.Requested_Parts__r;
+        WorkOrder woService = [SELECT id,ParentWorkOrderId, (SELECT Id,Quantity__c FROM Request_Parts1__r) FROM WorkOrder WHERE RecordType.Name=:Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER LIMIT 1];
+		delete woService.Request_Parts1__r;
     }
     
     //Deleting Require Part items with error
     static testmethod void deletingRequestParts2(){        
-        CKSW_BASE__Service__c s = [SELECT id,Work_Order__c, (SELECT Id,Quantity__c FROM Requested_Parts__r) FROM CKSW_BASE__Service__c LIMIT 1];
-        list<Request_Part__c> rr = s.Requested_Parts__r;
+        WorkOrder woService = [SELECT id,ParentWorkOrderId, (SELECT Id,Quantity__c FROM Request_Parts1__r) FROM WorkOrder WHERE RecordType.Name=:Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER LIMIT 1];
+        list<Request_Part__c> rr = woService.Request_Parts1__r;
         for(Request_Part__c rp:rr){
             rp.Status__c = 'Received';
         }
@@ -83,9 +98,9 @@ public class ProductRequestLineItemTriggerTest {
     
     //Receive Part Trigger testing with error
     static testmethod void deletingReceivePartTriggerError(){        
-        CKSW_BASE__Service__c s = [SELECT id,Work_Order__c, (SELECT Id,Quantity__c FROM Requested_Parts__r) FROM CKSW_BASE__Service__c LIMIT 1];
+        WorkOrder woService = [SELECT id,ParentWorkOrderId, (SELECT Id,Quantity__c FROM Request_Parts1__r) FROM WorkOrder WHERE RecordType.Name=:Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER LIMIT 1];
         list<Received_Part__c> receives = new list<Received_Part__c>();
-        for(Request_Part__c rp : s.Requested_Parts__r){
+        for(Request_Part__c rp : woService.Request_Parts1__r){
             Received_Part__c part = new Received_Part__c(Quantity_Received__c=rp.Quantity__c,Date_Received__c=system.today(),Request_Part__c=rp.Id);
             receives.add(part);
             break;
@@ -98,9 +113,9 @@ public class ProductRequestLineItemTriggerTest {
     
     //Receive Part Trigger testing
     static testmethod void deletingReceivePartTrigger(){        
-        CKSW_BASE__Service__c s = [SELECT id,Work_Order__c, (SELECT Id,Quantity__c FROM Requested_Parts__r) FROM CKSW_BASE__Service__c LIMIT 1];
+        WorkOrder woService = [SELECT id,ParentWorkOrderId, (SELECT Id,Quantity__c FROM Request_Parts1__r) FROM WorkOrder WHERE RecordType.Name=:Constants.RECORD_TYPE_STANDARD_SERVICE_WORK_ORDER LIMIT 1];
         list<Received_Part__c> receives = new list<Received_Part__c>();
-        for(Request_Part__c rp : s.Requested_Parts__r){
+        for(Request_Part__c rp : woService.Request_Parts1__r){
             Received_Part__c part = new Received_Part__c(Quantity_Received__c=rp.Quantity__c-1,Date_Received__c=system.today(),Request_Part__c=rp.Id);
             receives.add(part);
             break;

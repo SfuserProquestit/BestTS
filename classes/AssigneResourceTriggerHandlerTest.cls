@@ -12,6 +12,13 @@ private class AssigneResourceTriggerHandlerTest {
             serviceResources=TestUtility.createServiceResources(techUsers, Constants.SERVICE_RESOURCE_RESOURCE_TYPE_TECH);
         }
 
+        Map<Id,ServiceResource> serviceResourcesById = new Map<Id,ServiceResource>(serviceResources);
+        List<ServiceTerritoryMember> stms = [SELECT Id,ServiceResourceId, ServiceTerritoryId, TerritoryType, EffectiveStartDate, EffectiveEndDate FROM ServiceTerritoryMember WHERE ServiceResourceId IN :serviceResourcesById.keySet() AND TerritoryType='P' AND EffectiveStartDate<=:DateTime.Now() AND EffectiveEndDate >=:DateTime.Now()];
+        System.debug('******stms ==> '+ stms);
+        if(stms.size()<nbTechnicians){
+            TestUtility.assignServiceResourcesToServiceTerritory(serviceResources,null);
+        }
+        
         Account account = TestUtility.createAccounts(1)[0];
         insert account;
 
@@ -49,11 +56,18 @@ private class AssigneResourceTriggerHandlerTest {
     static void testSetServiceResourceOnWorkOrderWhenDelete(){
 
         List<User> techUsers = new List<User>();
-        Integer nbTechnicians = 1;
+        Integer nbTechnicians = 2;
         List<ServiceResource> serviceResources = [SELECT Id FROM ServiceResource WHERE IsActive=true AND ResourceType = :Constants.SERVICE_RESOURCE_RESOURCE_TYPE_TECH];
         if(serviceResources.size()<nbTechnicians){
             techUsers = TestUtility.createCommunityUserTechnicians(nbTechnicians-serviceResources.size());
             serviceResources=TestUtility.createServiceResources(techUsers, Constants.SERVICE_RESOURCE_RESOURCE_TYPE_TECH);
+        }
+
+        Map<Id,ServiceResource> serviceResourcesById = new Map<Id,ServiceResource>(serviceResources);
+        List<ServiceTerritoryMember> stms = [SELECT Id,ServiceResourceId, ServiceTerritoryId, TerritoryType, EffectiveStartDate, EffectiveEndDate FROM ServiceTerritoryMember WHERE ServiceResourceId IN :serviceResourcesById.keySet() AND TerritoryType='P' AND EffectiveStartDate<=:DateTime.Now() AND EffectiveEndDate >=:DateTime.Now()];
+        System.debug('******stms ==> '+ stms);
+        if(stms.size()<nbTechnicians){
+            TestUtility.assignServiceResourcesToServiceTerritory(serviceResources,null);
         }
 
         Account account = TestUtility.createAccounts(1)[0];

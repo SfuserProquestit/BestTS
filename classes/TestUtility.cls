@@ -9,15 +9,6 @@ public class TestUtility {
         return accountList;
     }
 
-    //public static List<WorkOrder> createWorkOrders(Account account, Integer count) {
-        
-    //    List<WorkOrder> woList = new List<WorkOrder>();
-    //    for(Integer i=0; i<count; i++){
-    //        woList.add(new WorkOrder(AccountId = account.Id, Status = 'New', Invoice_Created__c = false));
-    //    }
-    //    return woList;
-    //}
-
     public static List<WorkOrder> createWorkOrders(Account account, String recordTypeName, Integer count) {
         Map<String,Schema.RecordTypeInfo> rtMap = RecordTypeDAO.getRecordTypes(Schema.SObjectType.WorkOrder);
         Id woRecordTypeId = rtMap.get(recordTypeName).getRecordTypeId();
@@ -143,6 +134,31 @@ public class TestUtility {
         return serviceResources;
     }
 
+    public static void assignServiceResourcesToServiceTerritory(List<ServiceResource> serviceResources, ServiceTerritory territory){
+        Map<Id,ServiceResource> serviceResourcesById = new Map<Id,ServiceResource>(serviceResources);
+        List<ServiceTerritoryMember> stms = [SELECT Id,ServiceResourceId, ServiceTerritoryId, TerritoryType, EffectiveStartDate, EffectiveEndDate FROM ServiceTerritoryMember WHERE ServiceResourceId IN :serviceResourcesById.keySet() AND TerritoryType='P' AND EffectiveStartDate<=:DateTime.Now() AND (EffectiveEndDate=null OR EffectiveEndDate >=:DateTime.Now())];
+        if(territory == null){
+            territory = createServiceTerritories(1)[0];
+        }
+
+        List<ServiceTerritoryMember> stmsToInsert = new List<ServiceTerritoryMember>();
+        for(ServiceResource sr : serviceResources){
+            Boolean hasPrimaryServiceTerritory = false;
+            for(ServiceTerritoryMember stm : stms){
+                if(sr.Id == stm.ServiceResourceId){
+                    hasPrimaryServiceTerritory=true;
+                    break;
+                }
+            }
+            if(!hasPrimaryServiceTerritory){
+                stmsToInsert.add(new ServiceTerritoryMember(ServiceResourceId=sr.Id, ServiceTerritoryId=territory.Id, TerritoryType='P',EffectiveStartDate=Date.Today().addDays(-1), EffectiveEndDate=Date.Today().addDays(1)));
+            }
+        }
+        if(stmsToInsert.size()>0){
+            insert stmsToInsert;
+        }
+    }
+
     public static List<ServiceContract> createServiceContracts(Account account, Integer count) {
 
         List<ServiceContract> contractsList = new List<ServiceContract>();
@@ -198,6 +214,27 @@ public class TestUtility {
         upsert locationSettingsCS;
     }
 
+    public static void createActivateTriggerCS(){
+        ActivateTriggers__c activateTriggerCS = ActivateTriggers__c.getOrgDefaults();
+        activateTriggerCS.Enabled__c = true;
+        upsert activateTriggerCS;       
+    }
+
+    public static List<ServiceTerritory> createServiceTerritories(Integer nbServiceTerritory){
+        OperatingHours opHours = new OperatingHours(Name='Operating Hours', TimeZone='Australia/Sydney');
+        insert opHours;
+
+        List<ServiceTerritory> territories = new List<ServiceTerritory>();
+        for(Integer i=0; i<nbServiceTerritory; i++){
+            ServiceTerritory territory = new ServiceTerritory(Name = 'Test Service Territory '+i, 
+                                                             OperatingHoursId = opHours.Id,
+                                                             IsActive=true);
+            territories.add(territory);
+        }
+        insert territories;
+        return territories;
+    }
+
     public static List<Usage_FSL__c> createUsages(Id recTypeId, WorkOrder parentWorkorder, ServiceContract serviceContract, Contract_Pricing__c contractPricing, WorkOrder childWorkOrder, Integer count) {
 
         List<Usage_FSL__c> usages = new List<Usage_FSL__c>();
@@ -220,52 +257,45 @@ public class TestUtility {
         }
         return workTypes;
     }
-//////////////
-    /*public static List<CKSW_BASE__Service_Type__c> createServiceTypes(Integer count) {
-        
-        List<CKSW_BASE__Service_Type__c> serviceTypeList = new List<CKSW_BASE__Service_Type__c>();
-        for(Integer i=0; i<count; i++){
-            serviceTypeList.add(new CKSW_BASE__Service_Type__c(
-                                                Name = 'Test Service Type', 
-                                                CKSW_BASE__Duration__c = 60.00, 
-                                                CKSW_BASE__Duration_Type__c='Minutes'));
+
+    //Return list of ProductItems of a Van given length of number of products to create
+    public static List<ProductItem> createNewProductItems(integer len){
+        List<Product2> prodList = new list<Product2>();
+        for(integer i=0;i<len;i++){
+            prodList.add(new Product2(Name='Product-'+i,ProductCode='Code-'+i,Description='Description-'+i,IsActive=true,QuantityUnitOfMeasure='Each'));
         }
-        return serviceTypeList;
+        insert prodList;
+
+        Schema.Location van = new Schema.Location(Name='Van', LocationType='Van',IsInventoryLocation=true,isMobile=true);
+        insert van;
+
+        List<ProductItem> items = new List<ProductItem>();
+        for(Product2 p : prodList){
+            ProductItem pi = new ProductItem(Product2Id=p.Id, LocationId=van.Id, QuantityUnitOfMeasure=p.QuantityUnitOfMeasure,QuantityOnHand=10);
+            items.add(pi);
+        }
+        return items;
     }
 
-    public static List<CKSW_BASE__Location__c> createLocations(Account account, Integer count) {
-        
-        List<CKSW_BASE__Location__c> locationsList = new List<CKSW_BASE__Location__c>();
-        for(Integer i=0; i<count; i++){
-            locationsList.add(new CKSW_BASE__Location__c(Name = 'Test Location', 
-                                                         CKSW_BASE__Start_of_Day__c = '00:00', 
-                                                         CKSW_BASE__Time_Zone__c = 'Australia/Sydney'));
+    //Return list of Service Parts for a Service Work Order
+    public static List<Service_Part__c> createNewServiceParts(WorkOrder woService, List<ProductItem> productList){
+        List<Service_Part__c> spList = new List<Service_Part__c>();
+        for(ProductItem pit:productList){
+            Service_Part__c sp = new Service_Part__c(Work_Order_Service__c=woService.Id,Product_Item__c=pit.Id,Quantity_Consumed__c=1);
+            spList.add(sp);
         }
-        return locationsList;
-    }
-    
-    public static List<CKSW_BASE__Service__c> createServices(WorkOrder workorder, CKSW_BASE__Service_Type__c serviceType, CKSW_BASE__Location__c location, String status, Integer count) {
-        
-        List<CKSW_BASE__Service__c> servicesList = new List<CKSW_BASE__Service__c>();
-        for(Integer i=0; i<count; i++){
-            servicesList.add(new CKSW_BASE__Service__c(Work_Order__c = workorder.Id, 
-                                                       CKSW_BASE__Status__c = status, 
-                                                       CKSW_BASE__Service_Type__c = serviceType.Id, 
-                                                       CKSW_BASE__Location__c = location.Id,
-                                                       Created_from_Test_Class__c = true));
-        }
-        return servicesList;
+
+        return spList;
     }
 
-    public static List<CKSW_BASE__Resource__c> createResource(List<User> users, CKSW_BASE__Location__c location){
-        List<CKSW_BASE__Resource__c> newResources = new List<CKSW_BASE__Resource__c>();
-        for(User user: users){
-            newResources.add(new CKSW_BASE__Resource__c(    CKSW_BASE__User__c = user.Id, 
-                                                            CKSW_BASE__Active__c = true,
-                                                            CKSW_BASE__Location__c = location.Id));
+    //public retunr list of Request_Part__c for a Service Work Order
+    public static List<Request_Part__c> createNewPartRequest(WorkOrder woService, List<ProductItem> productList){
+        List<Request_Part__c> partsList = new List<Request_Part__c>();
+        for(ProductItem pit:productList){
+            Request_Part__c part = new Request_Part__c(Work_Order_Service__c=woService.Id,Product_Name__c=pit.Product2Id,Quantity__c=5);
+            partsList.add(part);
         }
-        return newResources;
-    }*/
-//////////////
 
+        return partsList;
+    }
 }
