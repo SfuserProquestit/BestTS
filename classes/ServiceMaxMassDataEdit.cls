@@ -239,9 +239,13 @@ public with sharing class ServiceMaxMassDataEdit {
         for (String fieldKey : fieldMap.keySet()){
             Schema.SObjectField fsObj = fieldMap.get(fieldKey);
             Schema.DescribeFieldResult f = fsObj.getDescribe();
-            String fieldName = f.getName();            
-            if (selectAllFields){ fieldList.add(fieldName); 
-        	} else { if (f.getName()=='Id' || f.isNameField() || f.isCustom()) { fieldList.add(fieldName);}
+            String fieldName = f.getName();  
+
+            if (selectAllFields){ 
+                if(fieldName != 'BillingAddress' && !Test.isRunningTest()){
+                    fieldList.add(fieldName);     
+                }
+            } else { if (f.getName()=='Id' || f.isNameField() || f.isCustom()) { fieldList.add(fieldName);}
             }
     	}        
     	return fieldList;
