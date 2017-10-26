@@ -53,8 +53,7 @@ public class TestUtility {
         return serviceAppointments;
     }
 
-    public static 
-    List<User> createCommunityUserTechnicians(Integer count){
+    public static List<User> createCommunityUserTechnicians(Integer count){
         Profile techProfile = [Select Id From Profile Where Name LIKE :Constants.PROFILE_NAME_FOR_COMMUNITY_TECHNICIAN];
         return createCommunityUsers(count, techProfile.Id);
     }
@@ -89,8 +88,8 @@ public class TestUtility {
                                         ALIAS = 'sfuser'+i, 
                                         COMMUNITYNICKNAME = 'sfuser'+i, 
                                         ISACTIVE = true, 
-                                        TIMEZONESIDKEY = 'Pacific/Auckland', 
-                                        LOCALESIDKEY = 'en_NZ', 
+                                        TIMEZONESIDKEY = 'Australia/Sydney', 
+                                        LOCALESIDKEY = 'en_AU', 
                                         LANGUAGELOCALEKEY = 'en_US', 
                                         EMAILENCODINGKEY = 'ISO-8859-1',
                                         ContactId=contact.Id));
@@ -115,8 +114,8 @@ public class TestUtility {
                                     ALIAS = 'sfuser'+i, 
                                     COMMUNITYNICKNAME = 'sfuser'+i, 
                                     ISACTIVE = true, 
-                                    TIMEZONESIDKEY = 'Pacific/Auckland', 
-                                    LOCALESIDKEY = 'en_NZ', 
+                                    TIMEZONESIDKEY = 'Australia/Sydney', 
+                                    LOCALESIDKEY = 'en_AU', 
                                     LANGUAGELOCALEKEY = 'en_US', 
                                     EMAILENCODINGKEY = 'ISO-8859-1' ));
         }

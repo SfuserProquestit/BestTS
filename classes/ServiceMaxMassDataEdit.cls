@@ -242,7 +242,7 @@ public with sharing class ServiceMaxMassDataEdit {
             String fieldName = f.getName();  
 
             if (selectAllFields){ 
-                if(Test.isRunningTest() && fieldName == 'BillingAddress'){
+                if(Test.isRunningTest() && (fieldName == 'BillingAddress' || fieldName == 'ShippingAddress')){
 
                 }else{
                     fieldList.add(fieldName);         
