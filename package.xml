@@ -2475,6 +2475,7 @@
         <members>Work_Order_Service_Send_Chatter_notification-9</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
+        <members>Work_Order_Service_Update_Master_WO_status-6</members>
         <members>Work_Order_Service_Update_Record_Type-3</members>
         <members>Work_Order_Service_Update_Standard_Instructions_from_Master_Work_order-1</members>
         <members>Work_order_Service_Auto_create_Product_consumed_on_WO-1</members>
@@ -2529,6 +2530,8 @@
         <members>Work_Order_Service_Send_Chatter_notification</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>
+        <members>Work_Order_Service_Update_Record_Type</members>
+        <members>Work_Order_Service_Update_Standard_Instructions_from_Master_Work_order</members>
         <members>Work_order_Service_Auto_create_Product_consumed_on_WO</members>
         <members>Work_order_Service_Indentify_Sole_Trader_on_Usage</members>
         <name>FlowDefinition</name>
@@ -4065,6 +4068,7 @@
         <members>WorkOrder.Completed On</members>
         <members>WorkOrder.Completion Time</members>
         <members>WorkOrder.Invoice Created</members>
+        <members>WorkOrder.Master WO - Update Standard Description</members>
         <members>WorkOrder.Notify Customer</members>
         <members>WorkOrder.Onsite Time</members>
         <members>WorkOrder.Response Time</members>

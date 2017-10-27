@@ -746,7 +746,7 @@
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Invoice_Created_Usage</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Unable to update usage if Invoice has been created on Work Order</description>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 Invoiced__c  = true
@@ -755,7 +755,7 @@ Invoiced__c  = true
     </validationRules>
     <validationRules>
         <fullName>Tech_cant_reassign_Usage_to_Service</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 ISCHANGED( Service__c ) &amp;&amp; $User.ProfileId =&quot;00eN0000000I5Bu&quot;</errorConditionFormula>
         <errorDisplayField>Service__c</errorDisplayField>

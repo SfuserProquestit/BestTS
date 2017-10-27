@@ -123,7 +123,7 @@
             <name>Cancelled_Date_Time_WO</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Status</field>
             <operation>equals</operation>
@@ -158,7 +158,7 @@
             <name>Completed_On</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Status</field>
             <operation>equals</operation>
@@ -169,7 +169,7 @@
     </rules>
     <rules>
         <fullName>Completion Time</fullName>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Status</field>
             <operation>equals</operation>
@@ -197,7 +197,7 @@
             <name>Invoice_Created</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Status</field>
             <operation>equals</operation>
@@ -207,12 +207,30 @@
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
+        <fullName>Master WO - Update Standard Description</fullName>
+        <actions>
+            <name>Update_Standard_Description</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>WorkOrder.ServiceContractId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Work Order</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
         <fullName>Notify Customer</fullName>
         <actions>
             <name>Notify_Customer</name>
             <type>Alert</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Notify_Customer__c</field>
             <operation>equals</operation>
@@ -227,7 +245,7 @@
             <name>Onsite_Time</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Status</field>
             <operation>equals</operation>
@@ -237,7 +255,7 @@
     </rules>
     <rules>
         <fullName>Response Time</fullName>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Status</field>
             <operation>equals</operation>
@@ -261,7 +279,7 @@
     </rules>
     <rules>
         <fullName>Schedule Start Time</fullName>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>WorkOrder.Status</field>
             <operation>equals</operation>

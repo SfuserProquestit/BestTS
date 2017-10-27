@@ -2587,7 +2587,7 @@ RecordType.Name  &lt;&gt; &apos;Master Work Order&apos;
     </validationRules>
     <validationRules>
         <fullName>Cancelled_Reason</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>When status is changed to Cancelled then a cancelled reason is required</description>
         <errorConditionFormula>AND(
 $Setup.ActivateTriggers__c.Enabled__c!=false, 
@@ -2599,7 +2599,7 @@ ISBLANK( Cancelled_Reason__c )  )</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Cannot_Cancel_WO_when_Complete</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Cannot_Cancel_WO_when_Complete or Incomplete</description>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 RecordType.Name  = &apos;Master Work Order&apos;
@@ -2611,7 +2611,7 @@ RecordType.Name  = &apos;Master Work Order&apos;
     </validationRules>
     <validationRules>
         <fullName>Change_Status_from_Closed</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Cannot change a Work Order Status from Closed
 
 AND(PRIORVALUE( Status )&lt;&gt;&apos;Closed&apos;, 
@@ -2626,7 +2626,7 @@ ISCHANGED(Status) &amp;&amp;  TEXT( PRIORVALUE( Status) ) = &apos;Closed&apos;</
     </validationRules>
     <validationRules>
         <fullName>Invoice_Created_WorkOrder</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 Invoice_Created__c = true
 &amp;&amp; NOT((PRIORVALUE(  Invoice_Created__c ))=false)</errorConditionFormula>
@@ -2634,7 +2634,7 @@ Invoice_Created__c = true
     </validationRules>
     <validationRules>
         <fullName>Invoice_Created_Work_Order_Service</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>If the Invoice created checkbox is ticked on the WO Service then the WO service cannot be updated</description>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 RecordType.Name  &lt;&gt; &quot;Master Work Order&quot;
@@ -2644,7 +2644,7 @@ RecordType.Name  &lt;&gt; &quot;Master Work Order&quot;
     </validationRules>
     <validationRules>
         <fullName>Invoice_Created_on_Close_Only</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Can only check invoice created if Work Order is closed</description>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 NOT(ISPICKVAL( Status , &apos;Closed&apos;))&amp;&amp;  Invoice_Created__c   =True</errorConditionFormula>
@@ -2653,7 +2653,7 @@ NOT(ISPICKVAL( Status , &apos;Closed&apos;))&amp;&amp;  Invoice_Created__c   =Tr
     </validationRules>
     <validationRules>
         <fullName>Not_New</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Cannot change a status back to New</description>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 ISCHANGED(Status)  &amp;&amp; TEXT(Status)=&apos;New&apos;</errorConditionFormula>
@@ -2662,7 +2662,7 @@ ISCHANGED(Status)  &amp;&amp; TEXT(Status)=&apos;New&apos;</errorConditionFormul
     </validationRules>
     <validationRules>
         <fullName>Onsite_Time_After_the_Travel_End</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 RecordType.Name  &lt;&gt; &quot;Master Work Order&quot;
 &amp;&amp;  Start_Onsite_Date_Time__c &lt; Travel_End_Date_Time__c</errorConditionFormula>
@@ -2670,7 +2670,7 @@ RecordType.Name  &lt;&gt; &quot;Master Work Order&quot;
     </validationRules>
     <validationRules>
         <fullName>SLA_Required</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>If Service Contract has a SLA and no SLA is selected then an error will occur</description>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 AND (RecordType.Name = &quot;Master Work Order&quot; , SLA_Count__c &lt;&gt;0, ISBLANK( SLA__c ))</errorConditionFormula>
@@ -2679,7 +2679,7 @@ AND (RecordType.Name = &quot;Master Work Order&quot; , SLA_Count__c &lt;&gt;0, I
     </validationRules>
     <validationRules>
         <fullName>Technician_ETA_should_be_blank</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 ( ISPICKVAL( Status ,&apos;In Progress&apos;) 
 || ISPICKVAL( Status ,&apos;Assigned&apos;) )
@@ -2688,7 +2688,7 @@ AND (RecordType.Name = &quot;Master Work Order&quot; , SLA_Count__c &lt;&gt;0, I
     </validationRules>
     <validationRules>
         <fullName>Technicians_ETA_Non_Editable</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 OR(
    AND (
@@ -2729,7 +2729,7 @@ OR(
     </validationRules>
     <validationRules>
         <fullName>Total_Break_Time_minutes_is_required</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 AND( 
  RecordType.Name  &lt;&gt; &apos;Master Work Order&apos;,
@@ -2746,7 +2746,7 @@ ISBLANK( Total_Break_Time_minutes__c  )
     </validationRules>
     <validationRules>
         <fullName>Travel_End_time_after_the_Travel_Start</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Technician cannot change the Travel End time to be before the Travel Start time.</description>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 RecordType.Name  &lt;&gt; &apos;Master Work Order&apos;

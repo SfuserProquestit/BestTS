@@ -167,7 +167,7 @@ Units__c *  Revenue_per_Unit__c )</formula>
             <name>Clear_Pass_Through_Revenue</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp; 
 Contract_Pricing__r.RecordType.Name = &quot;Margin Based&quot; &amp;&amp; NOT(ISBLANK( Units__c ))</formula>
         <triggerType>onAllChanges</triggerType>
@@ -190,7 +190,7 @@ Contract_Pricing__r.RecordType.Name = &quot;Margin Based&quot; &amp;&amp; NOT(IS
             <name>Clear_Engineering_Revenue</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp; 
 Contract_Pricing__r.RecordType.Name = &quot;Markup Based&quot; &amp;&amp; NOT(ISBLANK( Units__c ))</formula>
         <triggerType>onAllChanges</triggerType>
@@ -205,7 +205,7 @@ Contract_Pricing__r.RecordType.Name = &quot;Markup Based&quot; &amp;&amp; NOT(IS
             <name>Set_Usage_Revenue_per_Unit_FSL</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp; 
 Use_Standard_Price__c  = true</formula>
         <triggerType>onAllChanges</triggerType>
