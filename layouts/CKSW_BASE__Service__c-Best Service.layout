@@ -431,15 +431,7 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Skills</label>
-        <layoutColumns>
-            <layoutItems>
-                <height>450</height>
-                <page>CKSW_SRVC__vf035_Skill_Selector_V2_Service_Page</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>true</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <style>OneColumn</style>
     </layoutSections>
     <platformActionList>
@@ -538,15 +530,6 @@
         </quickActionListItems>
     </quickActionList>
     <relatedContent>
-        <relatedContentItems>
-            <layoutItem>
-                <height>65</height>
-                <page>CKSW_SRVC__SF1_Map</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItem>
-        </relatedContentItems>
         <relatedContentItems>
             <layoutItem>
                 <behavior>Readonly</behavior>
