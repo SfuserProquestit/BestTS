@@ -4045,6 +4045,7 @@
         <members>WorkOrder.Invoice_Created</members>
         <members>WorkOrder.Onsite_Time</members>
         <members>WorkOrder.Update_Schedule_Start</members>
+        <members>WorkOrder.Update_Standard_Description</members>
         <members>WorkOrder.Update_Standard_Instruction</members>
         <members>WorkOrder.WO_Update_Standard_Description</members>
         <name>WorkflowFieldUpdate</name>

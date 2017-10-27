@@ -99,6 +99,15 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Update_Standard_Description</fullName>
+        <field>Standard_Instructions__c</field>
+        <formula>ServiceContract.Standard_Instructions__c</formula>
+        <name>Update Standard Description</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Update_Standard_Instruction</fullName>
         <field>Standard_Instructions__c</field>
         <formula>ParentWorkOrder.Standard_Instructions__c</formula>
