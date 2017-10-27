@@ -3909,6 +3909,12 @@
         <members>Received_Part__c.Can_not_edit_Qty_Received</members>
         <members>Received_Part__c.Qty_Received_larger_than_Qty_Order</members>
         <members>Request_Part__c.Qty_has_to_be_1_or_more</members>
+        <members>ServiceAppointment.FSL__Related_Service_with_time_dependency</members>
+        <members>ServiceAppointment.FSL__Same_Resource_Same_Start</members>
+        <members>ServiceAppointment.FSL__Schedule_End_Required</members>
+        <members>ServiceAppointment.FSL__Schedule_Start_Required</members>
+        <members>ServiceAppointment.FSL__Service_Color_HEX_Format</members>
+        <members>ServiceAppointment.FSL__Time_dependency_with_related_service</members>
         <members>ServiceAppointment.FSL__isDurationExist</members>
         <members>ServiceAppointment.Invoice_is_created_on_master_Work_order</members>
         <members>Service_Part__c.Qty_Larger_than_0</members>
