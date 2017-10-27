@@ -152,7 +152,7 @@
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Qty_Larger_than_0</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>Must be greater than zero</description>
         <errorConditionFormula>Quantity_Consumed__c &lt; 1</errorConditionFormula>
         <errorDisplayField>Quantity_Consumed__c</errorDisplayField>

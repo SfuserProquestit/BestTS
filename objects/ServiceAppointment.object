@@ -210,49 +210,49 @@
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>FSL__Related_Service_with_time_dependency</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>If related service is not empty then time dependency is not empty</description>
         <errorConditionFormula>( !ISBLANK(FSL__Related_Service__c) &amp;&amp; ( ISBLANK(TEXT(FSL__Time_Dependency__c)) &amp;&amp; !FSL__Same_Day__c &amp;&amp; !FSL__Same_Resource__c ) )</errorConditionFormula>
         <errorMessage>Please select Time Dependency or Same Day or Same Reosurce .</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>FSL__Same_Resource_Same_Start</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>Can&apos;t be same start and same reosurce</description>
         <errorConditionFormula>TEXT(FSL__Time_Dependency__c) = &quot;Same Start&quot; &amp;&amp; FSL__Same_Resource__c</errorConditionFormula>
         <errorMessage>Resource dependency is invalid. Time Dependency can&apos;t be Same Start when same resource is required.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>FSL__Schedule_End_Required</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>ISNULL(SchedEndTime) &amp;&amp; NOT(ISNULL(SchedStartTime))</errorConditionFormula>
         <errorDisplayField>SchedEndTime</errorDisplayField>
         <errorMessage>Both scheduled start and end are required</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>FSL__Schedule_Start_Required</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>ISNULL(SchedStartTime) &amp;&amp; NOT(ISNULL(SchedEndTime))</errorConditionFormula>
         <errorDisplayField>SchedStartTime</errorDisplayField>
         <errorMessage>Both scheduled start and end are required</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>FSL__Service_Color_HEX_Format</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>(!ISBLANK(FSL__GanttColor__c)) &amp;&amp; (NOT(REGEX(FSL__GanttColor__c, &quot;#[a-fA-F0-9]{6}&quot;)))</errorConditionFormula>
         <errorDisplayField>FSL__GanttColor__c</errorDisplayField>
         <errorMessage>Gantt color must be in hexadecimal format: (for example: #ffffff)</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>FSL__Time_dependency_with_related_service</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>( ISBLANK(FSL__Related_Service__c) &amp;&amp; ( !ISBLANK(TEXT(FSL__Time_Dependency__c)) ||  FSL__Same_Day__c || FSL__Same_Resource__c ) )</errorConditionFormula>
         <errorDisplayField>FSL__Related_Service__c</errorDisplayField>
         <errorMessage>Please select Related Service.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>FSL__isDurationExist</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>Check if Duration field exist on service appointment.</description>
         <errorConditionFormula>ISNULL(Duration)</errorConditionFormula>
         <errorDisplayField>Duration</errorDisplayField>
@@ -260,7 +260,7 @@
     </validationRules>
     <validationRules>
         <fullName>Invoice_is_created_on_master_Work_order</fullName>
-        <active>false</active>
+        <active>true</active>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
 Invoice_Created__c = true
 &amp;&amp; NOT((PRIORVALUE( Invoice_Created__c ))=false)</errorConditionFormula>

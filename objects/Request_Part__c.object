@@ -303,7 +303,7 @@
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>Qty_has_to_be_1_or_more</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>Qty cannot be less than one</description>
         <errorConditionFormula>Quantity__c &lt;= 0</errorConditionFormula>
         <errorDisplayField>Quantity__c</errorDisplayField>
