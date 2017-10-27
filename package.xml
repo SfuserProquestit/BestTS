@@ -3909,6 +3909,7 @@
         <members>Received_Part__c.Can_not_edit_Qty_Received</members>
         <members>Received_Part__c.Qty_Received_larger_than_Qty_Order</members>
         <members>Request_Part__c.Qty_has_to_be_1_or_more</members>
+        <members>ServiceAppointment.FSL__isDurationExist</members>
         <members>ServiceAppointment.Invoice_is_created_on_master_Work_order</members>
         <members>Service_Part__c.Qty_Larger_than_0</members>
         <members>Usage_FSL__c.Invoice_Created_Usage</members>

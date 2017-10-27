@@ -209,6 +209,14 @@
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
+        <fullName>FSL__isDurationExist</fullName>
+        <active>false</active>
+        <description>Check if Duration field exist on service appointment.</description>
+        <errorConditionFormula>ISNULL(Duration)</errorConditionFormula>
+        <errorDisplayField>Duration</errorDisplayField>
+        <errorMessage>Duration field is required</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Invoice_is_created_on_master_Work_order</fullName>
         <active>false</active>
         <errorConditionFormula>$Setup.ActivateTriggers__c.Enabled__c!=false &amp;&amp;
