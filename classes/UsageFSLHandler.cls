@@ -45,7 +45,6 @@ public class UsageFSLHandler {
                 update woServicesToBeUpdates;
             } catch(Exception exp) {
                 System.debug('==An exception occurred while updating service roll up fields==' + exp.getMessage());
-                // add error
             }
             
         }

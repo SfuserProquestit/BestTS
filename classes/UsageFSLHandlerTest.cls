@@ -3,6 +3,7 @@ public class UsageFSLHandlerTest {
 
     @isTest
     static void testRollupCalculations() {
+        
         Account account = TestUtility.createAccounts(1)[0];
         insert account;
 
