@@ -158,6 +158,17 @@
         <style>CustomLinks</style>
     </layoutSections>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>CKSW_BASE__Location__c</fields>
+        <fields>CKSW_BASE__Start__c</fields>
+        <fields>CKSW_BASE__Finish__c</fields>
+        <relatedList>CKSW_BASE__Relocation__c.CKSW_BASE__Resource__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>CKSW_BASE__Working_Location__c.CKSW_BASE__Resource__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
