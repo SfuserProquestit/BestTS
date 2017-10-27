@@ -3402,6 +3402,7 @@
         <members>Access_to_File_Connect_Cloud</members>
         <members>Access_to_Forecasting_Quotat_App</members>
         <members>Allow_View_All_Forecast_Opportunities</members>
+        <members>Audit_Fields</members>
         <members>Best_Permission_Set</members>
         <members>ClickBase_Shift_Planner_Best_TS</members>
         <members>Core</members>
