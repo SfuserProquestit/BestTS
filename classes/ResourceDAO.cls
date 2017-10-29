@@ -1,5 +1,5 @@
 public class ResourceDAO {
-	public static List<CKSW_BASE__Resource__c> getActiveResource(String profileName) {
+	/*public static List<CKSW_BASE__Resource__c> getActiveResource(String profileName) {
 		return [Select	Id,
 						Name,	
 						CKSW_BASE__User__c,
@@ -9,5 +9,5 @@ public class ResourceDAO {
 				Where 	CKSW_BASE__User__r.IsActive = true
 				And		CKSW_BASE__User__r.Profile.Name LIKE :profileName
 				Order By CKSW_BASE__User__r.LastLoginDate ASC ];
-	}
+	}*/
 }

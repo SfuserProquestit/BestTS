@@ -39,7 +39,7 @@
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>FSL/OLD_REQUEST_PART_New_Order_Email</template>
+        <template>FSL/REQUEST_PART_New_Order_Email</template>
     </alerts>
     <alerts>
         <fullName>REQUEST_PART_Receive_Order_Notification</fullName>
@@ -50,6 +50,6 @@
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>FSL/OLD_REQUEST_PART_Received_Order_Email</template>
+        <template>FSL/REQUEST_PART_Received_Order_Email</template>
     </alerts>
 </Workflow>
