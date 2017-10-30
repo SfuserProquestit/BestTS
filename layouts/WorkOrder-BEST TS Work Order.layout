@@ -502,9 +502,9 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
+        <fields>Service_Work_Order__c</fields>
         <fields>Contract_Pricing__c</fields>
         <fields>Pricing_Category_Formula__c</fields>
-        <fields>Service__c</fields>
         <fields>Units__c</fields>
         <fields>Total_Cost_Usage__c</fields>
         <fields>Total_Revenue__c</fields>
