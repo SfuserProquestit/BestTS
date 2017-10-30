@@ -148,7 +148,7 @@
     </nameField>
     <pluralLabel>Service_Parts</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>Qty_Larger_than_0</fullName>
         <active>true</active>

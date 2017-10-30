@@ -2540,6 +2540,7 @@
         <members>Work_Order_Service_Update_Master_WO_status</members>
         <members>Work_Order_Service_Update_Record_Type</members>
         <members>Work_Order_Service_Update_Standard_Instructions_from_Master_Work_order</members>
+        <members>Work_Order_Update_Parent_Work_Order_Status</members>
         <members>Work_order_Service_Auto_create_Product_consumed_on_WO</members>
         <members>Work_order_Service_Indentify_Sole_Trader_on_Usage</members>
         <name>FlowDefinition</name>
