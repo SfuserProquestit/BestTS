@@ -2485,6 +2485,7 @@
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-6</members>
         <members>Work_Order_Service_Update_Record_Type-3</members>
+        <members>Work_Order_Service_Update_Record_Type-4</members>
         <members>Work_Order_Service_Update_Standard_Instructions_from_Master_Work_order-1</members>
         <members>Work_order_Service_Auto_create_Product_consumed_on_WO-1</members>
         <members>Work_order_Service_Indentify_Sole_Trader_on_Usage-1</members>
