@@ -2392,8 +2392,6 @@
     </types>
     <types>
         <members>Accepted_service-1</members>
-        <members>Add_Closed_DateTime_on_WO-1</members>
-        <members>Add_Closed_DateTime_on_WO-2</members>
         <members>Add_Product_Request_and_Line_Items-1</members>
         <members>Add_Product_Request_and_Line_Items-4</members>
         <members>Australia_Location-1</members>
@@ -2456,7 +2454,6 @@
         <members>Update_WO_Contact_Email_on_Service_Object-1</members>
         <members>Work_Order_Service_Allow_Auto_Notification-3</members>
         <members>Work_Order_Service_Auto_Create_Part_request-1</members>
-        <members>Work_Order_Service_Auto_Create_Part_request-3</members>
         <members>Work_Order_Service_Is_Dispatched-1</members>
         <members>Work_Order_Service_Is_changed_Technician_s_ETA-1</members>
         <members>Work_Order_Service_Is_changed_Technician_s_ETA-10</members>
@@ -2480,7 +2477,6 @@
         <members>Work_Order_Service_Reparenting_WO_Services-8</members>
         <members>Work_Order_Service_Reparenting_WO_Services-9</members>
         <members>Work_Order_Service_Send_Chatter_notification-12</members>
-        <members>Work_Order_Service_Send_Chatter_notification-9</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-6</members>
@@ -2492,7 +2488,6 @@
     </types>
     <types>
         <members>Accepted_service</members>
-        <members>Add_Closed_DateTime_on_WO</members>
         <members>Add_Product_Request_and_Line_Items</members>
         <members>Australia_Location</members>
         <members>Auto_Create_Part_Request_on_WO</members>
@@ -2540,7 +2535,6 @@
         <members>Work_Order_Service_Update_Master_WO_status</members>
         <members>Work_Order_Service_Update_Record_Type</members>
         <members>Work_Order_Service_Update_Standard_Instructions_from_Master_Work_order</members>
-        <members>Work_Order_Update_Parent_Work_Order_Status</members>
         <members>Work_order_Service_Auto_create_Product_consumed_on_WO</members>
         <members>Work_order_Service_Indentify_Sole_Trader_on_Usage</members>
         <name>FlowDefinition</name>
