@@ -47,6 +47,7 @@ public class Constants {
     public static final String WORK_ORDER_STATUS_CAPTURE_SIGNATURE                  = 'Capture Signature';
         
     public static final String OBJECT_ACCESS_LEVEL                                  = 'Edit';
+    public static final String OBJECT_ACCESS_LEVEL_READ                             = 'Read';
     
     public static final String PROFILE_NAME_FOR_COMMUNITY_TECHNICIAN                = 'Field_Service_Technician_Community';
     

@@ -28,6 +28,8 @@
         <members>HOME_CommunityAccess</members>
         <members>HOME_CommunityAccess_UT</members>
         <members>HomeNotification</members>
+        <members>LocationTriggerHandler</members>
+        <members>LocationTriggerHandlerTest</members>
         <members>NCRIncomingEmailHandler</members>
         <members>NCRIncomingEmailHandlerTest</members>
         <members>ObjectShareDAO</members>
@@ -36,6 +38,9 @@
         <members>PaginatedSelectList</members>
         <members>ProductConsumedTriggerController</members>
         <members>ProductConsumedTriggerControllerTest</members>
+        <members>ProductItemDAO</members>
+        <members>ProductItemTriggerHandler</members>
+        <members>ProductItemTriggerHandlerTest</members>
         <members>ProductRequestLineItemTriggerController</members>
         <members>ProductRequestLineItemTriggerTest</members>
         <members>QueueDAO</members>
@@ -87,6 +92,7 @@
         <members>ServiceContractDAO</members>
         <members>ServiceDAO</members>
         <members>ServiceMaxMassDataEdit</members>
+        <members>ServiceResourceDAO</members>
         <members>ServiceResourceTriggerHandler</members>
         <members>ServiceResourceTriggerHandlerTest</members>
         <members>ServiceTriggerHandler</members>
@@ -161,6 +167,8 @@
         <members>FeedCommentAcheivementCheckTrigger</members>
         <members>FeedItemAcheivementCheckTrigger</members>
         <members>Load_Ipad_Sample_Data</members>
+        <members>LocationTrigger</members>
+        <members>ProductItemTrigger</members>
         <members>ReceivedPartTrigger</members>
         <members>RequestPartTrigger</members>
         <members>ServiceAppointmentTrigger</members>
