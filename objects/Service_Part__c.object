@@ -113,16 +113,15 @@
     </fields>
     <fields>
         <fullName>Work_Order_Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Service Work Order</label>
         <referenceTo>WorkOrder</referenceTo>
         <relationshipLabel>Service Parts (Service Work Order)</relationshipLabel>
         <relationshipName>Service_Parts1</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>MasterDetail</type>
-        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Work_Order__c</fullName>

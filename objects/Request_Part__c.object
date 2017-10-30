@@ -199,17 +199,16 @@
     </fields>
     <fields>
         <fullName>Work_Order_Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Service Work Order</label>
         <referenceTo>WorkOrder</referenceTo>
         <relationshipLabel>Request Parts (Service Work Order)</relationshipLabel>
         <relationshipName>Request_Parts1</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
-        <type>MasterDetail</type>
-        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Work_Order__c</fullName>
