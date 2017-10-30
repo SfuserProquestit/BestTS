@@ -6891,11 +6891,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Best Work Order Service</layout>
-        <recordType>WorkOrder.Service_Edit</recordType>
+        <recordType>WorkOrder.Read_Only_Tech</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Best Work Order Service</layout>
-        <recordType>WorkOrder.Read_Only_Tech</recordType>
+        <recordType>WorkOrder.Service_Edit</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Best Work Order Service</layout>
@@ -6907,10 +6907,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
-        <recordType>WorkOrder.Master_Work_Order</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
+        <recordType>WorkOrder.Master_Work_Order</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrderLineItem-Work Order Line Item Layout</layout>

@@ -1842,6 +1842,9 @@
         <members>WorkOrderLineItem.UnitPrice</members>
         <members>WorkOrderLineItem.WorkOrderId</members>
         <members>WorkOrderLineItem.WorkTypeId</members>
+        <members>WorkOrderRecordTypes__c.Read_Only_Tech__c</members>
+        <members>WorkOrderRecordTypes__c.Service_Edit__c</members>
+        <members>WorkOrderRecordTypes__c.Standard_Service__c</members>
         <members>WorkThanks.FeedItemId</members>
         <members>WorkThanks.GiverId</members>
         <members>WorkThanks.Message</members>
@@ -2069,6 +2072,7 @@
         <members>WorkBadgeDefinition</members>
         <members>WorkOrder</members>
         <members>WorkOrderLineItem</members>
+        <members>WorkOrderRecordTypes__c</members>
         <members>WorkThanks</members>
         <members>WorkType</members>
         <members>items_Best_ITE_SharePoint_Online__x</members>
