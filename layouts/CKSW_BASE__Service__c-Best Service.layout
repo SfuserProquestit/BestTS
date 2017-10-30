@@ -467,34 +467,29 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CKSW_BASE__Service__c.Create_Expense</actionName>
+            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__Candidates</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__Candidates</actionName>
+            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__Emergency</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__Emergency</actionName>
+            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__ServiceReport</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>8</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__ServiceReport</actionName>
+            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__Running_Late</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>9</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__Running_Late</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>10</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>11</sortOrder>
+            <sortOrder>10</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -515,9 +510,6 @@
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>CKSW_BASE__Service__c.CKSW_SRVC__ServiceReport</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>CKSW_BASE__Service__c.Create_Expense</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>CKSW_BASE__Service__c.CKSW_SRVC__Candidates</quickActionName>
@@ -577,8 +569,6 @@
         <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
-        <customButtons>Apply_Standard_Usage</customButtons>
-        <customButtons>Add_Expense_Item</customButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>RECORDTYPE</fields>

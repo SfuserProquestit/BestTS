@@ -265,34 +265,29 @@
             <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CKSW_BASE__Service__c.Create_Expense</actionName>
+            <actionName>CKSW_BASE__Service__c.Edit_Call</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CKSW_BASE__Service__c.Edit_Call</actionName>
+            <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
+            <actionName>FeedItem.ContentPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
+            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__ServiceReport</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>CKSW_BASE__Service__c.CKSW_SRVC__ServiceReport</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>8</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>CKSW_BASE__Service__c.CKSW_SRVC__Running_Late</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>9</sortOrder>
+            <sortOrder>8</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -304,9 +299,6 @@
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>CKSW_BASE__Service__c.CKSW_SRVC__Change_Status</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>CKSW_BASE__Service__c.Create_Expense</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>FeedItem.TextPost</quickActionName>
