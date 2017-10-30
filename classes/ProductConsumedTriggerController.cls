@@ -95,10 +95,10 @@ public without sharing class ProductConsumedTriggerController {
 
     //Checks product items in Stock Van locations contain enough quantity before proceeding
     public void stockLocationcheck(list<Service_Part__c> newList){
-        set<Id> serviceIds = new set<Id>();
+        //set<Id> serviceIds = new set<Id>();
         set<Id> prodItems = new set<Id>();
         for(Service_Part__c sp : newList){
-            serviceIds.add(sp.Service__c);
+            //serviceIds.add(sp.Service__c);
             prodItems.add(sp.Product_Item__c);
         }
 

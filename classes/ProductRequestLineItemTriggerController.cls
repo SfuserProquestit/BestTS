@@ -178,5 +178,14 @@ public with sharing class ProductRequestLineItemTriggerController {
 		
 	}
 
-	
+    public static void setWorkOrder(List<Request_Part__c> newRequestParts){
+        Set<Id> woServiceIds = new Set<Id>();
+        for(Request_Part__c rp : newRequestParts){
+            woServiceIds.add(rp.Work_Order_Service__c);
+        }
+        Map<Id,WorkOrder> woServices = new Map<Id,WorkOrder>(WorkOrderDAO.getWorkOrdersById(woServiceIds));
+        for(Request_Part__c rp : newRequestParts){
+            rp.Work_Order__c = woServices.get(rp.Work_Order_Service__c).ParentWorkOrderId;
+        }
+    }
 }
