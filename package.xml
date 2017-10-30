@@ -30,6 +30,7 @@
         <members>HomeNotification</members>
         <members>LocationTriggerHandler</members>
         <members>LocationTriggerHandlerTest</members>
+        <members>MyProfilePageControllerTest</members>
         <members>NCRIncomingEmailHandler</members>
         <members>NCRIncomingEmailHandlerTest</members>
         <members>ObjectShareDAO</members>
