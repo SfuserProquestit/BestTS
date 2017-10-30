@@ -433,9 +433,6 @@
             <quickActionName>WorkOrder.Create_Work_Order_Service</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>WorkOrder.Create_Service</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
             <quickActionName>FeedItem.TextPost</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
