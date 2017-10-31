@@ -674,6 +674,18 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Record_Type_Name__c</fullName>
+        <description>Used for the FSL Migration Tool</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Rejected_Date_Time__c</fullName>
         <externalId>false</externalId>
         <label>Rejected Date Time</label>

@@ -1712,6 +1712,7 @@
         <members>WorkOrder.Parts_Used__c</members>
         <members>WorkOrder.Pricebook2Id</members>
         <members>WorkOrder.Priority</members>
+        <members>WorkOrder.Record_Type_Name__c</members>
         <members>WorkOrder.Rejected_Date_Time__c</members>
         <members>WorkOrder.Related_Work_Order__c</members>
         <members>WorkOrder.Representing_Company__c</members>
@@ -1844,6 +1845,7 @@
         <members>WorkOrderLineItem.WorkOrderId</members>
         <members>WorkOrderLineItem.WorkTypeId</members>
         <members>WorkOrderRecordTypes__c.Read_Only_Tech__c</members>
+        <members>WorkOrderRecordTypes__c.Service_Edit_Call__c</members>
         <members>WorkOrderRecordTypes__c.Service_Edit__c</members>
         <members>WorkOrderRecordTypes__c.Standard_Service__c</members>
         <members>WorkThanks.FeedItemId</members>
@@ -2457,6 +2459,7 @@
         <members>Update_Scheduled_Start_to_equal_Technicians_ETA-1</members>
         <members>Update_WO_Contact_Email-1</members>
         <members>Update_WO_Contact_Email_on_Service_Object-1</members>
+        <members>Work_Order_Populate_the_Record_Type_from_Service-1</members>
         <members>Work_Order_Service_Allow_Auto_Notification-3</members>
         <members>Work_Order_Service_Auto_Create_Part_request-1</members>
         <members>Work_Order_Service_Is_Dispatched-1</members>
@@ -3445,11 +3448,14 @@
         <members>Customer Community Plus User</members>
         <members>Customer Portal Manager Standard</members>
         <members>CustomerUser</members>
+        <members>DNU-Field Service Dispatcher</members>
         <members>Field Service Dispatcher</members>
         <members>Field Service Technician Community</members>
         <members>Field%C2%A0Service Administrator</members>
         <members>Field%C2%A0Service%C2%A0Dispatcher</members>
         <members>Field%C2%A0Service%C2%A0Mobile</members>
+        <members>Field Service Administrator</members>
+        <members>Field Service Mobile</members>
         <members>Gold Partner User</members>
         <members>Guest License User</members>
         <members>High Volume Customer Portal User</members>
