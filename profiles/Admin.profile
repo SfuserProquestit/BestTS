@@ -924,6 +924,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>CKSW_BASE__Service__c.Due_Date_for_SA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>CKSW_BASE__Service__c.Record_Type_Developer_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
