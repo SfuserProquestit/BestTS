@@ -560,7 +560,7 @@
     <relatedLists>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
-        <fields>Service__c</fields>
+        <fields>Work_Order__c</fields>
         <fields>Product_Code__c</fields>
         <fields>Product_Name__c</fields>
         <fields>Quantity__c</fields>

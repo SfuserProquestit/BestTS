@@ -3279,6 +3279,8 @@
         <members>WorkOrder-Best Technician Work Order Service %28Edit Call%29</members>
         <members>WorkOrder-Best Technician Work Order Service %28Edit%29</members>
         <members>WorkOrder-Best Technician Work Order Service %28Read Only%29</members>
+        <members>WorkOrder-Best Technician Work Order Service (Edit Call)</members>
+        <members>WorkOrder-Best Technician Work Order Service (Edit)</members>
         <members>WorkOrder-Best Work Order Service</members>
         <members>WorkOrder-Master Work Order BEST TS Page Layout</members>
         <members>WorkOrder-Master Work order BEST TS Technician Page Layout</members>
