@@ -1754,6 +1754,7 @@
         <members>WorkOrder.Service_Pass_Through_Margin__c</members>
         <members>WorkOrder.Service_Pass_Through_Revenue__c</members>
         <members>WorkOrder.Service_Resource__c</members>
+        <members>WorkOrder.Service_WO_Duration__c</members>
         <members>WorkOrder.Service_Work_performed__c</members>
         <members>WorkOrder.Sign_off_Name__c</members>
         <members>WorkOrder.Site_Address__c</members>
