@@ -3,7 +3,7 @@
     <fields>
         <fullName>Due_Date_for_SA__c</fullName>
         <externalId>false</externalId>
-        <formula>IF( CKSW_BASE__Due_Date__c &lt; CKSW_BASE__Early_Start__c , CKSW_BASE__Early_Start__c, CKSW_BASE__Due_Date__c)</formula>
+        <formula>IF( OR(ISNULL(CKSW_BASE__Due_Date__c),CKSW_BASE__Due_Date__c &lt; CKSW_BASE__Early_Start__c) , CKSW_BASE__Early_Start__c, CKSW_BASE__Due_Date__c)</formula>
         <label>Due Date for SA</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
