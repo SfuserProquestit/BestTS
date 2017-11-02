@@ -176,6 +176,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Work_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Order</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>i__EmailHasAttachments__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>

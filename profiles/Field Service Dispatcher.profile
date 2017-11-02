@@ -3,6 +3,11 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Work_Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ProductConsumed.Consumed_by_Service__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -124,6 +129,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Service_Part__c.Work_Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Work_Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

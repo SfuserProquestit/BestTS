@@ -461,9 +461,9 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Service_Work_Order__c</fields>
         <fields>Contract_Pricing__c</fields>
         <fields>Pricing_Category_Formula__c</fields>
-        <fields>Service__c</fields>
         <fields>Units__c</fields>
         <fields>Total_Cost_Usage__c</fields>
         <fields>Total_Revenue__c</fields>
@@ -477,6 +477,19 @@
         <fields>Priority</fields>
         <fields>Status</fields>
         <relatedList>WorkOrder.Related_Work_Order__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>TASK.SUBJECT</fields>
+        <fields>TASK.WHO_NAME</fields>
+        <fields>TASK.WHAT_NAME</fields>
+        <fields>ACTIVITY.TASK</fields>
+        <fields>TASK.DUE_DATE</fields>
+        <fields>TASK.STATUS</fields>
+        <fields>TASK.CLOSED</fields>
+        <fields>TASK.PRIORITY</fields>
+        <fields>CORE.USERS.FULL_NAME</fields>
+        <fields>TASK.LAST_UPDATE</fields>
+        <relatedList>Activity.Work_Order__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

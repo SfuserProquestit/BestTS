@@ -2359,6 +2359,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Event.Work_Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Event.i__EmailHasAttachments__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4969,6 +4974,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Task.Work_Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Task.i__EmailHasAttachments__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6942,10 +6952,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>WorkOrder-Master Work Order BEST TS Page Layout</layout>
-        <recordType>WorkOrder.Master_Work_Order</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrderLineItem-Work Order Line Item Layout</layout>

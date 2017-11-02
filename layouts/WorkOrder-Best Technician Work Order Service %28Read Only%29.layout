@@ -13,7 +13,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Duration</field>
+                <field>Service_WO_Duration__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
