@@ -5,6 +5,7 @@
         <members>AssigneResourceTriggerHandlerTest</members>
         <members>AssignedResourceDAO</members>
         <members>AssignedResourceTriggerHandler</members>
+        <members>AttachmentMigrator</members>
         <members>COMM_Controller</members>
         <members>COMM_Utils_Reports</members>
         <members>COMM_Utils_Reports_UT</members>
