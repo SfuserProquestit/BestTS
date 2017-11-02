@@ -1789,10 +1789,16 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
     <listViews>
         <fullName>All_WorkOrders</fullName>
         <columns>Name</columns>
-        <columns>Invoice_Created__c</columns>
+        <columns>Subject</columns>
+        <columns>Account</columns>
+        <columns>Priority</columns>
+        <columns>Status</columns>
         <filterScope>Everything</filterScope>
         <label>All Work Orders</label>
         <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Completed_Work_Orders</fullName>
@@ -1807,10 +1813,13 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <filters>
             <field>Status</field>
             <operation>equals</operation>
-            <value>Completed</value>
+            <value>Complete,Completed</value>
         </filters>
         <label>Completed Work Orders</label>
         <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Escalated</fullName>
@@ -1829,6 +1838,9 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         </filters>
         <label>Escalated</label>
         <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>My_WorkOrders</fullName>
@@ -1839,6 +1851,9 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <filterScope>Mine</filterScope>
         <label>My Work Orders</label>
         <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>NCR_Email_WorkOrder</fullName>
@@ -1874,6 +1889,9 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         </filters>
         <label>To Be Invoiced</label>
         <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>To_be_Accepted</fullName>
