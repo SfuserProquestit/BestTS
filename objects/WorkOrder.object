@@ -989,7 +989,7 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
     <fields>
         <fullName>Service_Engineering_Margin__c</fullName>
         <externalId>false</externalId>
-        <formula>Service_Pass_Through_Revenue__c -  Service_Pass_Through_Cost__c</formula>
+        <formula>Service_Engineering_Revenue__c - Service_Engineering_Cost__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Service Engineering Margin ($)</label>
         <precision>18</precision>
@@ -1127,6 +1127,19 @@ IMAGE(&quot;/resource/slds_colors/red.png&quot;,&quot;100% SLA Reached&quot;,10,
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Service_WO_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Appointment__r.Duration</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Service_Work_performed__c</fullName>
