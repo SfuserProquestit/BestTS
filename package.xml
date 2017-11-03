@@ -108,6 +108,7 @@
         <members>UsageFSLHandler</members>
         <members>UsageFSLHandlerTest</members>
         <members>UserDAO</members>
+        <members>WOSignatureExt</members>
         <members>WorkOrderDAO</members>
         <members>WorkOrderTriggerHandler</members>
         <members>WorkOrderTriggerHandlerTest</members>
@@ -161,6 +162,7 @@
         <members>ServiceReportThree</members>
         <members>SignatureCapture</members>
         <members>Start_Here</members>
+        <members>WOSignatureCapture</members>
         <members>salesreport</members>
         <name>ApexPage</name>
     </types>
