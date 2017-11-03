@@ -442,6 +442,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>WOSignatureExt</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>WorkOrderDAO</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -7631,6 +7635,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>Start_Here</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>WOSignatureCapture</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>

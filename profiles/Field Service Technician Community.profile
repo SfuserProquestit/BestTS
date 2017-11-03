@@ -24,6 +24,10 @@
         <apexClass>SignatureExtTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>WOSignatureExt</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -556,6 +560,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>SignatureCapture</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>WOSignatureCapture</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
