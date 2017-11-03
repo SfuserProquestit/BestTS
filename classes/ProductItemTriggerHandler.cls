@@ -8,7 +8,7 @@ public class ProductItemTriggerHandler {
         List<ProductItem> productItemsToShare = new List<ProductItem>();
         for(ProductItem pi : productItems){
             if(pi.LocationId != null 
-                && (oldProductItems==null || (oldProductItems != null && pi.OwnerId != oldProductItems.get(pi.Id).OwnerId))){
+                && ((oldProductItems==null && pi.OwnerId != UserInfo.getUserId()) || (oldProductItems != null && pi.OwnerId != oldProductItems.get(pi.Id).OwnerId))){
                 productItemsToShare.add(pi);
                 locationIds.add(pi.LocationId);
             }
