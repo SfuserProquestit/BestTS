@@ -1,5 +1,6 @@
-global class AttachmentMigrator implements Database.Batchable<sObject> {
-	
+global class AttachmentMigrator{
+/*global class AttachmentMigrator implements Database.Batchable<sObject> {
+
 	String query;
 	
 	global AttachmentMigrator() {
@@ -32,6 +33,6 @@ global class AttachmentMigrator implements Database.Batchable<sObject> {
 	
 	global void finish(Database.BatchableContext BC) {
 		
-	}
+	}*/
 	
 }
