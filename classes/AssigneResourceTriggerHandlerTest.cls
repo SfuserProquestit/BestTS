@@ -10,9 +10,9 @@ private class AssigneResourceTriggerHandlerTest {
         if(serviceResources.size()<nbTechnicians){
             techUsers = TestUtility.createCommunityUserTechnicians(nbTechnicians-serviceResources.size());
             serviceResources=TestUtility.createServiceResources(techUsers, Constants.SERVICE_RESOURCE_RESOURCE_TYPE_TECH);
+            insert serviceResources;
         }
-        insert serviceResources;
-
+        
         Map<Id,ServiceResource> serviceResourcesById = new Map<Id,ServiceResource>(serviceResources);
         List<ServiceTerritoryMember> stms = [SELECT Id,ServiceResourceId, ServiceTerritoryId, TerritoryType, EffectiveStartDate, EffectiveEndDate FROM ServiceTerritoryMember WHERE ServiceResourceId IN :serviceResourcesById.keySet() AND TerritoryType='P' AND EffectiveStartDate<=:DateTime.Now() AND EffectiveEndDate >=:DateTime.Now()];
         System.debug('******stms ==> '+ stms);
@@ -62,9 +62,9 @@ private class AssigneResourceTriggerHandlerTest {
         if(serviceResources.size()<nbTechnicians){
             techUsers = TestUtility.createCommunityUserTechnicians(nbTechnicians-serviceResources.size());
             serviceResources=TestUtility.createServiceResources(techUsers, Constants.SERVICE_RESOURCE_RESOURCE_TYPE_TECH);
+            insert serviceResources;
         }
-        insert serviceResources;
-
+        
         Map<Id,ServiceResource> serviceResourcesById = new Map<Id,ServiceResource>(serviceResources);
         List<ServiceTerritoryMember> stms = [SELECT Id,ServiceResourceId, ServiceTerritoryId, TerritoryType, EffectiveStartDate, EffectiveEndDate FROM ServiceTerritoryMember WHERE ServiceResourceId IN :serviceResourcesById.keySet() AND TerritoryType='P' AND EffectiveStartDate<=:DateTime.Now() AND EffectiveEndDate >=:DateTime.Now()];
         System.debug('******stms ==> '+ stms);
