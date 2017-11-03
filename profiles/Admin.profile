@@ -3889,11 +3889,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Request_Part__c.Service__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Request_Part__c.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4490,11 +4485,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Service_Part__c.Product_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Service_Part__c.Service__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5859,11 +5849,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>WorkOrder.Scheduled_End_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>WorkOrder.Scheduled_SLA_Met__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5965,11 +5950,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.Service_Resource__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>WorkOrder.Service_WO_Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
