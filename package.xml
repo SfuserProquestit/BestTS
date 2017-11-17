@@ -2391,6 +2391,8 @@
         <members>Product2.SBQQ__ConfiguratorLookup</members>
         <members>Product2.SBQQ__SearchFilters</members>
         <members>Product2.SBQQ__SearchResults</members>
+        <members>ServiceAppointment.FSL__Service_Lightbox</members>
+        <members>WorkOrder.FSL__Gantt_Lightbox</members>
         <name>FieldSet</name>
     </types>
     <types>
@@ -2450,6 +2452,7 @@
         <members>Schedule_Start_Date-1</members>
         <members>Scheduled_Work_Order-1</members>
         <members>Service_Appointment_Send_Email_to_tech_when_SA_status_is_Dispatched-6</members>
+        <members>Service_Appointment_Set_address_fields_when_created-1</members>
         <members>Service_appointment_Is_changed_scheduled_start-1</members>
         <members>Service_appointment_Is_changed_scheduled_start-2</members>
         <members>Service_appointment_Is_changed_scheduled_start-3</members>
@@ -2492,6 +2495,7 @@
         <members>Work_Order_Service_Reparenting_WO_Services-8</members>
         <members>Work_Order_Service_Reparenting_WO_Services-9</members>
         <members>Work_Order_Service_Send_Chatter_notification-12</members>
+        <members>Work_Order_Service_Set_address_fields_on_SA-1</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-6</members>
@@ -2533,6 +2537,7 @@
         <members>Schedule_Start_Date</members>
         <members>Scheduled_Work_Order</members>
         <members>Service_Appointment_Send_Email_to_tech_when_SA_status_is_Dispatched</members>
+        <members>Service_Appointment_Set_address_fields_when_created</members>
         <members>Service_appointment_Is_changed_scheduled_start</members>
         <members>Travel_on_Work_order</members>
         <members>Update_Invoiced_Checkbox_on_Usage_record_from_WO</members>
@@ -2547,6 +2552,7 @@
         <members>Work_Order_Service_Populate_Service_Territory</members>
         <members>Work_Order_Service_Reparenting_WO_Services</members>
         <members>Work_Order_Service_Send_Chatter_notification</members>
+        <members>Work_Order_Service_Set_address_fields_on_SA</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated</members>
         <members>Work_Order_Service_Update_Master_WO_status</members>
         <members>Work_Order_Service_Update_Record_Type</members>
