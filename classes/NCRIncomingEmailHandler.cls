@@ -60,7 +60,8 @@ global class NCRIncomingEmailHandler implements Messaging.InboundEmailHandler {
                         if(wo.City__c != null && wo.City__c != '' && wo.City__c.length() >=12){
                             wo.Site_Post_Code__c = wo.City__c.subString(wo.City__c.length()-4,wo.City__c.length());
                             wo.Site_State__c = wo.City__c.subString(wo.City__c.length()-11,wo.City__c.length()-8);
-                            wo.City__c = wo.City__c.subString(0,wo.City__c.length()-12).subString(0,39);
+                            wo.City__c = wo.City__c.subString(0,wo.City__c.length()-12).length()>40 ? wo.City__c.subString(0,wo.City__c.length()-12).subString(0,39) : wo.City__c.subString(0,wo.City__c.length()-12);
+
                         }
 
                         //The first SLA Record found is set in the work order
@@ -77,7 +78,7 @@ global class NCRIncomingEmailHandler implements Messaging.InboundEmailHandler {
                         woService.AccountId = Email_Service_Settings__c.getOrgDefaults().NCR_Account_Id__c;
                         woService.ServiceContractId = contractId;
                         woService.OwnerId = ncrQueue.Id;
-                        woService.City__c = wo.City__c.subString(0,39);
+                        woService.City__c = wo.City__c;
                         woService.Site_State__c = wo.Site_State__c;
                         woService.Site_Post_Code__c = wo.Site_Post_Code__c;
                         insert woService;
