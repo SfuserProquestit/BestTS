@@ -2452,6 +2452,7 @@
         <members>Schedule_Start_Date-1</members>
         <members>Scheduled_Work_Order-1</members>
         <members>Service_Appointment_Send_Email_to_tech_when_SA_status_is_Dispatched-6</members>
+        <members>Service_Appointment_Send_Email_to_tech_when_SA_status_is_Dispatched-7</members>
         <members>Service_Appointment_Set_address_fields_when_created-1</members>
         <members>Service_appointment_Is_changed_scheduled_start-1</members>
         <members>Service_appointment_Is_changed_scheduled_start-2</members>
@@ -2497,6 +2498,7 @@
         <members>Work_Order_Service_Send_Chatter_notification-12</members>
         <members>Work_Order_Service_Set_address_fields_on_SA-1</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
+        <members>Work_Order_Service_Set_timestamp_when_status_is_updated-5</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-6</members>
         <members>Work_Order_Service_Update_Record_Type-3</members>
