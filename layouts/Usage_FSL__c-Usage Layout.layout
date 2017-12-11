@@ -35,6 +35,10 @@
                 <behavior>Edit</behavior>
                 <field>Vendor__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Employee_Id__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

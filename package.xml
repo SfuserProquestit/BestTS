@@ -1549,6 +1549,7 @@
         <members>Usage_FSL__c.Cost_per_Unit__c</members>
         <members>Usage_FSL__c.Current_PO_Number__c</members>
         <members>Usage_FSL__c.Employee_ID__c</members>
+        <members>Usage_FSL__c.Employee_Id__c</members>
         <members>Usage_FSL__c.Expense_Mark_Up__c</members>
         <members>Usage_FSL__c.Expense__c</members>
         <members>Usage_FSL__c.Expenses_Total__c</members>

@@ -134,6 +134,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Employee_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Work_Order__r.Service_Resource__r.Employee_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Employee Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Expense_Mark_Up__c</fullName>
         <defaultValue>0.10</defaultValue>
         <externalId>false</externalId>

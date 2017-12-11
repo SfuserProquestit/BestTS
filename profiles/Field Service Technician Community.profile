@@ -185,6 +185,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Usage_FSL__c.Employee_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Usage_FSL__c.Service_Work_Order__c</field>
         <readable>true</readable>
@@ -531,6 +536,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Technician_Status_Transition__mdt-Status Transition Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Usage_FSL__c-Usage Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Best Technician Work Order Service %28Edit Call%29</layout>

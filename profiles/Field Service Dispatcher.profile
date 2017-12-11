@@ -137,6 +137,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Usage_FSL__c.Employee_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Usage_FSL__c.Service_Work_Order__c</field>
         <readable>true</readable>
@@ -480,6 +485,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Service_Part__c-Service Part Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Usage_FSL__c-Usage Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrder-Best Work Order Service</layout>

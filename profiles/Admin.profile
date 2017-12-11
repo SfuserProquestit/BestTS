@@ -5087,6 +5087,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Usage_FSL__c.Employee_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Usage_FSL__c.Expense_Mark_Up__c</field>
         <readable>true</readable>
@@ -6912,10 +6917,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Usage_FSL__c-Usage Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Usage_FSL__c-Usage Layout</layout>
-        <recordType>Usage_FSL__c.Standard_Usage</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Usage__c-Standard Usage Layout</layout>
