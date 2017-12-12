@@ -2500,6 +2500,7 @@
         <members>Work_Order_Service_Set_address_fields_on_SA-1</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-4</members>
         <members>Work_Order_Service_Set_timestamp_when_status_is_updated-5</members>
+        <members>Work_Order_Service_Set_timestamp_when_status_is_updated-6</members>
         <members>Work_Order_Service_Update_Master_WO_status-4</members>
         <members>Work_Order_Service_Update_Master_WO_status-6</members>
         <members>Work_Order_Service_Update_Record_Type-3</members>
